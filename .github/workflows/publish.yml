@@ -1,0 +1,33 @@
+# .github/workflows/publish.yml
+name: Build & publish static site to deploy
+on:
+    push:
+        branches: [main]
+
+permissions:
+    contents: write # <-- allow push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: npm
+            - run: npm ci
+
+            # If you're generating sitemap/robots with next-sitemap,
+            # do it BEFORE build so they get copied into out/
+            - run: npm run sitemap
+
+            # This now creates the out/ folder because of output: 'export'
+            - run: npm run build
+
+            - name: Publish to deploy branch
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  branch: deploy
+                  folder: out
+                  clean: true
