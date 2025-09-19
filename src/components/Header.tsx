@@ -10,11 +10,36 @@ const BRAND = { primary: "#2175a2", accent: "#21a37c" };
 
 export default function Header() {
 	const [mobileOpen, setMobileOpen] = useState(false);
+  // Keep menu mounted long enough to animate out
+  const [mobileMounted, setMobileMounted] = useState(false);
+  // Drive enter/exit animation separately from open state
+  const [menuShown, setMenuShown] = useState(false);
 
 	useEffect(() => {
-		document.body.classList.toggle("overflow-hidden", mobileOpen);
-		return () => document.body.classList.remove("overflow-hidden");
+		let t: ReturnType<typeof setTimeout> | undefined;
+		let raf1: number | undefined;
+		let raf2: number | undefined;
+		if (mobileOpen) {
+			setMobileMounted(true);
+			// Ensure initial hidden state paints before showing (prevents snap)
+			raf1 = window.requestAnimationFrame(() => {
+				raf2 = window.requestAnimationFrame(() => setMenuShown(true));
+			});
+		} else {
+			setMenuShown(false);
+			t = setTimeout(() => setMobileMounted(false), 300);
+		}
+		return () => {
+			if (t) clearTimeout(t);
+			if (raf1) cancelAnimationFrame(raf1);
+			if (raf2) cancelAnimationFrame(raf2);
+		};
 	}, [mobileOpen]);
+
+	useEffect(() => {
+		document.body.classList.toggle("overflow-hidden", mobileMounted);
+		return () => document.body.classList.remove("overflow-hidden");
+	}, [mobileMounted]);
 
 	return (
 		<>
@@ -57,15 +82,37 @@ export default function Header() {
 								Free Website Assessment
 							</a>
 							<button
-								className="md:hidden inline-flex items-center justify-center rounded-lg border px-3 py-2 text-sm"
+								type="button"
+								className="md:hidden inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm"
 								aria-expanded={mobileOpen}
 								aria-controls="mobile-menu"
 								aria-label="Toggle menu"
 								onClick={() => setMobileOpen((v) => !v)}
 							>
 								<span className="sr-only">Menu</span>
-								<div className="h-5 w-5 grid place-items-center">
-									{!mobileOpen ? "≡" : "×"}
+								{/* Hamburger icon that transitions to an X */}
+								<div className="h-5 w-6 flex flex-col items-center justify-center gap-1">
+									<span
+										className={`block h-0.5 w-6 bg-current transition-transform duration-300 ease-in-out ${
+											mobileOpen
+												? "translate-y-1.5 rotate-45"
+												: ""
+										}`}
+									/>
+									<span
+										className={`block h-0.5 w-6 bg-current transition-opacity duration-300 ease-in-out ${
+											mobileOpen
+												? "opacity-0"
+												: "opacity-100"
+										}`}
+									/>
+									<span
+										className={`block h-0.5 w-6 bg-current transition-transform duration-300 ease-in-out ${
+											mobileOpen
+												? "-translate-y-1.5 -rotate-45"
+												: ""
+										}`}
+									/>
 								</div>
 							</button>
 						</div>
@@ -73,16 +120,21 @@ export default function Header() {
 				</Container>
 			</header>
 
-			{mobileOpen && (
+			{mobileMounted && (
 				<div className="md:hidden fixed inset-0 z-[60]">
 					<div
-						className="absolute inset-0"
+						className={`absolute inset-0 transition-opacity duration-300 ${
+							menuShown ? "opacity-100" : "opacity-0"
+						}`}
 						style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
 						onClick={() => setMobileOpen(false)}
 					/>
 					<nav
 						id="mobile-menu"
-						className="absolute top-14 left-0 right-0 mx-4 rounded-2xl border bg-white p-4 shadow-lg"
+						className={`absolute top-14 left-0 right-0 mx-4 rounded-2xl border bg-white p-4 shadow-lg origin-top transform transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+							menuShown ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0"
+						}`}
+						style={{ willChange: "transform, opacity" }}
 					>
 						<a
 							href="#about"

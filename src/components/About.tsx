@@ -1,4 +1,3 @@
-// /components/AboutMe.tsx
 "use client";
 
 import Image from "next/image";
@@ -7,7 +6,7 @@ import { MapPin, Mail, Sparkles } from "lucide-react";
 import FadeIn from "./FadeIn";
 import Container from "./Container";
 
-export default function AboutMe() {
+export default function About() {
 	return (
 		<section
 			id="about"
@@ -19,7 +18,7 @@ export default function AboutMe() {
 					{/* LEFT: copy */}
 					<FadeIn>
 						{/* Pill heading */}
-						<div
+						{/* <div
 							className="inline-block rounded-full px-3 py-1 text-xs font-medium"
 							style={{
 								background: "rgba(255,255,255,0.15)",
@@ -27,18 +26,14 @@ export default function AboutMe() {
 							}}
 						>
 							About Me
-						</div>
+						</div> */}
 
 						<h2
 							className="mt-4 text-3xl md:text-4xl font-semibold leading-tight"
 							style={{ color: "#ffffff" }}
 						>
-							Hi, I’m{" "}
-							<span style={{ color: "#ffffff" }}>
-								Chris Owens
-							</span>
-							. I build fast, modern websites that help small
-							businesses grow.
+							About Elevate DevWorks: Innovative Solutions
+							Provider
 						</h2>
 
 						<p
@@ -49,7 +44,7 @@ export default function AboutMe() {
 						</p>
 
 						{/* Highlights as white cards for strong contrast */}
-						<ul className="mt-6 grid gap-3 sm:grid-cols-2">
+						{/* <ul className="mt-6 grid gap-3 sm:grid-cols-2">
 							{about.highlights.map((h) => (
 								<li
 									key={h}
@@ -62,10 +57,10 @@ export default function AboutMe() {
 									• {h}
 								</li>
 							))}
-						</ul>
+						</ul> */}
 
 						{/* Specialty badges inverted for dark bg */}
-						<div className="mt-6 flex flex-wrap items-center gap-2 text-xs">
+						{/* <div className="mt-6 flex flex-wrap items-center gap-2 text-xs">
 							{about.specialties.map((s) => (
 								<span
 									key={s}
@@ -78,7 +73,7 @@ export default function AboutMe() {
 									{s}
 								</span>
 							))}
-						</div>
+						</div> */}
 
 						{/* contact row */}
 						<div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 text-sm">
@@ -149,7 +144,7 @@ export default function AboutMe() {
 								</div>
 							</div>
 
-							<div
+							{/* <div
 								className="rounded-2xl border bg-white p-5 shadow-sm"
 								style={{
 									borderTop: "4px solid #21a37c",
@@ -184,7 +179,7 @@ export default function AboutMe() {
 									</li>
 									<li>• Clean, maintainable components</li>
 								</ul>
-							</div>
+							</div> */}
 						</div>
 					</FadeIn>
 				</div>

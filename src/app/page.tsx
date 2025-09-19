@@ -4,7 +4,7 @@
 import FixedBackground from "../components/FixedBackground";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import AboutMe from "@/components/AboutMe";
+import About from "@/components/About";
 import Services from "@/components/Services";
 import Work from "@/components/Work";
 // import Testimonials from "@/components/Testimonials";
@@ -18,7 +18,7 @@ export default function Page() {
 			<div className="relative z-10">
 				<Header />
 				<Hero />
-				<AboutMe />
+				<About />
 				<Services />
 				<Work />
 				{/* <Testimonials /> */}

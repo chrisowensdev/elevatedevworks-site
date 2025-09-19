@@ -3,9 +3,10 @@ export const about = {
 	name: "Chris Owens",
 	title: "Solutions Developer Team Lead • Founder @ Elevate DevWorks",
 	location: "Richmond, VA",
-	email: "chris@chrisowens.dev",
-	headshot: "/about-me-image.png", // put a square image in /public
-	blurb: "I’m a full-stack developer who builds clean, fast, SEO-ready websites and apps. I have been in the industry for over 5 years developing custom websites and applications where I help small businesses turn their sites into real growth engines.",
+	email: "chris@elevatedevworks.com",
+	headshot:
+		"https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1096&h=1088", // put a square image in /public
+	blurb: "Elevate Devworks is a leading web and software development company that specializes in creating custom websites, webapps, and mobile applications. We are dedicated to delivering innovative solutions that meet our clients' unique needs and exceed their expectations.",
 	highlights: [
 		"5+ years building web & mobile (Next.js, WordPress, React Native)",
 		"Performance & Core Web Vitals minded",
