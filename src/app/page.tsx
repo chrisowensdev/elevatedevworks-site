@@ -8,6 +8,8 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Work from "@/components/Work";
 // import Testimonials from "@/components/Testimonials";
+import Process from "@/components/Process";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,8 +22,10 @@ export default function Page() {
 				<Hero />
 				<About />
 				<Services />
+				<Process />
 				<Work />
 				{/* <Testimonials /> */}
+				<FAQ />
 				<Contact />
 				<Footer />
 			</div>
