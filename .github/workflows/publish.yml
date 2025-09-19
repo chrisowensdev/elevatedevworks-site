@@ -5,25 +5,30 @@ on:
         branches: [main]
 
 permissions:
-    contents: write # <-- allow push
+    contents: write
 
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+
             - uses: actions/setup-node@v4
               with:
                   node-version: 20
                   cache: npm
+
             - run: npm ci
 
-            # If you're generating sitemap/robots with next-sitemap,
-            # do it BEFORE build so they get copied into out/
+            # If you use next-sitemap, do it before the build
             - run: npm run sitemap
 
-            # This now creates the out/ folder because of output: 'export'
+            # For Next.js static export (output: 'export' in next.config.js)
             - run: npm run build
+
+            # 👇 Ensure .htaccess goes into the artifact
+            - name: Include .htaccess in out/
+              run: cp .htaccess out/.htaccess
 
             - name: Publish to deploy branch
               uses: JamesIves/github-pages-deploy-action@v4
