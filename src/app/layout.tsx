@@ -7,7 +7,10 @@ export const viewport: Viewport = { themeColor: "#2175a2" };
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://elevatedevworks.com"),
-	title: { default: "Elevate DevWorks", template: "%s | Elevate DevWorks" },
+	title: {
+		default: "Elevate DevWorks - Web/Application Development",
+		template: "%s | Elevate DevWorks - Web/Application Development",
+	},
 	description: "Building High-Quality Websites for Business",
 	openGraph: {
 		type: "website",
@@ -50,6 +53,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={`${text.variable} ${display.variable}`}>
+			<head>
+				<meta charSet="utf-8" />
+			</head>
 			<body>
 				<SEOJsonLd />
 				{children}
