@@ -21,10 +21,11 @@ export default function Hero() {
 					<div className="w-full pt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
 						<a
 							href="#contact"
+							aria-label="Get a free website assessment"
 							className="rounded-xl px-5 py-3 text-white font-medium"
 							style={{ background: BRAND.primary }}
 						>
-							Get a Free Assessment
+							Free Assessment
 						</a>
 						<a
 							href="#work"

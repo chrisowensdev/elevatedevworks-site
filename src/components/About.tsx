@@ -108,7 +108,7 @@ export default function About() {
 							>
 								{about.cta.primaryText}
 							</a>
-							<a
+							{/* <a
 								href={about.cta.secondaryHref}
 								className="rounded-xl px-5 py-3 font-medium"
 								style={{
@@ -118,7 +118,7 @@ export default function About() {
 								}}
 							>
 								{about.cta.secondaryText}
-							</a>
+							</a> */}
 						</div>
 					</FadeIn>
 

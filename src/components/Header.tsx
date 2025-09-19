@@ -76,10 +76,11 @@ export default function Header() {
 						<div className="flex items-center gap-2">
 							<a
 								href="#contact"
+								aria-label="Get a free website assessment"
 								className="hidden md:inline-flex rounded-xl px-3 py-2 text-sm text-white transition"
 								style={{ background: BRAND.primary }}
 							>
-								Free Website Assessment
+								Free Assessment
 							</a>
 							<button
 								type="button"
@@ -157,14 +158,15 @@ export default function Header() {
 						>
 							Work
 						</a>
-						<a
-							href="#contact"
-							onClick={() => setMobileOpen(false)}
-							className="mt-2 block rounded-xl px-4 py-3 text-center text-white font-medium hover:opacity-90"
-							style={{ background: BRAND.primary }}
-						>
-							Free Website Assessment
-						</a>
+							<a
+								href="#contact"
+								onClick={() => setMobileOpen(false)}
+								aria-label="Get a free website assessment"
+								className="mt-2 block rounded-xl px-4 py-3 text-center text-white font-medium hover:opacity-90"
+								style={{ background: BRAND.primary }}
+							>
+								Free Assessment
+							</a>
 					</nav>
 				</div>
 			)}
