@@ -1,93 +1,93 @@
 <?php
-// public/contact.php
+// contact.php (no Composer version)
+// Requires PHPMailer files. If not installed via Composer, download the PHPMailer source
+// and place the 'src' folder somewhere you can include (e.g., under public_html/phpmailer/).
+
+// 1) Load secrets
+$config = require __DIR__ . '/../app/config.php';
+
+// 2) Include PHPMailer (no Composer)
+require __DIR__ . '/phpmailer/src/PHPMailer.php';
+require __DIR__ . '/phpmailer/src/SMTP.php';
+require __DIR__ . '/phpmailer/src/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 header('Content-Type: application/json');
 
-// --- Basic CSRF-ish origin allowlist (adjust to your domains) ---
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-$referer = $_SERVER['HTTP_REFERER'] ?? '';
-$allowed = [
-    'https://chrisowens.dev',
-    'https://www.chrisowens.dev',
-    'http://localhost:3000',
-];
-$validOrigin = (!$origin && !$referer) || in_array($origin, $allowed, true) || array_reduce($allowed, fn($ok, $o) => $ok || str_starts_with($referer, $o), false);
-if (!$validOrigin) {
-    http_response_code(403);
-    echo json_encode(['ok' => false, 'error' => 'Invalid origin']);
+// ---- Optional auth between Next.js and PHP
+$apiKeyHeader = $_SERVER['HTTP_X_API_KEY'] ?? '';
+if (!empty($config['PHP_CONTACT_API_KEY']) && $apiKeyHeader !== $config['PHP_CONTACT_API_KEY']) {
+    http_response_code(401);
+    echo json_encode(['error' => 'Unauthorized']);
     exit;
 }
 
-// Only POST
-if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['ok' => false]);
-    exit;
-}
-
-// Collect fields
-$name = trim($_POST['name'] ?? '');
-$email = trim($_POST['email'] ?? '');
-$message = trim($_POST['message'] ?? '');
-$website = trim($_POST['website'] ?? ''); // honeypot
-$startedAt = intval($_POST['startedAt'] ?? 0);
-
-// Spam guards
-if ($website) {
-    echo json_encode(['ok' => true]);
-    exit;
-} // bots fill hidden field
-if (strlen($name) < 2 || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($message) < 10 || strlen($message) > 4000) {
-    http_response_code(400);
-    echo json_encode(['ok' => false, 'error' => 'Invalid fields']);
-    exit;
-}
-// Minimum time on page (2s)
-if (!$startedAt || (intval(microtime(true) * 1000) - $startedAt) < 2000) {
-    echo json_encode(['ok' => true]);
-    exit;
-}
-
-// --- Load secrets (NOT in repo). Create /home/<user>/secure/config.php on the server ---
-require __DIR__ . '/../secure/config.php'; // defines RESEND_API_KEY, CONTACT_FROM, CONTACT_TO
-
-// HTML email
-function esc($s)
-{
-    return htmlspecialchars($s ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
-}
-$html = '<div style="font-family:Arial,sans-serif"><h2 style="margin:0 0 12px">New Inquiry</h2>'
-    . '<p><b>Name:</b> ' . esc($name) . '</p>'
-    . '<p><b>Email:</b> ' . esc($email) . '</p>'
-    . '<p style="margin:16px 0 6px"><b>Message:</b></p>'
-    . '<p style="white-space:pre-line;margin:0">' . nl2br(esc($message)) . '</p></div>';
-
-$payload = [
-    'from' => CONTACT_FROM,          // must be on a verified domain in Resend
-    'to' => CONTACT_TO,
-    'subject' => 'New contact from ' . $name,
-    'reply_to' => $email,            // REST API uses snake_case
-    'text' => "Name: $name\nEmail: $email\n\n$message\n",
-    'html' => $html,
-];
-
-// Call Resend REST API (server-side)
-$ch = curl_init('https://api.resend.com/emails');
-curl_setopt_array($ch, [
-    CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . RESEND_API_KEY, 'Content-Type: application/json'],
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => json_encode($payload),
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_TIMEOUT => 10,
-]);
-$res = curl_exec($ch);
-$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-$err  = curl_error($ch);
-curl_close($ch);
-
-if ($code >= 200 && $code < 300) {
-    echo json_encode(['ok' => true]);
+// ---- CORS (only if you post to PHP directly from the browser; not needed if Next proxies)
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header('Access-Control-Allow-Origin: https://your-next-site.com');
+    header('Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-Api-Key');
+    header('Access-Control-Allow-Methods: POST, OPTIONS');
+    exit(0);
 } else {
-    error_log("Resend error ($code): $res $err");
-    http_response_code(502);
-    echo json_encode(['ok' => false, 'error' => 'Email failed']);
+    // If not using direct browser calls, you can omit this or restrict origin
+    // header('Access-Control-Allow-Origin: https://your-next-site.com');
+}
+
+// ---- Read JSON body
+$input = json_decode(file_get_contents('php://input'), true);
+$name      = trim($input['name'] ?? '');
+$email     = trim($input['email'] ?? '');
+$message   = trim($input['message'] ?? '');
+$userAgent = $input['userAgent'] ?? '';
+$ip        = $input['ip'] ?? ($_SERVER['REMOTE_ADDR'] ?? 'unknown');
+
+// ---- Basic validation
+if (!$name || !$email || !$message || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Invalid payload']);
+    exit;
+}
+
+$mail = new PHPMailer(true);
+
+try {
+    // SMTP
+    $mail->isSMTP();
+    $mail->Host       = $config['SMTP_HOST'];
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $config['SMTP_USER'];
+    $mail->Password   = $config['SMTP_PASS'];
+    // STARTTLS is common on 587; switch to ENCRYPTION_SMTPS + port 465 if your provider requires it
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = (int)($config['SMTP_PORT'] ?? 587);
+
+    // Addresses
+    $mail->setFrom($config['CONTACT_FROM'], 'Website Contact');
+    $mail->addAddress($config['CONTACT_TO']);
+    $mail->addReplyTo($email, $name);
+
+    // Content
+    $mail->Subject = 'New website contact';
+    $mail->isHTML(true);
+    $mail->Body = sprintf(
+        '<p><strong>Name:</strong> %s</p>
+     <p><strong>Email:</strong> %s</p>
+     <p><strong>Message:</strong><br>%s</p>
+     <hr>
+     <p><small>IP: %s<br>User-Agent: %s</small></p>',
+        htmlspecialchars($name),
+        htmlspecialchars($email),
+        nl2br(htmlspecialchars($message)),
+        htmlspecialchars($ip),
+        htmlspecialchars($userAgent)
+    );
+    $mail->AltBody = "Name: $name\nEmail: $email\n\nMessage:\n$message\n\nIP: $ip\nUA: $userAgent";
+
+    $mail->send();
+    echo json_encode(['ok' => true]);
+} catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Mailer error: ' . $mail->ErrorInfo]);
 }
