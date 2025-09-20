@@ -4,7 +4,7 @@
 // and place the 'src' folder somewhere you can include (e.g., under public_html/phpmailer/).
 
 // 1) Load secrets
-$config = require __DIR__ . '/../app/config.php';
+$config = require __DIR__ . '/../secure/config.php';
 
 // 2) Include PHPMailer (no Composer)
 require __DIR__ . '/phpmailer/src/PHPMailer.php';
