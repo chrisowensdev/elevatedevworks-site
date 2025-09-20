@@ -38,14 +38,11 @@ export default function Contact() {
 		};
 
 		try {
-			const res = await fetch(
-				"https://www.elevatedevworks.com/contact.php",
-				{
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify(payload),
-				}
-			);
+			const res = await fetch("https://elevatedevworks.com/contact.php", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(payload),
+			});
 
 			const json = await res.json().catch(() => null);
 			if (!res.ok || !json?.ok) {
