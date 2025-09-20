@@ -18,13 +18,15 @@ use PHPMailer\PHPMailer\Exception;
 
 /* ---------------- CORS (browser → PHP directly) ---------------- */
 
-$allowOrigin = $config['ALLOW_BROWSER_ORIGIN'] ?? '';
+$allowOrigin = $config['ALLOW_BROWSER_ORIGIN'] ?? [];
+if (is_string($allowed)) $allowed = [$allowed]; // backward compat
 $origin      = $_SERVER['HTTP_ORIGIN'] ?? '';
 if ($allowOrigin && $origin === $allowOrigin) {
     header('Access-Control-Allow-Origin: ' . $allowOrigin);
     header('Vary: Origin');
     header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
     header('Access-Control-Allow-Methods: POST, OPTIONS');
+    header('Access-Control-Max-Age: 86400'); // cache preflight for a day
 }
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit(0);
