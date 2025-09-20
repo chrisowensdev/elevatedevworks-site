@@ -20,15 +20,24 @@ jobs:
 
             - run: npm ci
 
-            # If you use next-sitemap, do it before the build
+            # If you use next-sitemap
             - run: npm run sitemap
 
-            # For Next.js static export (output: 'export' in next.config.js)
+            # Build static export (produces out/)
             - run: npm run build
 
-            # 👇 Ensure .htaccess goes into the artifact
-            - name: Include .htaccess in out/
+            # Ensure .htaccess gets shipped
+            - name: Include .htaccess
               run: cp .htaccess out/.htaccess
+
+            # >>> ADD: ship contact.php + PHPMailer <<<
+            - name: Include PHP endpoint and PHPMailer
+              run: |
+                  mkdir -p out/phpmailer/src
+                  cp public/contact.php out/contact.php
+                  cp public/phpmailer/src/PHPMailer.php out/phpmailer/src/PHPMailer.php
+                  cp public/phpmailer/src/SMTP.php out/phpmailer/src/SMTP.php
+                  cp public/phpmailer/src/Exception.php out/phpmailer/src/Exception.php
 
             - name: Publish to deploy branch
               uses: JamesIves/github-pages-deploy-action@v4
