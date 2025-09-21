@@ -3,6 +3,7 @@ import "./globals.css";
 import { text, display } from "./fonts";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import type { Viewport } from "next";
+import Script from "next/script";
 export const viewport: Viewport = { themeColor: "#2175a2" };
 
 export const metadata: Metadata = {
@@ -59,6 +60,16 @@ export default function RootLayout({
 			<body>
 				<SEOJsonLd />
 				{children}
+				<Script
+					src="https://www.googletagmanager.com/gtag/js?id=G-HRK4JC4W3J"
+					strategy="afterInteractive"
+				/>
+				<Script id="ga-init" strategy="afterInteractive">
+					{`window.dataLayer = window.dataLayer || [];
+  						function gtag(){dataLayer.push(arguments);}
+  						gtag('js', new Date());
+  						gtag('config', 'G-HRK4JC4W3J');`}
+				</Script>
 			</body>
 		</html>
 	);
