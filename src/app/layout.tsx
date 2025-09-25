@@ -4,6 +4,7 @@ import { text, display } from "./fonts";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import type { Viewport } from "next";
 import Script from "next/script";
+import GATracker from "./ga-tracker";
 export const viewport: Viewport = { themeColor: "#2175a2" };
 
 export const metadata: Metadata = {
@@ -60,6 +61,7 @@ export default function RootLayout({
 			<body>
 				<SEOJsonLd />
 				{children}
+				<GATracker />
 				<Script
 					src="https://www.googletagmanager.com/gtag/js?id=G-HRK4JC4W3J"
 					strategy="afterInteractive"
