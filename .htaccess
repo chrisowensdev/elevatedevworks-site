@@ -4,7 +4,7 @@ RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^ https://elevatedevworks.com%{REQUEST_URI} [L,R=301]
 
-RewriteRule ^(.*/)?index\.(html?|php)$ https://elevatedevworks.com/$1 [L,R=301,NC]
+RewriteRule ^(.\*/)?index\.(html?|php)$ https://elevatedevworks.com/$1 [L,R=301,NC]
 
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
@@ -13,4 +13,7 @@ RewriteRule ^(.*/)?index\.(html?|php)$ https://elevatedevworks.com/$1 [L,R=301,N
   # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   AddDefaultCharset utf-8
   AddCharset utf-8 .html .css .js .svg .json
+  # Don't blanket-block "bot" user agents; allow major crawlers
+BrowserMatchNoCase "googlebot|bingbot|duckduckbot|adsbot-google" good_bot
+# Example: if you rate-limit, exempt good_bot group.
 </IfModule>

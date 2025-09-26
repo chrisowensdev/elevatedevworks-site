@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://elevatedevworks.com
+
+# Sitemaps
+Sitemap: https://elevatedevworks.com/sitemap.xml
