@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { about } from "@/data/about";
-import { MapPin, Mail, Sparkles } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import FadeIn from "./FadeIn";
 import Container from "./Container";
 

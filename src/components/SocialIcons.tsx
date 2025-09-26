@@ -3,10 +3,10 @@ import { cn } from "@/lib/utils";
 import {
 	FaFacebook,
 	FaXTwitter,
-	FaLinkedin,
+	// FaLinkedin,
 	FaInstagram,
-	FaYoutube,
-	FaGithub,
+	// FaYoutube,
+	// FaGithub,
 } from "react-icons/fa6";
 
 type SocialLinks = {
