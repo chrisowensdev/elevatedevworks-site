@@ -23,10 +23,6 @@ jobs:
               # Build static export (produces out/)
             - run: npm run build
 
-            # 2) Export static site to ./out
-            - name: Export
-              run: npm run export
-
             # If you use next-sitemap
             - run: npm run sitemap
 
