@@ -2,7 +2,7 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
 	siteUrl: "https://elevatedevworks.com", // non-www canonical
-	generateRobotsTxt: true, // also creates robots.txt
+	generateRobotsTxt: false, // also creates robots.txt
 	outDir: "out", // <- write into the export folder
 	changefreq: "weekly",
 	priority: 0.7,
