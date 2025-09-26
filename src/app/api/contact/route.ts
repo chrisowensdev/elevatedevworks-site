@@ -61,6 +61,9 @@ export async function POST(req: NextRequest) {
 		}
 		return NextResponse.json({ ok: true });
 	} catch (err) {
-		return NextResponse.json({ error: "Upstream error" }, { status: 502 });
+		return NextResponse.json(
+			{ error: "Upstream error", err },
+			{ status: 502 }
+		);
 	}
 }
