@@ -6,6 +6,7 @@ import type { Viewport } from "next";
 import Script from "next/script";
 import GATracker from "./ga-tracker";
 import { Suspense } from "react";
+import Header from "@/components/Header";
 export const viewport: Viewport = { themeColor: "#2175a2" };
 
 export const metadata: Metadata = {
@@ -61,6 +62,7 @@ export default function RootLayout({
 			</head>
 			<body>
 				<SEOJsonLd />
+				<Header />
 				{children}
 				<Suspense fallback="null">
 					<GATracker />

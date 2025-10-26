@@ -1,13 +1,11 @@
-// app/terms/page.tsx
-import Header from "@/components/Header";
 import FixedBackground from "@/components/FixedBackground";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 
 export const metadata = {
 	title: "Terms of Use",
-	description: "Terms for using the ChrisOwensDev website and content.",
-	alternates: { canonical: "https://chrisowens.dev/terms" },
+	description: "Terms for using the Elevate DevWorks website and content.",
+	alternates: { canonical: "https://elevatedevworks.com/terms" },
 };
 
 export default function TermsPage() {
@@ -15,7 +13,6 @@ export default function TermsPage() {
 		<main className="min-h-screen text-neutral-900">
 			<FixedBackground />
 			<div className="relative z-10">
-				<Header />
 				<section>
 					<Container className="py-16 md:py-24">
 						<article
@@ -83,7 +80,7 @@ export default function TermsPage() {
 							<p>
 								Questions?{" "}
 								<a href="mailto:hello@chrisowens.dev">
-									hello@chrisowens.dev
+									chris@elevatedevworks.com
 								</a>
 							</p>
 						</article>
