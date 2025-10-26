@@ -1,14 +1,14 @@
-// app/privacy/page.tsx
-import Header from "@/components/Header";
 import FixedBackground from "@/components/FixedBackground";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 
+import { site } from "@/data/site";
+
 export const metadata = {
 	title: "Privacy Policy",
 	description:
-		"How ChrisOwensDev collects, uses, and protects your information.",
-	alternates: { canonical: "https://chrisowens.dev/privacy" },
+		"How Elevate DevWorks collects, uses, and protects your information.",
+	alternates: { canonical: "https://elevatedevworks.com/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -16,7 +16,6 @@ export default function PrivacyPage() {
 		<main className="min-h-screen text-neutral-900">
 			<FixedBackground />
 			<div className="relative z-10">
-				<Header />
 				<section>
 					<Container className="py-16 md:py-24">
 						<article
@@ -39,10 +38,10 @@ export default function PrivacyPage() {
 							<h2>Who we are</h2>
 							<p>
 								This website is operated by{" "}
-								<strong>ChrisOwensDev</strong> (Chris Owens),
-								based in Richmond, VA. Contact:{" "}
-								<a href="mailto:hello@chrisowens.dev">
-									hello@chrisowens.dev
+								<strong>Elevate DevWorks, LLC</strong>, based in
+								Richmond, VA. Contact:{" "}
+								<a href={`mailto:${site.supportEmail}`}>
+									{site.supportEmail}
 								</a>
 								.
 							</p>

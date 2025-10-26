@@ -7,7 +7,7 @@ import Services from "@/components/Services";
 export const metadata = {
 	title: "Services",
 	description: "Design & development, hosting, and SEO.",
-	alternates: { canonical: "https://chrisowens.dev/services" },
+	alternates: { canonical: "https://elevatedevwoks.com/services" },
 };
 
 export default function ServicesPage() {
