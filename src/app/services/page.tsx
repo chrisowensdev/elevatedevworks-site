@@ -15,7 +15,6 @@ export default function ServicesPage() {
 		<main className="min-h-screen text-neutral-900">
 			<FixedBackground />
 			<div className="relative z-10">
-				<Header />
 				<Services />
 				<Contact />
 				<Footer />
