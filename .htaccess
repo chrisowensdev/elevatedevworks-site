@@ -1,3 +1,7 @@
+# Use our exported 404 page
+
+ErrorDocument 404 /404.html
+
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !^elevatedevworks\.com$ [NC,OR]
 RewriteCond %{HTTPS} !=on [OR]
