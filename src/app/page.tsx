@@ -18,7 +18,6 @@ export default function Page() {
 		<main className="min-h-screen text-neutral-900">
 			<FixedBackground />
 			<div className="relative z-10">
-				<Header />
 				<Hero />
 				<About />
 				<Services />
