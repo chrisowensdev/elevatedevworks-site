@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 		siteName: "Elevate DevWorks",
 		images: [
 			{
-				url: "/og-default-1200x630.jpg",
+				url: "/elevate_devworks_seo_image.png",
 				width: 1200,
 				height: 630,
 				alt: "Elevate DevWorks",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		images: ["/og-default-1200x630.jpg"],
+		images: ["https://elevatedevworks.com/elevate_devworks_seo_image.png"],
 	},
 	alternates: { canonical: "https://elevatedevworks.com" },
 	themeColor: "#2175a2",
