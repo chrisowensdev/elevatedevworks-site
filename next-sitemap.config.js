@@ -1,22 +1,17 @@
-// next-sitemap.config.js
-/** @type {import('next-sitemap').IConfig} */
 module.exports = {
-	siteUrl: "https://elevatedevworks.com", // non-www canonical
-	generateRobotsTxt: false, // also creates robots.txt
-	outDir: "out", // <- write into the export folder
+	siteUrl: "https://elevatedevworks.com",
+	generateRobotsTxt: true,
+	generateIndexSitemap: false,
+	outDir: "out",
 	changefreq: "weekly",
 	priority: 0.7,
-	sitemapSize: 7000,
-	exclude: ["/api/*"],
-
+	sitemapSize: 50000,
+	trailingSlash: true,
+	exclude: ["/api/*", "/404", "/500"],
 	robotsTxtOptions: {
-		// Broad allow; add disallows if you have private routes
 		policies: [{ userAgent: "*", allow: "/" }],
-		// If you have extra sitemaps (e.g., blog on another subdomain), add them here:
-		// additionalSitemaps: ["https://blog.elevatedevworks.com/sitemap.xml"],
 	},
 
-	// Optional: tweak priorities per route
 	transform: async (config, path) => {
 		const prioMap = {
 			"/": 1.0,
