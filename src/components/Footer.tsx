@@ -3,7 +3,7 @@ import SocialIcons from "./SocialIcons";
 
 export default function Footer() {
 	return (
-		<footer className="border-t bg-white">
+		<footer className="border-t bg-white relative z-20">
 			<div className="mx-auto max-w-7xl px-4 py-6 text-sm text-neutral-600 flex flex-col md:flex-row items-center justify-between gap-4">
 				<p>© {new Date().getFullYear()} Elevate DevWorks, LLC</p>
 				<SocialIcons />

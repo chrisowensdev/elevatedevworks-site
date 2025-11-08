@@ -10,10 +10,10 @@ const BRAND = { primary: "#2175a2", accent: "#21a37c" };
 
 export default function Header() {
 	const [mobileOpen, setMobileOpen] = useState(false);
-  // Keep menu mounted long enough to animate out
-  const [mobileMounted, setMobileMounted] = useState(false);
-  // Drive enter/exit animation separately from open state
-  const [menuShown, setMenuShown] = useState(false);
+	// Keep menu mounted long enough to animate out
+	const [mobileMounted, setMobileMounted] = useState(false);
+	// Drive enter/exit animation separately from open state
+	const [menuShown, setMenuShown] = useState(false);
 
 	useEffect(() => {
 		let t: ReturnType<typeof setTimeout> | undefined;
@@ -59,16 +59,16 @@ export default function Header() {
 						</Link>
 
 						<nav className="hidden md:flex gap-6 text-sm">
-							<a href="#about" className="hover:opacity-70">
+							<a href="/about" className="hover:opacity-70">
 								About
 							</a>
-							<a href="#services" className="hover:opacity-70">
+							<a href="/services" className="hover:opacity-70">
 								Services
 							</a>
-							<a href="#work" className="hover:opacity-70">
+							<a href="/work" className="hover:opacity-70">
 								Work
 							</a>
-							<a href="#contact" className="hover:opacity-70">
+							<a href="/contact" className="hover:opacity-70">
 								Contact
 							</a>
 						</nav>
@@ -133,40 +133,42 @@ export default function Header() {
 					<nav
 						id="mobile-menu"
 						className={`absolute top-14 left-0 right-0 mx-4 rounded-2xl border bg-white p-4 shadow-lg origin-top transform transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
-							menuShown ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0"
+							menuShown
+								? "translate-y-0 opacity-100"
+								: "-translate-y-6 opacity-0"
 						}`}
 						style={{ willChange: "transform, opacity" }}
 					>
 						<a
-							href="#about"
+							href="/about"
 							onClick={() => setMobileOpen(false)}
 							className="block rounded-lg px-3 py-3 text-base hover:bg-neutral-50"
 						>
 							About
 						</a>
 						<a
-							href="#services"
+							href="/services"
 							onClick={() => setMobileOpen(false)}
 							className="block rounded-lg px-3 py-3 text-base hover:bg-neutral-50"
 						>
 							Services
 						</a>
 						<a
-							href="#work"
+							href="/work"
 							onClick={() => setMobileOpen(false)}
 							className="block rounded-lg px-3 py-3 text-base hover:bg-neutral-50"
 						>
 							Work
 						</a>
-							<a
-								href="#contact"
-								onClick={() => setMobileOpen(false)}
-								aria-label="Get a free website assessment"
-								className="mt-2 block rounded-xl px-4 py-3 text-center text-white font-medium hover:opacity-90"
-								style={{ background: BRAND.primary }}
-							>
-								Free Assessment
-							</a>
+						<a
+							href="/contact"
+							onClick={() => setMobileOpen(false)}
+							aria-label="Get a free website assessment"
+							className="mt-2 block rounded-xl px-4 py-3 text-center text-white font-medium hover:opacity-90"
+							style={{ background: BRAND.primary }}
+						>
+							Free Assessment
+						</a>
 					</nav>
 				</div>
 			)}
