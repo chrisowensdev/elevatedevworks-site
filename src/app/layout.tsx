@@ -7,6 +7,9 @@ import Script from "next/script";
 import GATracker from "./ga-tracker";
 import { Suspense } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
+import ConsentScript from "@/components/ConsentScript";
 export const viewport: Viewport = { themeColor: "#2175a2" };
 
 export const metadata: Metadata = {
@@ -63,7 +66,12 @@ export default function RootLayout({
 			<body>
 				<SEOJsonLd />
 				<Header />
+
+				<ConsentScript gaMeasurementId="G-HRK4JC4W3J" />
+
+				<CookieBanner />
 				{children}
+				<Footer />
 				<Suspense fallback="null">
 					<GATracker />
 				</Suspense>

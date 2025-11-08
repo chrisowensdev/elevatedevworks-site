@@ -1,7 +1,6 @@
 import Contact from "@/components/Contact";
 import FixedBackground from "@/components/FixedBackground";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Services from "@/components/Services";
 
 export const metadata = {

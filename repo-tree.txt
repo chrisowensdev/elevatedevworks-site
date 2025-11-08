@@ -1,0 +1,206 @@
+./
+├── .DS_Store
+├── .env.local
+├── .github/
+│   └── workflows/
+│       └── publish.yml
+├── .gitignore
+├── .htaccess
+├── components.json
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next-sitemap.config.js
+├── next.config.mjs
+├── next.config.ts
+├── out/
+│   ├── _next/
+│   │   ├── LQMS4EC0Vcq-WqSVrCM8e/
+│   │   └── static/
+│   │       ├── chunks/
+│   │       │   ├── 479-b20cbcd720ad7ce8.js
+│   │       │   ├── 4bd1b696-cf72ae8a39fa05aa.js
+│   │       │   ├── 53c13509-fc9fc123e9844e96.js
+│   │       │   ├── 546-2bb057ff0000c1d6.js
+│   │       │   ├── 766-1cd631173aa77bb4.js
+│   │       │   ├── 874-88e24f0e286df0b2.js
+│   │       │   ├── 964-9b249bc0ac5a9a8b.js
+│   │       │   ├── app/
+│   │       │   │   ├── _not-found/
+│   │       │   │   ├── api/
+│   │       │   │   ├── layout-fe0ea65235d38bed.js
+│   │       │   │   ├── not-found-797649e9cef02bb4.js
+│   │       │   │   ├── page-0809f22d16ffcc6a.js
+│   │       │   │   ├── privacy/
+│   │       │   │   ├── robots.txt/
+│   │       │   │   ├── services/
+│   │       │   │   └── terms/
+│   │       │   ├── framework-7c95b8e5103c9e90.js
+│   │       │   ├── main-104aa73dbd615a48.js
+│   │       │   ├── main-app-3d785bce8e1c5f35.js
+│   │       │   ├── pages/
+│   │       │   │   ├── _app-0a0020ddd67f79cf.js
+│   │       │   │   └── _error-03529f2c21436739.js
+│   │       │   ├── polyfills-42372ed130431b0a.js
+│   │       │   └── webpack-802d0fe21122d700.js
+│   │       ├── css/
+│   │       │   └── 6b04f9d72f1218f2.css
+│   │       ├── LQMS4EC0Vcq-WqSVrCM8e/
+│   │       │   ├── _buildManifest.js
+│   │       │   └── _ssgManifest.js
+│   │       └── media/
+│   │           ├── 19cfc7226ec3afaa-s.woff2
+│   │           ├── 21350d82a1f187e9-s.woff2
+│   │           ├── 438aa629764e75f3-s.woff2
+│   │           ├── 4c9affa5bc8f420e-s.p.woff2
+│   │           ├── 51251f8b9793cdb3-s.woff2
+│   │           ├── 875ae681bfde4580-s.woff2
+│   │           ├── 8e9860b6e62d6359-s.woff2
+│   │           ├── ba9851c3c22cd980-s.woff2
+│   │           ├── c5fe6dc8356a8c31-s.woff2
+│   │           ├── cc978ac5ee68c2b6-s.woff2
+│   │           ├── df0a9ae256c0569c-s.woff2
+│   │           ├── e4af272ccee01ff0-s.p.woff2
+│   │           └── e857b654a2caa584-s.woff2
+│   ├── 404/
+│   │   └── index.html
+│   ├── 404.html
+│   ├── contact.php
+│   ├── elevate-logo-symbol-48x48.png
+│   ├── elevate-main-logo.png
+│   ├── hero-demo.mp4
+│   ├── hero-poster.webp
+│   ├── index.html
+│   ├── index.txt
+│   ├── phpmailer/
+│   │   └── src/
+│   │       ├── DSNConfigurator.php
+│   │       ├── Exception.php
+│   │       ├── OAuth.php
+│   │       ├── OAuthTokenProvider.php
+│   │       ├── PHPMailer.php
+│   │       ├── POP3.php
+│   │       └── SMTP.php
+│   ├── privacy/
+│   │   ├── index.html
+│   │   └── index.txt
+│   ├── robots.txt
+│   ├── services/
+│   │   ├── index.html
+│   │   └── index.txt
+│   ├── terms/
+│   │   ├── index.html
+│   │   └── index.txt
+│   └── work/
+│       ├── hvac-1200.webp
+│       ├── hvac-400.webp
+│       ├── hvac-800.webp
+│       ├── invoiceways-1200.webp
+│       ├── invoiceways-400.webp
+│       ├── invoiceways-800.webp
+│       ├── law-1200.webp
+│       ├── law-400.webp
+│       └── law-800.webp
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public/
+│   ├── contact.php
+│   ├── elevate_devworks_seo_image.png
+│   ├── elevate-logo-symbol-48x48.png
+│   ├── elevate-main-logo.png
+│   ├── hero-demo.mp4
+│   ├── hero-poster.webp
+│   ├── phpmailer/
+│   │   └── src/
+│   │       ├── DSNConfigurator.php
+│   │       ├── Exception.php
+│   │       ├── OAuth.php
+│   │       ├── OAuthTokenProvider.php
+│   │       ├── PHPMailer.php
+│   │       ├── POP3.php
+│   │       └── SMTP.php
+│   └── work/
+│       ├── hvac-1200.webp
+│       ├── hvac-400.webp
+│       ├── hvac-800.webp
+│       ├── invoiceways-1200.webp
+│       ├── invoiceways-400.webp
+│       ├── invoiceways-800.webp
+│       ├── landscaping-1200.webp
+│       ├── landscaping-400.webp
+│       ├── landscaping-800.webp
+│       ├── law-1200.webp
+│       ├── law-400.webp
+│       └── law-800.webp
+├── README.md
+├── repo-folders.txt
+├── repo-tree.txt
+├── secure/
+│   └── config.php
+├── src/
+│   ├── app/
+│   │   ├── about/
+│   │   │   └── page.tsx
+│   │   ├── api/
+│   │   │   └── contact/
+│   │   │       └── route.ts
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   ├── fonts.ts
+│   │   ├── ga-tracker.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── not-found.tsx
+│   │   ├── page.tsx
+│   │   ├── privacy/
+│   │   │   └── page.tsx
+│   │   ├── robots.ts
+│   │   ├── services/
+│   │   │   └── page.tsx
+│   │   ├── terms/
+│   │   │   └── page.tsx
+│   │   └── work/
+│   │       ├── greenscape/
+│   │       │   └── page.tsx
+│   │       └── page.tsx
+│   ├── components/
+│   │   ├── About.tsx
+│   │   ├── ConsentScript.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Container.tsx
+│   │   ├── CookieBanner.tsx
+│   │   ├── FadeIn.tsx
+│   │   ├── FAQ.tsx
+│   │   ├── FixedBackground.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Header.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Process.tsx
+│   │   ├── SEOJsonLd.tsx
+│   │   ├── Services.tsx
+│   │   ├── SocialIcons.tsx
+│   │   ├── Testimonials.tsx
+│   │   ├── ui/
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── checkbox.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── label.tsx
+│   │   │   └── textarea.tsx
+│   │   ├── Work.tsx
+│   │   └── WorkCard.tsx
+│   ├── data/
+│   │   ├── about.ts
+│   │   ├── services.ts
+│   │   ├── site.ts
+│   │   └── work.ts
+│   ├── lib/
+│   │   ├── consent.ts
+│   │   └── utils.ts
+│   └── types/
+│       ├── content.ts
+│       └── global.d.ts
+├── tailwind.config.ts
+└── tsconfig.json
+
+47 directories, 157 files
