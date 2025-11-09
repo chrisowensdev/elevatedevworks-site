@@ -8,6 +8,10 @@ import Container from "@/components/layout/Container";
 import { site } from "@/data/site";
 import Main from "@/components/layout/Main";
 import PageHero from "@/components/sections/PageHero";
+import ContactCard from "./_components/ContactCard";
+import InputField from "./_components/InputField";
+import SelectField from "./_components/SelectField";
+import TextArea from "./_components/TextArea";
 
 // export const metadata = {
 // 	title: "Contact | Elevate DevWorks",
@@ -36,59 +40,111 @@ export default function ContactPage() {
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
 	const [budget, setBudget] = useState("");
-	const [loading, setLoading] = useState(false);
-	const [success, setSuccess] = useState<string | null>(null);
 	const [error, setError] = useState<string | null>(null);
 	const [hp, setHp] = useState(""); // honeypot
+	const [status, setStatus] = useState<
+		"idle" | "sending" | "success" | "error"
+	>("idle");
+	const [startedAt, setStartedAt] = useState<number>(0);
 
-	async function onSubmit(e: React.FormEvent) {
+	// async function onSubmit(e: React.FormEvent) {
+	// 	e.preventDefault();
+	// 	setError(null);
+	// 	setSuccess(null);
+
+	// 	// simple validation
+	// 	if (!name.trim() || !email.trim() || !message.trim()) {
+	// 		setError("Please fill in your name, email, and a short message.");
+	// 		return;
+	// 	}
+
+	// 	// primitive email check
+	// 	if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+	// 		setError("Please enter a valid email address.");
+	// 		return;
+	// 	}
+
+	// 	// honeypot
+	// 	if (hp) {
+	// 		setSuccess("Thanks!");
+	// 		return;
+	// 	}
+
+	// 	setLoading(true);
+	// 	try {
+	// 		const res = await fetch("/api/contact", {
+	// 			method: "POST",
+	// 			headers: { "Content-Type": "application/json" },
+	// 			body: JSON.stringify({ name, email, message, budget }),
+	// 		});
+
+	// 		if (!res.ok) throw new Error("Failed to send");
+
+	// 		setSuccess(
+	// 			"Thanks — your message has been sent. We’ll get back within one business day."
+	// 		);
+	// 		setName("");
+	// 		setEmail("");
+	// 		setMessage("");
+	// 		setBudget("");
+	// 	} catch (err) {
+	// 		console.error(err);
+	// 		setError(
+	// 			"Sorry, something went wrong sending your message. You can email us directly at " +
+	// 				site.supportEmail
+	// 		);
+	// 	} finally {
+	// 		setLoading(false);
+	// 	}
+	// }
+
+	async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
+		if (status === "sending") return;
+		setStatus("sending");
 		setError(null);
-		setSuccess(null);
 
-		// simple validation
-		if (!name.trim() || !email.trim() || !message.trim()) {
-			setError("Please fill in your name, email, and a short message.");
+		const form = e.currentTarget;
+		const fd = new FormData(form);
+
+		// honeypot: if bots fill this, bail silently
+		const website = (fd.get("website") as string) || "";
+		if (website.length) {
+			setStatus("success");
+			form.reset();
+			setStartedAt(Date.now());
 			return;
 		}
 
-		// primitive email check
-		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-			setError("Please enter a valid email address.");
-			return;
-		}
+		const payload = {
+			name: fd.get("name"),
+			email: fd.get("email"),
+			message: fd.get("message"),
+			website, // honeypot field (empty for humans)
+			startedAt, // ms epoch captured on mount
+			userAgent: navigator.userAgent,
+		};
 
-		// honeypot
-		if (hp) {
-			setSuccess("Thanks!");
-			return;
-		}
-
-		setLoading(true);
 		try {
-			const res = await fetch("/api/contact", {
+			const res = await fetch("https://elevatedevworks.com/contact.php", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ name, email, message, budget }),
+				body: JSON.stringify(payload),
 			});
 
-			if (!res.ok) throw new Error("Failed to send");
+			const json = await res.json().catch(() => null);
+			if (!res.ok || !json?.ok) {
+				setError(json?.error ?? "Something went wrong.");
+				setStatus("error");
+				return;
+			}
 
-			setSuccess(
-				"Thanks — your message has been sent. We’ll get back within one business day."
-			);
-			setName("");
-			setEmail("");
-			setMessage("");
-			setBudget("");
-		} catch (err) {
-			console.error(err);
-			setError(
-				"Sorry, something went wrong sending your message. You can email us directly at " +
-					site.supportEmail
-			);
-		} finally {
-			setLoading(false);
+			form.reset();
+			setStartedAt(Date.now());
+			setStatus("success");
+		} catch {
+			setError("Network error. Please try again.");
+			setStatus("error");
 		}
 	}
 
@@ -243,30 +299,29 @@ export default function ContactPage() {
 									/>
 								</div>
 
-								{error && (
+								{status === "success" && (
 									<p
-										className="mt-4 text-sm text-red-600"
-										role="alert"
+										className="text-sm"
+										style={{ color: "#21a37c" }}
 									>
-										{error}
+										Thanks! I’ll get back to you shortly.
 									</p>
 								)}
-								{success && (
-									<p
-										className="mt-4 text-sm text-emerald-700"
-										role="status"
-									>
-										{success}
+								{status === "error" && (
+									<p className="text-sm text-red-600">
+										{error}
 									</p>
 								)}
 
 								<div className="mt-6 flex flex-wrap items-center gap-3">
 									<button
 										type="submit"
-										disabled={loading}
+										disabled={status === "sending"}
 										className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-white shadow-sm transition hover:bg-emerald-700 disabled:opacity-60"
 									>
-										{loading ? "Sending…" : "Send message"}
+										{status === "sending"
+											? "Sending…"
+											: "Send"}
 									</button>
 									<Link
 										href={`mailto:${site.supportEmail}`}
@@ -331,132 +386,3 @@ export default function ContactPage() {
 }
 
 /* ———————————————————————————————— */
-function ContactCard({
-	title,
-	subtitle,
-	children,
-}: {
-	title: string;
-	subtitle?: string;
-	children: React.ReactNode;
-}) {
-	return (
-		<div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-			<h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-			{subtitle && (
-				<p className="mt-1 text-sm text-gray-600">{subtitle}</p>
-			)}
-			<div className="mt-3 text-gray-700">{children}</div>
-		</div>
-	);
-}
-
-function InputField({
-	id,
-	label,
-	value,
-	onChange,
-	type = "text",
-	autoComplete,
-	required,
-}: {
-	id: string;
-	label: string;
-	value: string;
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-	type?: string;
-	autoComplete?: string;
-	required?: boolean;
-}) {
-	return (
-		<div>
-			<label
-				htmlFor={id}
-				className="mb-2 block text-sm font-medium text-gray-900"
-			>
-				{label}
-			</label>
-			<input
-				id={id}
-				type={type}
-				value={value}
-				onChange={onChange}
-				autoComplete={autoComplete}
-				required={required}
-				className="w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm outline-none ring-emerald-500 transition focus:ring-2"
-			/>
-		</div>
-	);
-}
-
-function SelectField({
-	id,
-	label,
-	value,
-	onChange,
-	options,
-}: {
-	id: string;
-	label: string;
-	value: string;
-	onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-	options: { value: string; label: string }[];
-}) {
-	return (
-		<div>
-			<label
-				htmlFor={id}
-				className="mb-2 block text-sm font-medium text-gray-900"
-			>
-				{label}
-			</label>
-			<select
-				id={id}
-				value={value}
-				onChange={onChange}
-				className="w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 shadow-sm outline-none ring-emerald-500 transition focus:ring-2"
-			>
-				{options.map((opt) => (
-					<option key={opt.value} value={opt.value}>
-						{opt.label}
-					</option>
-				))}
-			</select>
-		</div>
-	);
-}
-
-function TextArea({
-	id,
-	label,
-	value,
-	onChange,
-	rows = 6,
-	required,
-}: {
-	id: string;
-	label: string;
-	value: string;
-	onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-	rows?: number;
-	required?: boolean;
-}) {
-	return (
-		<div>
-			<label
-				htmlFor={id}
-				className="mb-2 block text-sm font-medium text-gray-900"
-			>
-				{label}
-			</label>
-			<textarea
-				id={id}
-				value={value}
-				onChange={onChange}
-				rows={rows}
-				required={required}
-				className="w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm outline-none ring-emerald-500 transition focus:ring-2"
-			/>
-		</div>
-	);
-}
