@@ -60,7 +60,7 @@ export default function RootLayout({
 			<head>
 				<meta charSet="utf-8" />
 			</head>
-			<body>
+			<body className="min-h-dvh flex flex-col">
 				<a
 					href="#main"
 					className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded bg-white px-3 py-2 text-sm shadow"

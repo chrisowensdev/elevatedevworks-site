@@ -1,6 +1,3 @@
-// components/Services.tsx
-"use client";
-
 import { Laptop, Server, LineChart, Palette, ShieldCheck } from "lucide-react";
 import { services } from "@/data/services";
 import { Container } from "@/components/layout";
@@ -16,23 +13,37 @@ const Icons = {
 	analytics: LineChart,
 };
 
-export default function Services() {
+export default function ServicesGrid() {
 	return (
+		// <section
+		// 	id="services"
+		// 	aria-labelledby="services-grid-heading"
+		// 	className="border-b bg-white/70"
+		// >
 		<section
 			id="services"
-			className="border-y "
-			style={{ backgroundColor: "rgba(255,255,255,0.7)" }}
+			aria-labelledby="services-grid-heading"
+			className="border-b bg-neutral-50"
 		>
 			<Container className="mx-auto max-w-7xl px-4 py-16 md:py-24">
-				<h2 className="text-2xl md:text-3xl font-semibold">Services</h2>
-				<div className="mt-8 grid md:grid-cols-3 gap-6">
+				<h2
+					id="services-grid-heading"
+					className="text-2xl md:text-3xl font-semibold"
+				>
+					Services
+				</h2>
+
+				<div className="mt-8 grid gap-6 md:grid-cols-3">
 					{services.map((s, i) => {
 						const Icon = Icons[s.icon] || Laptop;
 						return (
 							<FadeIn key={s.title} delay={i * 0.05}>
 								<article
-									className="rounded-2xl border bg-white p-6 shadow-sm border-t-4"
-									style={{ borderTopColor: BRAND.accent }}
+									className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+									style={{
+										borderTopWidth: 4,
+										borderTopColor: BRAND.accent,
+									}}
 								>
 									<div className="flex items-center gap-2">
 										<Icon

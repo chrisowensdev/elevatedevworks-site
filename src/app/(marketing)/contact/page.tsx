@@ -7,6 +7,7 @@ import FixedBackground from "@/components/layout/FixedBackground";
 import Container from "@/components/layout/Container";
 import { site } from "@/data/site";
 import Main from "@/components/layout/Main";
+import PageHero from "@/components/sections/PageHero";
 
 // export const metadata = {
 // 	title: "Contact | Elevate DevWorks",
@@ -93,22 +94,18 @@ export default function ContactPage() {
 
 	return (
 		<Main>
-			{/* Hero */}
-			<section className="pt-16 sm:pt-24">
-				<Container>
-					<p className="text-sm font-semibold tracking-wider text-emerald-600">
-						Contact
-					</p>
-					<h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-5xl">
-						Let’s build something great together
-					</h1>
-					<p className="mt-4 max-w-2xl text-gray-600">
-						Tell us a bit about your project, timeline, and goals.
-						We’ll review and reply within one business day with next
-						steps.
-					</p>
-				</Container>
-			</section>
+			<PageHero
+				eyebrow="Get in touch"
+				title="Let’s build something great together"
+				description="Tell us a bit about your goals and timeline. We’ll reply within one business day."
+				primaryCta={{
+					href: "mailto:hello@elevatedevworks.com",
+					label: "Email us",
+				}}
+				secondaryCta={{ href: "/privacy", label: "Privacy policy" }}
+				align="center"
+				headingLevel="h1"
+			/>
 
 			{/* Content grid */}
 			<section className="py-12 sm:py-16">

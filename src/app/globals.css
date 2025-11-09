@@ -23,6 +23,8 @@
 		"Segoe UI Emoji";
 	--font-display: var(--font-display), var(--font-text), ui-sans-serif,
 		system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+	--color-brand: #2175a2;
+	--color-brand-light: #eaf3f7;
 }
 
 :root {

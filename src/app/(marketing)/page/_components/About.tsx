@@ -5,76 +5,62 @@ import { about } from "@/data/about";
 import { MapPin, Mail } from "lucide-react";
 import { Container } from "@/components/layout";
 import { FadeIn } from "@/components/media";
+import Button from "@/components/ui/button";
 
 export default function About() {
 	return (
-		<section
-			id="about"
-			// Brand blue background with high-contrast foreground
-			style={{ backgroundColor: "#2175a2" }}
-		>
+		<section id="about" className="bg-[#2175a2]">
 			<Container className="mx-auto max-w-7xl px-4 py-16 md:py-24">
 				<div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] items-start">
 					{/* LEFT: copy */}
 					<FadeIn>
 						<h2
-							className="mt-4 text-3xl md:text-4xl font-semibold leading-tight"
-							style={{ color: "#ffffff" }}
+							className="mt-4 text-3xl md:text-4xl font-semibold leading-tight text-white"
 						>
 							About Elevate DevWorks: Innovative Solutions
 							Provider
 						</h2>
 
-						<p
-							className="mt-4 leading-relaxed"
-							style={{ color: "rgba(255,255,255,0.9)" }}
-						>
+						<p className="mt-4 leading-relaxed text-white/90">
 							{about.blurb}
 						</p>
 
 						{/* contact row */}
-						<div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 text-sm">
-							<div
-								className="flex items-center gap-2"
-								style={{ color: "rgba(255,255,255,0.9)" }}
-							>
-								<MapPin
-									size={16}
-									style={{ color: "#ffffff" }}
-								/>
-								<span>{about.location}</span>
+						<address className="mt-6 not-italic text-sm text-white/90">
+							<div className="flex flex-col sm:flex-row sm:items-center gap-4">
+								<div className="flex items-center gap-2">
+									<MapPin size={16} className="text-white" />
+									<span>{about.location}</span>
+								</div>
+								<div className="flex items-center gap-2">
+									<Mail size={16} className="text-white" />
+									<a
+										href={`mailto:${about.email}`}
+										className="text-white underline underline-offset-4"
+									>
+										{about.email}
+									</a>
+								</div>
 							</div>
-							<div className="flex items-center gap-2">
-								<Mail size={16} style={{ color: "#ffffff" }} />
-								<a
-									href={`mailto:${about.email}`}
-									className="underline underline-offset-4"
-									style={{ color: "#ffffff" }}
-								>
-									{about.email}
-								</a>
-							</div>
-						</div>
+						</address>
 
 						{/* CTAs */}
 						<div className="mt-8 flex flex-wrap gap-3">
-							<a
-								href={about.cta.primaryHref}
-								className="rounded-xl px-5 py-3 text-white font-medium"
-								style={{ background: "#21a37c" }}
+							<Button
+								asChild
+								className="rounded-xl bg-[#21a37c] text-white hover:bg-[#21a37c]/90"
 							>
-								{about.cta.primaryText}
-							</a>
+								<a href={about.cta.primaryHref} aria-label={about.cta.primaryText}>
+									{about.cta.primaryText}
+								</a>
+							</Button>
 						</div>
 					</FadeIn>
 
 					{/* RIGHT: photo + wins card */}
 					<FadeIn delay={0.5}>
 						<div className="grid gap-5">
-							<div
-								className="relative rounded-3xl overflow-hidden"
-								style={{ borderColor: "rgba(0,0,0,0.08)" }}
-							>
+							<div className="relative rounded-3xl overflow-hidden">
 								<div
 									className="relative"
 									style={{ aspectRatio: "4 / 4" }}
@@ -89,43 +75,6 @@ export default function About() {
 									/>
 								</div>
 							</div>
-
-							{/* <div
-								className="rounded-2xl border bg-white p-5 shadow-sm"
-								style={{
-									borderTop: "4px solid #21a37c",
-									borderColor: "rgba(0,0,0,0.08)",
-								}}
-							>
-								<div className="flex items-center gap-2">
-									<Sparkles
-										size={16}
-										style={{ color: "#2175a2" }}
-									/>
-									<p
-										className="text-sm font-semibold"
-										style={{ color: "#0f172a" }}
-									>
-										A few quick wins I focus on
-									</p>
-								</div>
-								<ul
-									className="mt-3 space-y-2 text-sm"
-									style={{ color: "#334155" }}
-								>
-									<li>
-										• Solid sitemap & content flow for
-										clarity
-									</li>
-									<li>
-										• Core Web Vitals & performance tuning
-									</li>
-									<li>
-										• On-page SEO & schema for visibility
-									</li>
-									<li>• Clean, maintainable components</li>
-								</ul>
-							</div> */}
 						</div>
 					</FadeIn>
 				</div>

@@ -1,4 +1,5 @@
 import Main from "@/components/layout/Main";
+import PageHero from "@/components/sections/PageHero";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -27,38 +28,16 @@ export default function AboutPage() {
 	return (
 		<Main>
 			{/* Hero */}
-			<section className="relative isolate">
-				<div className="mx-auto max-w-6xl px-6 pt-16 pb-10 sm:pt-24 sm:pb-16">
-					<p className="text-sm/6 font-semibold tracking-wider text-emerald-600">
-						About Elevate DevWorks
-					</p>
-					<h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-						Building better digital experiences — together.
-					</h1>
-					<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-						Elevate DevWorks helps small businesses and creative
-						professionals turn ideas into fast, modern, and
-						beautifully built websites. We combine clean code, great
-						communication, and reliable delivery to make web
-						development feel easy.
-					</p>
-
-					<div className="mt-8 flex flex-wrap gap-3">
-						<Link
-							href="/contact"
-							className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-white shadow-sm transition hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-						>
-							Get a free quote
-						</Link>
-						<Link
-							href="/portfolio"
-							className="inline-flex items-center justify-center rounded-xl border border-gray-300 px-5 py-3 text-gray-900 shadow-sm transition hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-						>
-							View projects
-						</Link>
-					</div>
-				</div>
-			</section>
+			<PageHero
+				eyebrow="About Elevate DevWorks"
+				title="Building better digital experiences — together."
+				description="Elevate DevWorks helps small businesses and creative professionals turn ideas into fast, modern, beautifully built websites."
+				primaryCta={{ href: "/contact", label: "Get a free quote" }}
+				secondaryCta={{ href: "/work", label: "View projects" }}
+				tone="white"
+				align="left"
+				headingLevel="h1"
+			/>
 
 			{/* Content sections */}
 			<section className="border-t border-gray-100 bg-white">

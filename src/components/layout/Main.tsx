@@ -18,10 +18,7 @@ export default function Main({
 	return (
 		<main
 			id={withSkipTarget ? id ?? "main" : id}
-			className={cn(
-				"min-h-screen text-neutral-900 relative z-10",
-				className
-			)}
+			className={cn("flex-1 text-neutral-900 relative z-10", className)}
 			{...props}
 		/>
 	);
