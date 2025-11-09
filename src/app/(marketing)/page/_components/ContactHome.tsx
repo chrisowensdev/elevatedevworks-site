@@ -1,5 +1,6 @@
 "use client";
 import { Container } from "@/components/layout";
+import { site } from "@/data/site";
 import { useEffect, useState } from "react";
 
 export default function ContactHome() {
@@ -56,7 +57,10 @@ export default function ContactHome() {
 			setStartedAt(Date.now());
 			setStatus("success");
 		} catch {
-			setError("Network error. Please try again.");
+			setError(
+				"Sorry, something went wrong sending your message. You can email us directly at " +
+					site.supportEmail
+			);
 			setStatus("error");
 		}
 	}
