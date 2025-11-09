@@ -120,32 +120,35 @@ export default function ContactPage() {
 			name: fd.get("name"),
 			email: fd.get("email"),
 			message: fd.get("message"),
+			budget: fd.get("budget"),
 			website, // honeypot field (empty for humans)
 			startedAt, // ms epoch captured on mount
 			userAgent: navigator.userAgent,
 		};
 
-		try {
-			const res = await fetch("https://elevatedevworks.com/contact.php", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(payload),
-			});
+		console.log("payload", payload);
 
-			const json = await res.json().catch(() => null);
-			if (!res.ok || !json?.ok) {
-				setError(json?.error ?? "Something went wrong.");
-				setStatus("error");
-				return;
-			}
+		// try {
+		// 	const res = await fetch("https://elevatedevworks.com/contact.php", {
+		// 		method: "POST",
+		// 		headers: { "Content-Type": "application/json" },
+		// 		body: JSON.stringify(payload),
+		// 	});
 
-			form.reset();
-			setStartedAt(Date.now());
-			setStatus("success");
-		} catch {
-			setError("Network error. Please try again.");
-			setStatus("error");
-		}
+		// 	const json = await res.json().catch(() => null);
+		// 	if (!res.ok || !json?.ok) {
+		// 		setError(json?.error ?? "Something went wrong.");
+		// 		setStatus("error");
+		// 		return;
+		// 	}
+
+		// 	form.reset();
+		// 	setStartedAt(Date.now());
+		// 	setStatus("success");
+		// } catch {
+		// 	setError("Network error. Please try again.");
+		// 	setStatus("error");
+		// }
 	}
 
 	return (
@@ -222,6 +225,7 @@ export default function ContactPage() {
 									<InputField
 										id="name"
 										label="Your name"
+										name="name"
 										value={name}
 										onChange={(e) =>
 											setName(e.target.value)
@@ -233,6 +237,7 @@ export default function ContactPage() {
 										id="email"
 										type="email"
 										label="Email address"
+										name="email"
 										value={email}
 										onChange={(e) =>
 											setEmail(e.target.value)
@@ -247,6 +252,7 @@ export default function ContactPage() {
 										id="budget"
 										label="Estimated budget"
 										value={budget}
+										name="budget"
 										onChange={(e) =>
 											setBudget(e.target.value)
 										}
@@ -280,6 +286,7 @@ export default function ContactPage() {
 										id="message"
 										label="Tell us about your project"
 										value={message}
+										name="message"
 										onChange={(e) =>
 											setMessage(e.target.value)
 										}
