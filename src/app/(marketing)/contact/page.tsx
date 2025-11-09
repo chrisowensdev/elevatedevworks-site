@@ -126,29 +126,27 @@ export default function ContactPage() {
 			userAgent: navigator.userAgent,
 		};
 
-		console.log("payload", payload);
+		try {
+			const res = await fetch("https://elevatedevworks.com/contact.php", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(payload),
+			});
 
-		// try {
-		// 	const res = await fetch("https://elevatedevworks.com/contact.php", {
-		// 		method: "POST",
-		// 		headers: { "Content-Type": "application/json" },
-		// 		body: JSON.stringify(payload),
-		// 	});
+			const json = await res.json().catch(() => null);
+			if (!res.ok || !json?.ok) {
+				setError(json?.error ?? "Something went wrong.");
+				setStatus("error");
+				return;
+			}
 
-		// 	const json = await res.json().catch(() => null);
-		// 	if (!res.ok || !json?.ok) {
-		// 		setError(json?.error ?? "Something went wrong.");
-		// 		setStatus("error");
-		// 		return;
-		// 	}
-
-		// 	form.reset();
-		// 	setStartedAt(Date.now());
-		// 	setStatus("success");
-		// } catch {
-		// 	setError("Network error. Please try again.");
-		// 	setStatus("error");
-		// }
+			form.reset();
+			setStartedAt(Date.now());
+			setStatus("success");
+		} catch {
+			setError("Network error. Please try again.");
+			setStatus("error");
+		}
 	}
 
 	return (
