@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { text, display } from "./fonts";
-import SEOJsonLd from "@/components/SEOJsonLd";
-import type { Viewport } from "next";
-import Script from "next/script";
-import GATracker from "./ga-tracker";
-import { Suspense } from "react";
-import Header from "@/components/Header";
+import {
+	SEOJsonLd,
+	ConsentScript,
+	CookieBanner,
+} from "@/components/analytics-privacy";
+import { Header, Footer, FixedBackground } from "@/components/layout";
+
 export const viewport: Viewport = { themeColor: "#2175a2" };
 
 export const metadata: Metadata = {
@@ -34,7 +35,6 @@ export const metadata: Metadata = {
 		images: ["https://elevatedevworks.com/elevate_devworks_seo_image.png"],
 	},
 	alternates: { canonical: "https://elevatedevworks.com" },
-	themeColor: "#2175a2",
 
 	icons: {
 		// If you prefer explicit control in addition to app/icon.png:
@@ -60,24 +60,22 @@ export default function RootLayout({
 			<head>
 				<meta charSet="utf-8" />
 			</head>
-			<body>
+			<body className="min-h-dvh flex flex-col">
+				<a
+					href="#main"
+					className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded bg-white px-3 py-2 text-sm shadow"
+				>
+					Skip to content
+				</a>
+				<FixedBackground />
 				<SEOJsonLd />
+				<ConsentScript gaMeasurementId="G-HRK4JC4W3J" />
+
 				<Header />
 				{children}
-				<Suspense fallback="null">
-					<GATracker />
-				</Suspense>
+				<Footer />
 
-				<Script
-					src="https://www.googletagmanager.com/gtag/js?id=G-HRK4JC4W3J"
-					strategy="afterInteractive"
-				/>
-				<Script id="ga-init" strategy="afterInteractive">
-					{`window.dataLayer = window.dataLayer || [];
-  						function gtag(){dataLayer.push(arguments);}
-  						gtag('js', new Date());
-  						gtag('config', 'G-HRK4JC4W3J');`}
-				</Script>
+				<CookieBanner />
 			</body>
 		</html>
 	);

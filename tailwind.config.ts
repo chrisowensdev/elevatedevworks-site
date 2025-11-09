@@ -10,6 +10,9 @@ export default {
 	],
 	theme: {
 		extend: {
+			colors: {
+				brand: { DEFAULT: "#2175a2", light: "#eaf3f7" },
+			},
 			fontFamily: {
 				sans: [
 					"var(--font-text)",

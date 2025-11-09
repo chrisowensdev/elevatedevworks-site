@@ -7,6 +7,7 @@ export const items = [
 		desc: "Fast, mobile-first site with a quote-request funnel, service-area pages, and reviews to drive calls.",
 		href: "/",
 		highlight: true,
+		slug: "hvac",
 	},
 	{
 		title: "Landscaping",
@@ -16,6 +17,7 @@ export const items = [
 		desc: "Trust-first layout with clear services offered, intake form, and badges—built to convert consultations and create clients.",
 		href: "https://greenscape.elevatedevworks.com",
 		highlight: true,
+		slug: "greenscape",
 	},
 	{
 		title: "Law Firm",
@@ -25,6 +27,7 @@ export const items = [
 		desc: "Trust-first layout with clear practice areas, intake form, and badges—built to convert consultations and create clients.",
 		href: "https://thebulgerfirm.netlify.app",
 		highlight: false,
+		slug: "law",
 	},
 	{
 		title: "Invoice Ways",
@@ -34,10 +37,10 @@ export const items = [
 		desc: "Cross-platform invoicing app (Web/iOS/Android) with estimates, branded PDFs, and Stripe-powered payments.",
 		href: "https://invoiceways.com",
 		highlight: true,
+		slug: "invoiceways",
 	},
 ];
 
 export const highlightedItems = items.filter((item) => {
-	console.log(item);
 	return item.highlight;
 });
