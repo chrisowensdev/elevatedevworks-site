@@ -6,6 +6,7 @@ export default function InputField({
 	type = "text",
 	autoComplete,
 	required,
+	name,
 }: {
 	id: string;
 	label: string;
@@ -14,6 +15,7 @@ export default function InputField({
 	type?: string;
 	autoComplete?: string;
 	required?: boolean;
+	name: string;
 }) {
 	return (
 		<div>
@@ -30,6 +32,7 @@ export default function InputField({
 				onChange={onChange}
 				autoComplete={autoComplete}
 				required={required}
+				name={name}
 				className="w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm outline-none ring-emerald-500 transition focus:ring-2"
 			/>
 		</div>

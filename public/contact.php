@@ -79,6 +79,7 @@ if (!is_array($input)) {
 $name       = trim($input['name'] ?? '');
 $email      = trim($input['email'] ?? '');
 $message    = trim($input['message'] ?? '');
+$budget     = trim($input['budget'] ?? '');
 $userAgent  = (string)($input['userAgent'] ?? '');
 $clientIp   = (string)($input['ip'] ?? ($ip));
 $honeypot   = trim($input['website'] ?? '');            // hidden spam trap
@@ -142,11 +143,13 @@ try {
     $mail->Body = sprintf(
         '<p><strong>Name:</strong> %s</p>
          <p><strong>Email:</strong> %s</p>
+         <p><strong>Budget:</strong><br>%s</p>
          <p><strong>Message:</strong><br>%s</p>
          <hr>
          <p><small>IP: %s<br>User-Agent: %s</small></p>',
         $safe($name),
         $safe($email),
+        $safe($budget),
         nl2br($safe($message)),
         $safe($clientIp),
         $safe($userAgent)

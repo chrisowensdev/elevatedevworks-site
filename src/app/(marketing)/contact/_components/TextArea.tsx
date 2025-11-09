@@ -5,6 +5,7 @@ export default function TextArea({
 	onChange,
 	rows = 6,
 	required,
+	name,
 }: {
 	id: string;
 	label: string;
@@ -12,6 +13,7 @@ export default function TextArea({
 	onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 	rows?: number;
 	required?: boolean;
+	name: string;
 }) {
 	return (
 		<div>
@@ -27,6 +29,7 @@ export default function TextArea({
 				onChange={onChange}
 				rows={rows}
 				required={required}
+				name={name}
 				className="w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm outline-none ring-emerald-500 transition focus:ring-2"
 			/>
 		</div>
