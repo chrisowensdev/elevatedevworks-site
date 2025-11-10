@@ -14,9 +14,7 @@ export default function About() {
 				<div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] items-start">
 					{/* LEFT: copy */}
 					<FadeIn>
-						<h2
-							className="mt-4 text-3xl md:text-4xl font-semibold leading-tight text-white"
-						>
+						<h2 className="mt-4 text-3xl md:text-4xl font-semibold leading-tight text-white">
 							About Elevate DevWorks: Innovative Solutions
 							Provider
 						</h2>
@@ -50,7 +48,10 @@ export default function About() {
 								asChild
 								className="rounded-xl bg-[#21a37c] text-white hover:bg-[#21a37c]/90"
 							>
-								<a href={about.cta.primaryHref} aria-label={about.cta.primaryText}>
+								<a
+									href={about.cta.primaryHref}
+									aria-label={about.cta.primaryText}
+								>
 									{about.cta.primaryText}
 								</a>
 							</Button>

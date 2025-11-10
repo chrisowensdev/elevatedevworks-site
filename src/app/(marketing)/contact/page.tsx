@@ -141,6 +141,10 @@ export default function ContactPage() {
 			}
 
 			form.reset();
+			setName("");
+			setEmail("");
+			setBudget("");
+			setMessage("");
 			setStartedAt(Date.now());
 			setStatus("success");
 		} catch {
@@ -156,7 +160,7 @@ export default function ContactPage() {
 				title="Let’s build something great together"
 				description="Tell us a bit about your goals and timeline. We’ll reply within one business day."
 				primaryCta={{
-					href: "mailto:hello@elevatedevworks.com",
+					href: "mailto:chris@elevatedevworks.com",
 					label: "Email us",
 				}}
 				secondaryCta={{ href: "/privacy", label: "Privacy policy" }}
