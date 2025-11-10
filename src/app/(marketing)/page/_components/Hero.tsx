@@ -22,14 +22,14 @@ export default function Hero() {
 						<a
 							href="#contact"
 							aria-label="Get a free website assessment"
-							className="rounded-xl px-5 py-3 text-white font-medium"
+							className="rounded-xl px-5 py-3 text-white font-medium min-w-[200px] text-center"
 							style={{ background: BRAND.primary }}
 						>
 							Free Assessment
 						</a>
 						<a
 							href="#work"
-							className="rounded-xl border px-5 py-3 font-medium"
+							className="rounded-xl border px-5 py-3 font-medium min-w-[200px] text-center"
 							style={{
 								borderColor: BRAND.primary,
 								color: BRAND.primary,

@@ -75,7 +75,7 @@ export default function Header() {
 
 						<div className="flex items-center gap-2">
 							<a
-								href="#contact"
+								href="/contact"
 								aria-label="Get a free website assessment"
 								className="hidden md:inline-flex rounded-xl px-3 py-2 text-sm text-white transition"
 								style={{ background: BRAND.primary }}
