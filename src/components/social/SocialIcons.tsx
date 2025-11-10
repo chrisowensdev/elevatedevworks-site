@@ -29,7 +29,7 @@ export default function SocialIcons({ className, size = 20, links }: Props) {
 		{
 			key: "facebook",
 			name: "Facebook",
-			href: links?.facebook ?? "https://facebook.com/elevatedevworks",
+			href: links?.facebook ?? "https://facebook.com/elevatedevworksllc",
 			Icon: FaFacebook,
 		},
 		{
