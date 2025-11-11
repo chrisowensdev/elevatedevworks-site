@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 		description:
 			"Discover our story, mission, and values — and see how we help small businesses and web designers bring their ideas to life online.",
 		url: "https://elevatedevworks.com/about",
-		images: ["/assets/og-about-elevate-devworks.png"],
+		images: ["/elevate_devworks_seo_image.png"],
 		type: "website",
 	},
 	twitter: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 		title: "About Elevate DevWorks",
 		description:
 			"Friendly, reliable web development for small businesses and designers.",
-		images: ["/assets/og-about-elevate-devworks.png"],
+		images: ["https://elevatedevworks.com/elevate_devworks_seo_image.png"],
 	},
 };
 
