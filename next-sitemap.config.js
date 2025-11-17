@@ -13,17 +13,30 @@ module.exports = {
 	},
 
 	transform: async (config, path) => {
-		const prioMap = {
-			"/": 1.0,
-			"/services": 0.9,
-			"/work": 0.8,
-			"/about": 0.8,
-			"/contact": 0.8,
-		};
+		// const prioMap = {
+		// 	"/": 1.0,
+		// 	"/services": 0.9,
+		// 	"/work": 0.8,
+		// 	"/about": 0.8,
+		// 	"/contact": 0.9,
+		// };
+		// return {
+		// 	loc: path,
+		// 	changefreq: "weekly",
+		// 	priority: prioMap[path] ?? 0.7,
+		// 	lastmod: new Date().toISOString(),
+		// };
+
+		let priority = 0.7;
+		if (path.startsWith("/work/")) priority = 0.4; // Lower priority for case studies
+		if (path === "/") priority = 1.0;
+		if (path === "/services") priority = 0.9;
+		if (path === "/privacy" || path === "/terms") priority = 0.1;
+
 		return {
 			loc: path,
-			changefreq: "weekly",
-			priority: prioMap[path] ?? 0.7,
+			changefreq: "monthly",
+			priority,
 			lastmod: new Date().toISOString(),
 		};
 	},
