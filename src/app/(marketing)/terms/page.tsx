@@ -1,10 +1,17 @@
 import Container from "@/components/layout/Container";
 import Main from "@/components/layout/Main";
+import { Metadata } from "next";
 
-export const metadata = {
-	title: "Terms of Use",
-	description: "Terms for using the Elevate DevWorks website and content.",
-	alternates: { canonical: "https://elevatedevworks.com/terms" },
+export const metadata: Metadata = {
+	title: "Terms of Service | Elevate DevWorks",
+	description: "The terms that govern your use of Elevate DevWorks services.",
+	robots: {
+		index: true,
+		follow: true,
+	},
+	alternates: {
+		canonical: "https://elevatedevworks.com/terms",
+	},
 };
 
 export default function TermsPage() {

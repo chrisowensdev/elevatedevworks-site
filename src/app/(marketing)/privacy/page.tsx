@@ -2,12 +2,18 @@ import Container from "@/components/layout/Container";
 import Main from "@/components/layout/Main";
 
 import { site } from "@/data/site";
+import { Metadata } from "next";
 
-export const metadata = {
-	title: "Privacy Policy",
-	description:
-		"How Elevate DevWorks collects, uses, and protects your information.",
-	alternates: { canonical: "https://elevatedevworks.com/privacy" },
+export const metadata: Metadata = {
+	title: "Privacy Policy | Elevate DevWorks",
+	description: "How Elevate DevWorks collects, uses, and protects your data.",
+	robots: {
+		index: true,
+		follow: true,
+	},
+	alternates: {
+		canonical: "https://elevatedevworks.com/privacy",
+	},
 };
 
 export default function PrivacyPage() {
