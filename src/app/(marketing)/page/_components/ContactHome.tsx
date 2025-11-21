@@ -79,7 +79,12 @@ export default function ContactHome() {
 						</p>
 						<ul className="mt-6 space-y-2 text-sm ">
 							<li>📍 Richmond, VA</li>
-							<li>✉️ chris@chrisowens.dev</li>
+							<li>
+								✉️{" "}
+								<a href="mailto:chris@elevatedevworks.com">
+									chris@elevatedevworks.com
+								</a>
+							</li>
 						</ul>
 					</div>
 
