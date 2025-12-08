@@ -6,7 +6,7 @@ import PageHero from "@/components/sections/PageHero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Services| Web Development for Small Businesses & Designers",
+	title: "Website Design & Web Application Services | Elevate DevWorks",
 	description:
 		"Learn about Elevate DevWorks — a friendly, modern web development studio helping small businesses and creative professionals build fast, SEO-ready websites with care.",
 	openGraph: {

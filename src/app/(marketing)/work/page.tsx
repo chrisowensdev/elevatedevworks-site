@@ -5,7 +5,7 @@ import WorkSection from "./_components/WorkSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Our Work | Web Development for Small Businesses & Designers",
+	title: "Portfolio & Recent Projects | Elevate DevWorks",
 	description:
 		"Learn about Elevate DevWorks — a friendly, modern web development studio helping small businesses and creative professionals build fast, SEO-ready websites with care.",
 	openGraph: {

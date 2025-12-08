@@ -8,6 +8,7 @@ export const items = [
 		href: "/",
 		highlight: true,
 		slug: "hvac",
+		ariaLabel: "Peak Performance case study",
 	},
 	{
 		title: "Landscaping",
@@ -18,17 +19,18 @@ export const items = [
 		href: "https://greenscape.elevatedevworks.com",
 		highlight: true,
 		slug: "greenscape",
+		ariaLabel: "Greenscape Landscaping case study",
 	},
-	{
-		title: "Law Firm",
-		tag: "Professional Services",
-		img: "law",
-		alt: "Law firm website",
-		desc: "Trust-first layout with clear practice areas, intake form, and badges—built to convert consultations and create clients.",
-		href: "https://thebulgerfirm.netlify.app",
-		highlight: false,
-		slug: "law",
-	},
+	// {
+	// 	title: "Law Firm",
+	// 	tag: "Professional Services",
+	// 	img: "law",
+	// 	alt: "Law firm website",
+	// 	desc: "Trust-first layout with clear practice areas, intake form, and badges—built to convert consultations and create clients.",
+	// 	href: "https://thebulgerfirm.netlify.app",
+	// 	highlight: false,
+	// 	slug: "law",
+	// },
 	{
 		title: "Invoice Ways",
 		tag: "Mobile App",
@@ -38,6 +40,7 @@ export const items = [
 		href: "https://invoiceways.com",
 		highlight: true,
 		slug: "invoiceways",
+		ariaLabel: "InvoiceWays case study",
 	},
 ];
 

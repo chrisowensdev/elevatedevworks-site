@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-	title: "About Elevate DevWorks | Web Development for Small Businesses & Designers",
+	title: "About | Elevate DevWorks",
 	description:
 		"Learn about Elevate DevWorks — a friendly, modern web development studio helping small businesses and creative professionals build fast, SEO-ready websites with care.",
 	openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "About Elevate DevWorks",
+		title: "About | Elevate DevWorks",
 		description:
 			"Friendly, reliable web development for small businesses and designers.",
 		images: ["https://elevatedevworks.com/elevate_devworks_seo_image.png"],
