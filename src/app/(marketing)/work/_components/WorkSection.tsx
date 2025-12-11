@@ -53,6 +53,7 @@ export default function WorkSection() {
 										<Link
 											href={`/work/${project.slug}`}
 											className="text-sm font-medium text-emerald-600 hover:text-emerald-700"
+											aria-label={`${project.ariaLabel}`}
 										>
 											View project →
 										</Link>
