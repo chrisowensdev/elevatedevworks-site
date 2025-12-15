@@ -1,5 +1,5 @@
 import { Laptop, Server, LineChart, Palette, ShieldCheck } from "lucide-react";
-import { services } from "@/data/services";
+import { services } from "@/content/services";
 import { Container } from "@/components/layout";
 import { FadeIn } from "@/components/media";
 
@@ -25,7 +25,7 @@ export default function ServicesGrid() {
 			aria-labelledby="services-grid-heading"
 			className="border-b bg-neutral-50"
 		>
-			<Container className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+			<Container className="py-16 md:py-24">
 				<h2
 					id="services-grid-heading"
 					className="text-2xl md:text-3xl font-semibold"

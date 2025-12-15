@@ -1,10 +1,10 @@
 import { Container } from "@/components/layout";
-import { steps } from "@/data/process";
+import { steps } from "@/content/process";
 
 export default function Process() {
 	return (
 		<section aria-labelledby="process-heading" className="border-b">
-			<Container className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+			<Container className="py-16 md:py-24">
 				<h2
 					id="process-heading"
 					className="text-2xl md:text-3xl font-semibold"

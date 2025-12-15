@@ -47,76 +47,75 @@ export default function Header() {
 				className="sticky top-0 z-50 border-b backdrop-blur"
 				style={{ backgroundColor: "rgba(255,255,255,0.8)" }}
 			>
-				<Container>
-					<div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-						<Link href="/" className="flex items-center gap-3">
-							<Image
-								src="/elevate-main-logo.png"
-								width={140}
-								height={40}
-								alt="profile Image"
-							/>
-						</Link>
+				<Container
+					className="py-3 flex items-center justify-between"
+					size="wide"
+				>
+					<Link href="/" className="flex items-center gap-3">
+						<Image
+							src="/elevate-main-logo.png"
+							width={140}
+							height={40}
+							alt="profile Image"
+						/>
+					</Link>
 
-						<nav className="hidden md:flex gap-6 text-sm">
-							<a href="/about" className="hover:opacity-70">
-								About
-							</a>
-							<a href="/services" className="hover:opacity-70">
-								Services
-							</a>
-							<a href="/work" className="hover:opacity-70">
-								Work
-							</a>
-							<a href="/contact" className="hover:opacity-70">
-								Contact
-							</a>
-						</nav>
+					<nav className="hidden md:flex gap-6 text-sm">
+						<a href="/about" className="hover:opacity-70">
+							About
+						</a>
+						<a href="/services" className="hover:opacity-70">
+							Services
+						</a>
+						<a href="/work" className="hover:opacity-70">
+							Work
+						</a>
+						<a href="/contact" className="hover:opacity-70">
+							Contact
+						</a>
+					</nav>
 
-						<div className="flex items-center gap-2">
-							<a
-								href="/contact"
-								aria-label="Get a free website assessment"
-								className="hidden md:inline-flex rounded-xl px-3 py-2 text-sm text-white transition"
-								style={{ background: BRAND.primary }}
-							>
-								Free Assessment
-							</a>
-							<button
-								type="button"
-								className="md:hidden inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm"
-								aria-expanded={mobileOpen}
-								aria-controls="mobile-menu"
-								aria-label="Toggle menu"
-								onClick={() => setMobileOpen((v) => !v)}
-							>
-								<span className="sr-only">Menu</span>
-								{/* Hamburger icon that transitions to an X */}
-								<div className="h-5 w-6 flex flex-col items-center justify-center gap-1">
-									<span
-										className={`block h-0.5 w-6 bg-current transition-transform duration-300 ease-in-out ${
-											mobileOpen
-												? "translate-y-1.5 rotate-45"
-												: ""
-										}`}
-									/>
-									<span
-										className={`block h-0.5 w-6 bg-current transition-opacity duration-300 ease-in-out ${
-											mobileOpen
-												? "opacity-0"
-												: "opacity-100"
-										}`}
-									/>
-									<span
-										className={`block h-0.5 w-6 bg-current transition-transform duration-300 ease-in-out ${
-											mobileOpen
-												? "-translate-y-1.5 -rotate-45"
-												: ""
-										}`}
-									/>
-								</div>
-							</button>
-						</div>
+					<div className="flex items-center gap-2">
+						<a
+							href="/contact"
+							aria-label="Get a free website assessment"
+							className="hidden md:inline-flex rounded-xl px-3 py-2 text-sm text-white transition"
+							style={{ background: BRAND.primary }}
+						>
+							Free Assessment
+						</a>
+						<button
+							type="button"
+							className="md:hidden inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm"
+							aria-expanded={mobileOpen}
+							aria-controls="mobile-menu"
+							aria-label="Toggle menu"
+							onClick={() => setMobileOpen((v) => !v)}
+						>
+							<span className="sr-only">Menu</span>
+							{/* Hamburger icon that transitions to an X */}
+							<div className="h-5 w-6 flex flex-col items-center justify-center gap-1">
+								<span
+									className={`block h-0.5 w-6 bg-current transition-transform duration-300 ease-in-out ${
+										mobileOpen
+											? "translate-y-1.5 rotate-45"
+											: ""
+									}`}
+								/>
+								<span
+									className={`block h-0.5 w-6 bg-current transition-opacity duration-300 ease-in-out ${
+										mobileOpen ? "opacity-0" : "opacity-100"
+									}`}
+								/>
+								<span
+									className={`block h-0.5 w-6 bg-current transition-transform duration-300 ease-in-out ${
+										mobileOpen
+											? "-translate-y-1.5 -rotate-45"
+											: ""
+									}`}
+								/>
+							</div>
+						</button>
 					</div>
 				</Container>
 			</header>
