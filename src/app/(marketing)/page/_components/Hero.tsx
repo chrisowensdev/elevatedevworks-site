@@ -9,7 +9,10 @@ const BRAND = { primary: "#2175a2", accent: "#21a37c" };
 export default function Hero() {
 	return (
 		<section className="relative overflow-hidden">
-			<Container className="mx-auto max-w-7xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+			<Container
+				className="py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center"
+				size="wide"
+			>
 				<FadeIn>
 					<h1 className="text-4xl md:text-6xl leading-tight tracking-tight">
 						Websites that elevate your business.

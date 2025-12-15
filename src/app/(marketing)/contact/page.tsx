@@ -1,5 +1,5 @@
 import Container from "@/components/layout/Container";
-import { site } from "@/data/site";
+import { site } from "@/content/site";
 import Main from "@/components/layout/Main";
 import PageHero from "@/components/sections/PageHero";
 import ContactCard from "./_components/ContactCard";

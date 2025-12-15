@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { about } from "@/data/about";
+import { about } from "@/content/about";
 import { MapPin, Mail } from "lucide-react";
 import { Container } from "@/components/layout";
 import { FadeIn } from "@/components/media";
@@ -10,7 +10,7 @@ import Button from "@/components/ui/button";
 export default function About() {
 	return (
 		<section id="about" className="bg-[#2175a2]">
-			<Container className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+			<Container className="py-16 md:py-24">
 				<div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] items-start">
 					{/* LEFT: copy */}
 					<FadeIn>

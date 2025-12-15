@@ -1,4 +1,4 @@
-import { site } from "@/data/site";
+import { site } from "@/content/site";
 
 export default function SEOJsonLd() {
 	const baseUrl = "https://elevatedevworks.com";

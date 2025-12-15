@@ -1,6 +1,6 @@
 "use client";
 import { Container } from "@/components/layout";
-import { site } from "@/data/site";
+import { site } from "@/content/site";
 import { useEffect, useState } from "react";
 
 export default function ContactHome() {
@@ -67,7 +67,7 @@ export default function ContactHome() {
 
 	return (
 		<section id="contact" className=" bg-brand">
-			<Container className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+			<Container className="py-16 md:py-24">
 				<div className="grid md:grid-cols-2 gap-10">
 					<div className="text-white">
 						<h2 className="text-2xl md:text-3xl font-semibold">

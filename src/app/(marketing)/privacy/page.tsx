@@ -1,7 +1,7 @@
 import Container from "@/components/layout/Container";
 import Main from "@/components/layout/Main";
 
-import { site } from "@/data/site";
+import { site } from "@/content/site";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { site } from "@/data/site";
+import { site } from "@/content/site";
 import InputField from "./InputField";
 import SelectField from "./SelectField";
 import TextArea from "./TextArea";
