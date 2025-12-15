@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout";
+import CTASections from "@/components/layout/CTASection";
 import Main from "@/components/layout/Main";
 import PageHero from "@/components/sections/PageHero";
 import type { Metadata } from "next";
@@ -41,7 +42,7 @@ export default function AboutPage() {
 			/>
 
 			{/* Content sections */}
-			<section className="border-t border-gray-100 bg-white">
+			<section className="border-t border-gray-100">
 				<Container className="mx-auto">
 					<div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-16 sm:gap-16 sm:py-24">
 						{/* Our Story */}
@@ -191,6 +192,7 @@ export default function AboutPage() {
 							</div>
 						</div>
 					</div>
+					<CTASections />
 				</Container>
 			</section>
 

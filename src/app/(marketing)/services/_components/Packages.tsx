@@ -41,7 +41,7 @@ export default function Packages() {
 		<section
 			id="packages"
 			aria-labelledby="packages-heading"
-			className="border-b bg-white/70"
+			className="border-b"
 		>
 			<Container className="py-16 md:py-24">
 				<h2

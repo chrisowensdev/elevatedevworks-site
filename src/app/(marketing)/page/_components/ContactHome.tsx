@@ -1,6 +1,6 @@
 "use client";
 import { Container } from "@/components/layout";
-import { site } from "@/content/site";
+import { siteConfig } from "@/content/siteConfig";
 import { useEffect, useState } from "react";
 
 export default function ContactHome() {
@@ -59,7 +59,7 @@ export default function ContactHome() {
 		} catch {
 			setError(
 				"Sorry, something went wrong sending your message. You can email us directly at " +
-					site.supportEmail
+					siteConfig.email
 			);
 			setStatus("error");
 		}
@@ -81,8 +81,8 @@ export default function ContactHome() {
 							<li>📍 Richmond, VA</li>
 							<li>
 								✉️{" "}
-								<a href="mailto:chris@elevatedevworks.com">
-									chris@elevatedevworks.com
+								<a href={`mailto:${siteConfig.email}`}>
+									{siteConfig.email}
 								</a>
 							</li>
 						</ul>

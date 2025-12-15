@@ -1,5 +1,5 @@
 import Container from "@/components/layout/Container";
-import { site } from "@/content/site";
+import { siteConfig } from "@/content/siteConfig";
 import Main from "@/components/layout/Main";
 import PageHero from "@/components/sections/PageHero";
 import ContactCard from "./_components/ContactCard";
@@ -54,10 +54,10 @@ export default function ContactPage() {
 								>
 									<p className="text-gray-700">
 										<a
-											href={`mailto:${site.supportEmail}`}
+											href={`mailto:${siteConfig.email}`}
 											className="underline underline-offset-2"
 										>
-											{site.supportEmail}
+											{siteConfig.email}
 										</a>
 									</p>
 								</ContactCard>
@@ -122,7 +122,7 @@ export default function ContactPage() {
 							"@type": "Organization",
 							name: "Elevate DevWorks",
 							url: "https://elevatedevworks.com",
-							email: site.supportEmail,
+							email: siteConfig.email,
 							sameAs: [
 								"https://x.com/elevatedevworks",
 								"https://www.facebook.com/elevatedevworks",
