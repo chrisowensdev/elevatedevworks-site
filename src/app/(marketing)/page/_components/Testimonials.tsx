@@ -2,7 +2,7 @@
 
 import { Container } from "@/components/layout";
 import { FadeIn } from "@/components/media";
-import { testimonials } from "@/data/testimonials";
+import { testimonials } from "@/content/testimonials";
 
 export default function Testimonials() {
 	return (

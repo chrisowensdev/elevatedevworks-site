@@ -43,7 +43,7 @@ export default function Packages() {
 			aria-labelledby="packages-heading"
 			className="border-b bg-white/70"
 		>
-			<Container className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+			<Container className="py-16 md:py-24">
 				<h2
 					id="packages-heading"
 					className="text-2xl md:text-3xl font-semibold"

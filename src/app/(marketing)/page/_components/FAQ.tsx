@@ -1,5 +1,5 @@
 import { Container } from "@/components/layout";
-import { faqs } from "@/data/faq";
+import { faqs } from "@/content/faq";
 
 export default function FAQ() {
 	const jsonLd = {
@@ -17,7 +17,7 @@ export default function FAQ() {
 
 	return (
 		<section aria-labelledby="faq-heading">
-			<Container className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+			<Container className="py-16 md:py-24">
 				<h2
 					id="faq-heading"
 					className="text-2xl md:text-3xl font-semibold"
