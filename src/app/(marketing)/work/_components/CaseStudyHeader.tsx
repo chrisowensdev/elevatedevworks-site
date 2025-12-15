@@ -58,7 +58,7 @@ export default function CaseStudyHeader({
 			{/* Make room on desktop for the overlapping image on the right */}
 			<div
 				className={cn(
-					"relative mx-auto max-w-6xl  pt-16 pb-10 sm:pt-5 sm:pb-16",
+					"relative mx-auto max-w-6xl px-6 pt-16 pb-10 sm:pt-5 sm:pb-16",
 					// add right padding only on large screens to avoid text under-image
 					"lg:pr-[28rem]",
 					innerClassName
