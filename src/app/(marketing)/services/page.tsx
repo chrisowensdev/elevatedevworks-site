@@ -1,9 +1,9 @@
 import Main from "@/components/layout/Main";
-import ContactHome from "@/app/(marketing)/page/_components/ContactHome";
 import ServicesGrid from "./_components/ServicesGrid";
 import Packages from "./_components/Packages";
 import PageHero from "@/components/sections/PageHero";
 import { Metadata } from "next";
+import CTASection from "@/components/layout/CTASection";
 
 export const metadata: Metadata = {
 	title: "Website Design & Web Application Services | Elevate DevWorks",
@@ -41,7 +41,7 @@ export default function ServicesPage() {
 
 			<ServicesGrid />
 			<Packages />
-			<ContactHome />
+			<CTASection />
 		</Main>
 	);
 }

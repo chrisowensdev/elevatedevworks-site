@@ -1,7 +1,7 @@
 import Container from "@/components/layout/Container";
 import Main from "@/components/layout/Main";
 
-import { site } from "@/content/site";
+import { siteConfig } from "@/content/siteConfig";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -39,8 +39,8 @@ export default function PrivacyPage() {
 						This website is operated by{" "}
 						<strong>Elevate DevWorks, LLC</strong>, based in
 						Richmond, VA. Contact:{" "}
-						<a href={`mailto:${site.supportEmail}`}>
-							{site.supportEmail}
+						<a href={`mailto:${siteConfig.email}`}>
+							{siteConfig.email}
 						</a>
 						.
 					</p>
@@ -162,8 +162,8 @@ export default function PrivacyPage() {
 						</li>
 						<li>
 							<strong>Access/deletion:</strong> Email{" "}
-							<a href={`mailto:${site.supportEmail}`}>
-								{site.supportEmail}
+							<a href={`mailto:${siteConfig.email}`}>
+								{siteConfig.email}
 							</a>{" "}
 							to access or delete inquiry messages we hold.
 						</li>
@@ -235,8 +235,8 @@ export default function PrivacyPage() {
 					<h2 id="contact">Contact</h2>
 					<p>
 						Questions about this policy or your data? Email{" "}
-						<a href={`mailto:${site.supportEmail}`}>
-							{site.supportEmail}
+						<a href={`mailto:${siteConfig.email}`}>
+							{siteConfig.email}
 						</a>
 						.
 					</p>

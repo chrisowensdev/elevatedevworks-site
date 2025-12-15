@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { site } from "@/content/site";
+import { siteConfig } from "@/content/siteConfig";
 import InputField from "./InputField";
 import SelectField from "./SelectField";
 import TextArea from "./TextArea";
@@ -176,7 +176,7 @@ export default function ContactForm() {
 						{status === "sending" ? "Sending…" : "Send"}
 					</button>
 					<Link
-						href={`mailto:${site.supportEmail}`}
+						href={`mailto:${siteConfig.email}`}
 						className="inline-flex items-center justify-center rounded-xl border border-gray-300 px-5 py-3 text-gray-900 shadow-sm transition hover:bg-gray-50"
 					>
 						Email us instead

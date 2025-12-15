@@ -70,7 +70,7 @@ export default function SocialIcons({ className, size = 20, links }: Props) {
 									: undefined
 							}
 							aria-label={name}
-							className="transition-colors hover:text-neutral-900"
+							className="transition-colors hover:text-white"
 						>
 							<span className="sr-only">{name}</span>
 							<Icon size={size} aria-hidden="true" />
