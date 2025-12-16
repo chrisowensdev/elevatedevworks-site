@@ -1,26 +1,33 @@
 import { Container } from "@/components/layout";
 import { projects } from "@/content/projects";
 import WorkGrid from "./WorkGrid";
+import SectionHeader from "@/components/sections/SectionHeader";
+import SectionCTA from "@/components/layout/SectionCTA";
 
-export default function WorkSection() {
+export default function WorkSection({
+	className,
+	ctaText,
+	ctaUrl,
+}: {
+	className?: string;
+	ctaText?: string;
+	ctaUrl?: string;
+}) {
 	return (
-		<section id="work" aria-labelledby="work-heading">
+		<section id="work" aria-labelledby="work-heading" className={className}>
 			<Container className="py-16 md:py-24">
-				<p className="text-sm font-semibold tracking-wider text-emerald-600">
-					Recent Projects
-				</p>
-				<h2
-					id="work-heading"
-					className="mt-2 text-2xl font-semi bold tracking-tight text-gray-900 sm:text-3xl"
+				<SectionHeader
+					eyebrow="Recent Projects"
+					title="Projects that tell our story"
 				>
-					Projects that tell our story
-				</h2>
-				<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
 					A few examples of how Elevate DevWorks helps small
 					businesses and creative professionals turn ideas into fast,
 					beautiful, high-performing web experiences.
-				</p>
+				</SectionHeader>
 				<WorkGrid projects={projects} />
+				{ctaText && ctaUrl && (
+					<SectionCTA ctaText={ctaText} ctaUrl={ctaUrl} />
+				)}
 			</Container>
 		</section>
 	);
