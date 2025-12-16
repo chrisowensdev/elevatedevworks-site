@@ -1,80 +1,52 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { about } from "@/content/about";
-import { MapPin, Mail } from "lucide-react";
 import { Container } from "@/components/layout";
 import { FadeIn } from "@/components/media";
-import Button from "@/components/ui/button";
+import SectionCTA from "@/components/layout/SectionCTA";
 
 export default function About() {
 	return (
-		<section id="about" className="bg-[#2175a2]">
+		<section id="about" className="bg-white/70">
 			<Container className="py-16 md:py-24">
-				<div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] items-start">
+				<div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] items-center">
 					{/* LEFT: copy */}
 					<FadeIn>
-						<h2 className="mt-4 text-3xl md:text-4xl font-semibold leading-tight text-white">
-							About Elevate DevWorks: Innovative Solutions
-							Provider
+						<p className="text-sm font-semibold tracking-wider text-emerald-600">
+							About
+						</p>
+
+						<h2 className="mt-2 text-3xl md:text-4xl font-semibold leading-tight text-gray-900">
+							Thoughtful websites built with clarity and care.
 						</h2>
 
-						<p className="mt-4 leading-relaxed text-white/90">
+						<p className="mt-4 leading-relaxed text-gray-600 text-base sm:text-lg">
 							{about.blurb}
 						</p>
 
-						{/* contact row */}
-						<address className="mt-6 not-italic text-sm text-white/90">
-							<div className="flex flex-col sm:flex-row sm:items-center gap-4">
-								<div className="flex items-center gap-2">
-									<MapPin size={16} className="text-white" />
-									<span>{about.location}</span>
-								</div>
-								<div className="flex items-center gap-2">
-									<Mail size={16} className="text-white" />
-									<a
-										href={`mailto:${about.email}`}
-										className="text-white underline underline-offset-4"
-									>
-										{about.email}
-									</a>
-								</div>
-							</div>
-						</address>
-
-						{/* CTAs */}
-						<div className="mt-8 flex flex-wrap gap-3">
-							<Button
-								asChild
-								className="rounded-xl bg-[#21a37c] text-white hover:bg-[#21a37c]/90"
-							>
-								<a
-									href={about.cta.primaryHref}
-									aria-label={about.cta.primaryText}
-								>
-									{about.cta.primaryText}
-								</a>
-							</Button>
-						</div>
+						<SectionCTA
+							ctaText="Learn more about Elevate DevWorks"
+							ctaUrl="/about"
+						/>
 					</FadeIn>
 
-					{/* RIGHT: photo + wins card */}
-					<FadeIn delay={0.5}>
-						<div className="grid gap-5">
-							<div className="relative rounded-3xl overflow-hidden">
-								<div
-									className="relative"
-									style={{ aspectRatio: "4 / 4" }}
-								>
-									<Image
-										src={about.headshot}
-										alt={`Photo of ${about.name}`}
-										fill
-										className="object-cover"
-										sizes="(max-width: 768px) 100vw, 40vw"
-										priority
-									/>
-								</div>
+					{/* RIGHT: photo */}
+					<FadeIn delay={0.2}>
+						<div className="relative overflow-hidden rounded-3xl border bg-white shadow-sm">
+							<div
+								className="relative"
+								style={{ aspectRatio: "4 / 4" }}
+							>
+								<Image
+									src={about.headshot}
+									alt={`Photo of ${about.name}`}
+									fill
+									className="object-cover"
+									sizes="(max-width: 768px) 100vw, 40vw"
+									priority
+								/>
 							</div>
 						</div>
 					</FadeIn>

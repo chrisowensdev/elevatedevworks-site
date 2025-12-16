@@ -1,9 +1,14 @@
 import Main from "@/components/layout/Main";
-import ContactHome from "@/app/(marketing)/page/_components/ContactHome";
-import ServicesGrid from "./_components/ServicesGrid";
-import Packages from "./_components/Packages";
 import PageHero from "@/components/sections/PageHero";
 import { Metadata } from "next";
+import CTASection from "@/components/sections/CTASection";
+import WebsitePackagesSection from "./_components/WebsitePackages";
+import CarePackagesSection from "./_components/CarePackages";
+import AddOns from "./_components/AddOns";
+import QuickWins from "./_components/QuickWins";
+import ServicesOverview from "./_components/ServicesOverview";
+import ContentSection from "@/components/sections/ContentSection";
+import FAQSection from "../../../components/sections/FAQSection";
 
 export const metadata: Metadata = {
 	title: "Website Design & Web Application Services | Elevate DevWorks",
@@ -39,9 +44,31 @@ export default function ServicesPage() {
 				headingLevel="h1"
 			/>
 
-			<ServicesGrid />
-			<Packages />
-			<ContactHome />
+			<ServicesOverview className="bg-white/70" />
+			<WebsitePackagesSection />
+			<CarePackagesSection />
+			<AddOns />
+			<QuickWins />
+			<ContentSection
+				eyebrow="For Designers"
+				title="Development support for designers and studios"
+				className="py-16 md:py-24"
+			>
+				<p className="mt-4">
+					If you handle branding and UI, I can partner with you to
+					build production-ready Next.js or WordPress implementations.
+					Clean code, fast delivery, and calm communication.
+					White-label friendly.
+				</p>
+			</ContentSection>
+			<FAQSection
+				context="services"
+				title="Questions about services, pricing, and timelines"
+				description="If you’re not sure what package fits, send a quick note and I’ll recommend the simplest option that meets your goals."
+				sectionBg="bg-white/70"
+			/>
+
+			<CTASection bgColor="clear" />
 		</Main>
 	);
 }

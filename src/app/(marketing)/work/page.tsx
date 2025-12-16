@@ -1,8 +1,9 @@
 import Main from "@/components/layout/Main";
 import PageHero from "@/components/sections/PageHero";
-import ContactHome from "@/app/(marketing)/page/_components/ContactHome";
 import WorkSection from "./_components/WorkSection";
 import { Metadata } from "next";
+import CTASection from "@/components/sections/CTASection";
+import ContentSection from "@/components/sections/ContentSection";
 
 export const metadata: Metadata = {
 	title: "Portfolio & Recent Projects | Elevate DevWorks",
@@ -36,8 +37,21 @@ export default function WorkPage() {
 				tone="white"
 				align="left"
 			/>
+			<ContentSection
+				eyebrow="Selected Projects"
+				title="A few examples of how we approach client work"
+				className="py-16 md:py-24"
+				bgColor="bg-white"
+			>
+				<p>
+					These projects highlight how we think about structure,
+					performance, and clarity — not just visual design. Some are
+					client engagements, others are carefully crafted demos that
+					represent the kinds of problems we solve.
+				</p>
+			</ContentSection>
 			<WorkSection />
-			<ContactHome />
+			<CTASection />
 		</Main>
 	);
 }

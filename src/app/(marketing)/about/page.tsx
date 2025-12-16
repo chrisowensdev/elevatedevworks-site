@@ -1,8 +1,12 @@
-import { Container } from "@/components/layout";
+import CTASections from "@/components/sections/CTASection";
 import Main from "@/components/layout/Main";
 import PageHero from "@/components/sections/PageHero";
 import type { Metadata } from "next";
-import Link from "next/link";
+
+import ContentSection from "../../../components/sections/ContentSection";
+
+import HowWeWork from "./_components/HowWeWork";
+import Values from "./_components/Values";
 
 export const metadata: Metadata = {
 	title: "About | Elevate DevWorks",
@@ -40,159 +44,61 @@ export default function AboutPage() {
 				headingLevel="h1"
 			/>
 
-			{/* Content sections */}
-			<section className="border-t border-gray-100 bg-white">
-				<Container className="mx-auto">
-					<div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-16 sm:gap-16 sm:py-24">
-						{/* Our Story */}
-						<Section
-							eyebrow="Our Story"
-							title="How It Started"
-							body={
-								<>
-									<p>
-										Elevate DevWorks began as a small
-										passion project by{" "}
-										<strong>Chris Owens</strong>, a
-										developer who saw how often great
-										designs were held back by unreliable or
-										overly complex development. After years
-										of working with enterprise systems,
-										Chris set out to bring that same level
-										of precision and quality to smaller
-										teams — without the layers of red tape.
-									</p>
-									<p className="mt-4">
-										What started as weekend projects soon
-										grew into a development studio focused
-										on{" "}
-										<strong>
-											partnership, craftsmanship, and
-											trust
-										</strong>
-										. Today, we collaborate with business
-										owners and designers who want reliable,
-										modern websites that actually deliver
-										results.
-									</p>
-								</>
-							}
-						/>
+			{/* Our Story */}
+			<ContentSection
+				eyebrow="Our Story"
+				title="How It Started"
+				className="py-16 md:py-24"
+				bgColor="bg-white"
+			>
+				<>
+					<p>
+						Elevate DevWorks began as a small passion project by{" "}
+						<strong>Chris Owens</strong>, a developer who saw how
+						often great designs were held back by unreliable or
+						overly complex development. After years of working with
+						enterprise systems, Chris set out to bring that same
+						level of precision and quality to smaller teams, without
+						the layers of red tape.
+					</p>
+					<p className="mt-4">
+						What started as weekend projects soon grew into a
+						development studio focused on{" "}
+						<strong>partnership, craftsmanship, and trust</strong>.
+						Today, we collaborate with business owners and designers
+						who want reliable, modern websites that actually deliver
+						results.
+					</p>
+				</>
+			</ContentSection>
 
-						{/* Mission */}
-						<Section
-							eyebrow="Our Mission"
-							title="Why We Exist"
-							body={
-								<>
-									<p>
-										Our mission is simple: to{" "}
-										<strong>
-											empower small businesses and
-											creative professionals
-										</strong>{" "}
-										with clean, scalable web solutions that
-										elevate their online presence and help
-										them grow confidently.
-									</p>
-									<p className="mt-4">
-										We believe great websites come from
-										collaboration — not confusion. That’s
-										why we focus on clear communication,
-										transparency, and helping our clients
-										understand what’s being built every step
-										of the way.
-									</p>
-								</>
-							}
-						/>
+			{/* Mission */}
+			<ContentSection
+				eyebrow="Our Mission"
+				title="Why We Exist"
+				className="py-16 md:py-24"
+			>
+				<>
+					<p>
+						Our mission is simple: to{" "}
+						<strong>
+							empower small businesses and creative professionals
+						</strong>{" "}
+						with clean, scalable web solutions that elevate their
+						online presence and help them grow confidently.
+					</p>
+					<p className="mt-4">
+						We believe great websites come from collaboration — not
+						confusion. That’s why we focus on clear communication,
+						transparency, and helping our clients understand what’s
+						being built every step of the way.
+					</p>
+				</>
+			</ContentSection>
 
-						{/* Values */}
-						<div>
-							<Eyebrow>Our Values</Eyebrow>
-							<h2 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
-								What We Stand For
-							</h2>
-							<ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-								<ValueCard
-									title="Clarity over complexity"
-									emoji="✨"
-								>
-									We keep things simple and purposeful — no
-									unnecessary plugins or bloated frameworks.
-								</ValueCard>
-								<ValueCard title="Partnership first" emoji="🤝">
-									We listen, collaborate, and build around
-									your goals — not ours.
-								</ValueCard>
-								<ValueCard title="Craft and care" emoji="🛠️">
-									We treat every project like it’s our own
-									brand on the line.
-								</ValueCard>
-								<ValueCard title="Sustainability" emoji="🌱">
-									We build for the long term — your site
-									should grow with you, not hold you back.
-								</ValueCard>
-							</ul>
-						</div>
-
-						{/* How We Work */}
-						<div>
-							<Eyebrow>The Elevate Approach</Eyebrow>
-							<h2 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
-								How We Work
-							</h2>
-							<div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-								{[
-									{
-										step: "01",
-										title: "Discover your goals",
-										text: "We start by understanding your vision, audience, and success metrics.",
-									},
-									{
-										step: "02",
-										title: "Design the roadmap",
-										text: "A plan that fits your timeline and budget — no surprises, just clarity.",
-									},
-									{
-										step: "03",
-										title: "Build & launch",
-										text: "Fast, responsive, and SEO-optimized sites with clean, maintainable code.",
-									},
-									{
-										step: "04",
-										title: "Support & grow",
-										text: "We stick around with updates, hosting advice, and analytics guidance.",
-									},
-								].map((item) => (
-									<div
-										key={item.step}
-										className="rounded-2xl border border-gray-200 p-6 shadow-sm"
-									>
-										<div className="text-sm font-semibold text-emerald-600">
-											{item.step}
-										</div>
-										<h3 className="mt-2 text-lg font-semibold text-gray-900">
-											{item.title}
-										</h3>
-										<p className="mt-2 text-gray-600">
-											{item.text}
-										</p>
-									</div>
-								))}
-							</div>
-							<div className="mt-8">
-								<Link
-									href="/contact"
-									className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-white shadow-sm transition hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-								>
-									Let’s build something great together
-								</Link>
-							</div>
-						</div>
-					</div>
-				</Container>
-			</section>
+			<Values />
+			<HowWeWork />
+			<CTASections />
 
 			{/* Optional structured data for Organization */}
 			<script
@@ -216,60 +122,5 @@ export default function AboutPage() {
 				}}
 			/>
 		</Main>
-	);
-}
-
-/* ———————————————————————————————— */
-function Eyebrow({ children }: { children: React.ReactNode }) {
-	return (
-		<p className="text-sm/6 font-semibold tracking-wider text-emerald-600">
-			{children}
-		</p>
-	);
-}
-
-function Section({
-	eyebrow,
-	title,
-	body,
-}: {
-	eyebrow: string;
-	title: string;
-	body: React.ReactNode;
-}) {
-	return (
-		<div>
-			<Eyebrow>{eyebrow}</Eyebrow>
-			<h2 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
-				{title}
-			</h2>
-			<div className="prose prose-gray mt-4 max-w-none text-gray-700">
-				{body}
-			</div>
-		</div>
-	);
-}
-
-function ValueCard({
-	title,
-	emoji,
-	children,
-}: {
-	title: string;
-	emoji?: string;
-	children: React.ReactNode;
-}) {
-	return (
-		<li className="rounded-2xl border border-gray-200 p-6 shadow-sm">
-			<div className="flex items-center gap-2">
-				<span className="text-xl" aria-hidden>
-					{emoji}
-				</span>
-				<h3 className="text-base font-semibold text-gray-900">
-					{title}
-				</h3>
-			</div>
-			<p className="mt-2 text-gray-600">{children}</p>
-		</li>
 	);
 }

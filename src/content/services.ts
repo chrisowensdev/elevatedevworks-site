@@ -6,6 +6,15 @@ export type Service = {
 	icon: "web" | "hosting" | "seo" | "design" | "care" | "analytics";
 };
 
+export type Packages = {
+	name: string;
+	blurb: string;
+	description: string;
+	price: string;
+	itemsHeader: string;
+	items: string[];
+};
+
 export const services: Service[] = [
 	{
 		title: "Custom Websites",
@@ -41,6 +50,52 @@ export const services: Service[] = [
 			"Core Web Vitals & performance",
 			"Analytics & goals setup",
 			"Quarterly strategy check-in",
+		],
+	},
+];
+
+export const packages: Packages[] = [
+	{
+		name: "Starter Website",
+		blurb: "A clean, modern website that builds trust and makes it easy for customers to reach you.",
+		description:
+			"Perfect for: new businesses, simple service providers, or anyone who needs a polished presence without complexity.",
+		price: "From $1,200",
+		itemsHeader: "Includes:",
+		items: [
+			"1–5 professionally designed pages",
+			"Mobile-responsive layouts",
+			"On-page SEO setup (titles/meta, indexing basics)",
+			"Contact form + Google Maps integration",
+			"Domain, SSL, and hosting configuration",
+		],
+	},
+	{
+		name: "Professional Presence",
+		blurb: "A cohesive, professionally branded website that elevates your business and builds authority.",
+		description:
+			"Great for businesses that want a site they’re proud to share — and messaging that’s clearer and more persuasive.",
+		price: "From $2,500",
+		itemsHeader: "Includes everything in Starter, plus:",
+		items: [
+			"Custom design system (colors, type, layout styling)",
+			"Copywriting assistance (clarity + persuasion)",
+			"CRM / lead integrations",
+			"Google Analytics + Search Console + conversion tracking setup",
+		],
+	},
+	{
+		name: "Growth Site / Lead Engine",
+		blurb: "Turn your website into a lead engine that supports growth long-term.",
+		description:
+			"Built for businesses ready to publish content, rank higher, and measure what’s working.",
+		price: "From $4,500",
+		itemsHeader: "Includes everything in Professional, plus:",
+		items: [
+			"SEO-optimized pages + advanced SEO setup",
+			"Blog publishing system",
+			"Lead tracking + automation workflows",
+			"AI chatbot integration (optional; scoped to your needs)",
 		],
 	},
 ];

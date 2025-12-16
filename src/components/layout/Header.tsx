@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import Container from "./Container";
 import Link from "next/link";
 
-const BRAND = { primary: "#2175a2", accent: "#21a37c" };
-
 export default function Header() {
 	const [mobileOpen, setMobileOpen] = useState(false);
 	// Keep menu mounted long enough to animate out
@@ -76,14 +74,20 @@ export default function Header() {
 					</nav>
 
 					<div className="flex items-center gap-2">
-						<a
+						<Link
+							href="/contact"
+							className="hidden md:inline-flex items-center rounded-lg bg-brand-accent px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700"
+						>
+							Discuss your Project
+						</Link>
+						{/* <a
 							href="/contact"
 							aria-label="Get a free website assessment"
 							className="hidden md:inline-flex rounded-xl px-3 py-2 text-sm text-white transition"
 							style={{ background: BRAND.primary }}
 						>
 							Free Assessment
-						</a>
+						</a> */}
 						<button
 							type="button"
 							className="md:hidden inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm"
@@ -159,7 +163,7 @@ export default function Header() {
 						>
 							Work
 						</a>
-						<a
+						{/* <a
 							href="/contact"
 							onClick={() => setMobileOpen(false)}
 							aria-label="Get a free website assessment"
@@ -167,7 +171,13 @@ export default function Header() {
 							style={{ background: BRAND.primary }}
 						>
 							Free Assessment
-						</a>
+						</a> */}
+						<Link
+							href="/contact"
+							className="block text-center items-center rounded-lg bg-emerald-600 px-4 py-2 text-base font-medium text-white hover:bg-emerald-700"
+						>
+							Discuss your project
+						</Link>
 					</nav>
 				</div>
 			)}
