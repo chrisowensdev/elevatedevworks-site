@@ -46,7 +46,7 @@ export default function About() {
 						<div className="mt-8 flex flex-wrap gap-3">
 							<Button
 								asChild
-								className="rounded-xl bg-[#21a37c] text-white hover:bg-[#21a37c]/90"
+								className="rounded-xl border text-white bg-brand hover:bg-white hover:text-brand"
 							>
 								<a
 									href={about.cta.primaryHref}

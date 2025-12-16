@@ -25,6 +25,7 @@
 		system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
 	--color-brand: #2175a2;
 	--color-brand-light: #eaf3f7;
+	--color-brand-accent: #21a37c;
 }
 
 :root {
