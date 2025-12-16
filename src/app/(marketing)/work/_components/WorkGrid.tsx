@@ -9,7 +9,7 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
 		<div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{projects.map((project, i) => (
 				<FadeIn key={project.slug} delay={i * 0.05}>
-					<article className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+					<article className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md border-t-4 border-t-brand-accent">
 						<div className="relative aspect-video overflow-hidden">
 							<Image
 								src={`/work/${project.img}-1200.webp`}

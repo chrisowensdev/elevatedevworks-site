@@ -1,9 +1,12 @@
 import Main from "@/components/layout/Main";
-import ServicesGrid from "./_components/ServicesGrid";
-import Packages from "./_components/Packages";
 import PageHero from "@/components/sections/PageHero";
 import { Metadata } from "next";
-import CTASection from "@/components/layout/CTASection";
+import CTASection from "@/components/sections/CTASection";
+import WebsitePackagesSection from "./_components/WebsitePackages";
+import CarePackagesSection from "./_components/CarePackages";
+import AddOns from "./_components/AddOns";
+import QuickWins from "./_components/QuickWins";
+import ServicesOverview from "./_components/ServicesOverview";
 
 export const metadata: Metadata = {
 	title: "Website Design & Web Application Services | Elevate DevWorks",
@@ -39,9 +42,12 @@ export default function ServicesPage() {
 				headingLevel="h1"
 			/>
 
-			<ServicesGrid />
-			<Packages />
-			<CTASection />
+			<ServicesOverview className="bg-white/70" />
+			<WebsitePackagesSection />
+			<CarePackagesSection />
+			<AddOns />
+			<QuickWins />
+			<CTASection bgColor="clear" />
 		</Main>
 	);
 }

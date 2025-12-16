@@ -1,62 +1,27 @@
 import { Container } from "@/components/layout";
-
-const packs = [
-	{
-		name: "Launch",
-		blurb: "One-time website build to get you live fast.",
-		price: "from $1,000",
-		items: [
-			"Sitemap & wireframes",
-			"Responsive build",
-			"SEO basics",
-			"Launch checklist",
-		],
-	},
-	{
-		name: "Care",
-		blurb: "Hosting, updates, and support every month.",
-		price: "$99/mo",
-		items: [
-			"Managed hosting & SSL",
-			"Backups & updates",
-			"Uptime/security monitoring",
-			"Monthly report",
-		],
-	},
-	{
-		name: "Grow",
-		blurb: "Ongoing SEO + content + performance care.",
-		price: "custom",
-		items: [
-			"Keyword plan",
-			"On-page SEO",
-			"Content roadmap",
-			"Quarterly reviews",
-		],
-	},
-];
+import ContentEyebrow from "@/components/ui/ContentEyebrow";
+import { packages } from "@/content/services";
 
 export default function Packages() {
 	return (
-		<section
-			id="packages"
-			aria-labelledby="packages-heading"
-			className="border-b"
-		>
+		<section className="border-b">
 			<Container className="py-16 md:py-24">
-				<h2
-					id="packages-heading"
-					className="text-2xl md:text-3xl font-semibold"
-				>
-					Packages
+				<ContentEyebrow>Website Packages</ContentEyebrow>
+				<h2 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
+					Choose the build that fits your stage
 				</h2>
+				<div className="prose prose-gray mt-4 max-w-none text-gray-700">
+					Each package is designed to create trust, improve clarity,
+					and make it easy for customers to contact you. Pricing
+					ranges reflect scope, number of pages, and integrations.
+				</div>
 				<div className="mt-8 grid gap-6 md:grid-cols-3">
-					{packs.map((p) => (
+					{packages.map((p) => (
 						<article
 							key={p.name}
 							className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
 						>
-							<div className="flex items-baseline justify-between">
+							<div className="items-baseline justify-between">
 								<h3 className="text-lg font-semibold">
 									{p.name}
 								</h3>
@@ -67,6 +32,7 @@ export default function Packages() {
 							<p className="mt-1 text-sm text-neutral-700">
 								{p.blurb}
 							</p>
+							<p>{p.description}</p>
 							<ul className="mt-4 space-y-1 text-sm text-neutral-600">
 								{p.items.map((it) => (
 									<li key={it}>• {it}</li>

@@ -2,6 +2,7 @@
 "use client";
 
 import { Container } from "@/components/layout";
+import CTAButtons from "@/components/layout/CTAButtons";
 import { FadeIn } from "@/components/media";
 
 const BRAND = { primary: "#2175a2", accent: "#21a37c" };
@@ -14,38 +15,15 @@ export default function Hero() {
 				size="wide"
 			>
 				<FadeIn>
-					<h1 className="text-4xl md:text-6xl leading-tight tracking-tight">
-						Websites that elevate your business.
+					<h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight">
+						High-performing websites for small businesses that want
+						to grow.
 					</h1>
-					<p className="mt-5 text-lg text-neutral-700">
-						We design, build, and host high-performing websites for
-						small businesses.
+					<p className="mt-5 text-lg text-neutral-600">
+						Design, development, and hosting handled end-to-end — so
+						your site stays fast, reliable, and easy to manage.
 					</p>
-					<div className="w-full pt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-						<a
-							href="#contact"
-							aria-label="Get a free website assessment"
-							className="rounded-xl px-5 py-3 text-white font-medium min-w-[200px] text-center"
-							style={{ background: BRAND.primary }}
-						>
-							Free Assessment
-						</a>
-						<a
-							href="#work"
-							className="rounded-xl border px-5 py-3 font-medium min-w-[200px] text-center"
-							style={{
-								borderColor: BRAND.primary,
-								color: BRAND.primary,
-							}}
-						>
-							View Work
-						</a>
-					</div>
-					<div className="mt-8 flex items-center gap-6 text-sm text-neutral-600">
-						<span>Fast • SEO-ready • Mobile-first</span>
-						<span className="hidden md:inline">|</span>
-						<span>Richmond, VA</span>
-					</div>
+					<CTAButtons secondaryCTA />
 				</FadeIn>
 
 				<FadeIn delay={0.1}>

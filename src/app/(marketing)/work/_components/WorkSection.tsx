@@ -4,18 +4,14 @@ import WorkGrid from "./WorkGrid";
 
 export default function WorkSection() {
 	return (
-		<section
-			id="work"
-			aria-labelledby="work-heading"
-			className="border-b bg-white/70"
-		>
+		<section id="work" aria-labelledby="work-heading">
 			<Container className="py-16 md:py-24">
 				<p className="text-sm font-semibold tracking-wider text-emerald-600">
-					Our Work
+					Recent Projects
 				</p>
 				<h2
 					id="work-heading"
-					className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl"
+					className="mt-2 text-2xl font-semi bold tracking-tight text-gray-900 sm:text-3xl"
 				>
 					Projects that tell our story
 				</h2>

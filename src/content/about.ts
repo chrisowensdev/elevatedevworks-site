@@ -21,8 +21,8 @@ export const about = {
 		"Strapi",
 	],
 	cta: {
-		primaryText: "Book a Free Call",
-		primaryHref: "#contact",
+		primaryText: "Learn More",
+		primaryHref: "/about",
 		secondaryText: "Download Resume",
 		secondaryHref: "",
 	},

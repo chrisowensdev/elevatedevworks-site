@@ -9,7 +9,7 @@ export default function Work() {
 	const featured = projects.filter((project) => project.featured);
 	return (
 		<section id="work" style={{ backgroundColor: "rgba(255,255,255,0.7)" }}>
-			<Container className="py-16 md:pb-24 md:pt-8">
+			<Container className="py-16 md:pb-24">
 				<div className="flex items-end justify-between gap-6">
 					<h2 className="text-2xl md:text-3xl font-semibold">
 						Projects

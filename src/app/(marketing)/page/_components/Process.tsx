@@ -20,7 +20,7 @@ export default function Process() {
 					{steps.map((s, i) => (
 						<article
 							key={s.title}
-							className="rounded-2xl border bg-white p-6 shadow-sm"
+							className="rounded-2xl border bg-white p-6 shadow-sm border-t-4 border-t-brand-accent"
 						>
 							<div className="text-sm font-semibold text-neutral-500">
 								Step {i + 1}
