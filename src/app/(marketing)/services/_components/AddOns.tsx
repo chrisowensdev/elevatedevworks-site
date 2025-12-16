@@ -68,6 +68,7 @@ export default function AddOns() {
 								"transition hover:shadow-md",
 								"ring-4 ring-transparent hover:ring-emerald-500/10",
 							].join(" ")}
+							key={p.title}
 						>
 							<div>
 								<h3 className="mt-4 text-xl font-semibold tracking-tight text-gray-900">

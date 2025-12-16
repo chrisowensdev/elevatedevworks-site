@@ -4,6 +4,7 @@ import { Laptop, Server, LineChart } from "lucide-react";
 import { Container } from "@/components/layout";
 import { FadeIn } from "@/components/media";
 import SectionHeader from "@/components/sections/SectionHeader";
+import SectionCTA from "@/components/layout/SectionCTA";
 
 type ServiceItem = {
 	title: string;
@@ -53,8 +54,12 @@ const services: ServiceItem[] = [
 
 export default function ServicesOverview({
 	className,
+	ctaText,
+	ctaUrl,
 }: {
 	className?: string;
+	ctaText?: string;
+	ctaUrl?: string;
 }) {
 	return (
 		<section
@@ -79,7 +84,7 @@ export default function ServicesOverview({
 						const Icon = service.icon;
 						return (
 							<FadeIn key={service.title} delay={i * 0.05}>
-								<article className="rounded-2xl border bg-white/90 p-6 shadow-sm">
+								<article className="rounded-2xl border bg-white/90 p-6 shadow-sm border-t-4 border-t-brand-accent">
 									<div className="flex items-center gap-3">
 										<Icon
 											className="h-5 w-5 text-emerald-600"
@@ -112,6 +117,9 @@ export default function ServicesOverview({
 						);
 					})}
 				</div>
+				{ctaText && ctaUrl && (
+					<SectionCTA ctaText={ctaText} ctaUrl={ctaUrl} />
+				)}
 			</Container>
 		</section>
 	);

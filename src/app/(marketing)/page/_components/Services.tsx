@@ -16,7 +16,7 @@ const Icons = {
 
 export default function Services() {
 	return (
-		<section id="services" className="border-y bg-white">
+		<section id="services" className="border-y">
 			<Container className="py-16 md:py-24">
 				<h2 className="text-2xl md:text-3xl font-semibold">Services</h2>
 				<div className="mt-8 grid md:grid-cols-3 gap-6">
