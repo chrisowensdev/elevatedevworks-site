@@ -31,7 +31,7 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
 							</p>
 							<div className="mt-4 flex justify-between">
 								<Link
-									href={`/work/${project.slug}`}
+									href={project.liveUrl}
 									className="text-sm font-medium text-emerald-600 hover:text-emerald-700"
 									aria-label={`${project.ariaLabel}`}
 								>
