@@ -5,7 +5,7 @@ import { siteConfig } from "@/content/siteConfig";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Privacy Policy | Elevate DevWorks",
+	title: "Privacy Policy",
 	description: "How Elevate DevWorks collects, uses, and protects your data.",
 	robots: {
 		index: true,

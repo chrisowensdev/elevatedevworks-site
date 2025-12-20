@@ -3,7 +3,7 @@ import Main from "@/components/layout/Main";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Terms of Service | Elevate DevWorks",
+	title: "Terms of Service",
 	description: "The terms that govern your use of Elevate DevWorks services.",
 	robots: {
 		index: true,
