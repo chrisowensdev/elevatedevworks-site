@@ -6,22 +6,22 @@ import CTASection from "@/components/sections/CTASection";
 import ContentSection from "@/components/sections/ContentSection";
 
 export const metadata: Metadata = {
-	title: "Portfolio & Recent Projects | Elevate DevWorks",
+	title: "Client Work & Case Studies",
 	description:
-		"Learn about Elevate DevWorks — a friendly, modern web development studio helping small businesses and creative professionals build fast, SEO-ready websites with care.",
+		"Explore recent projects and case studies from Elevate DevWorks, showcasing fast, SEO-ready websites built for small businesses and service professionals.",
 	openGraph: {
-		title: "Our Work | Web Development for Small Businesses & Designers",
+		title: "Client Work & Case Studies | Elevate DevWorks",
 		description:
-			"Discover our story, mission, and values — and see how we help small businesses and web designers bring their ideas to life online.",
+			"See real examples of websites designed and developed for small businesses, including performance-focused builds, SEO foundations, and conversion-driven layouts.",
 		url: "https://elevatedevworks.com/work",
 		images: ["/elevate_devworks_seo_image.png"],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Our Work | Elevate DevWorks",
+		title: "Client Work | Elevate DevWorks",
 		description:
-			"Friendly, reliable web development for small businesses and designers.",
+			"Real website projects built for small businesses with a focus on performance, clarity, and SEO.",
 		images: ["https://elevatedevworks.com/elevate_devworks_seo_image.png"],
 	},
 };

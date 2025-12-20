@@ -6,7 +6,7 @@ import ContactCard from "./_components/ContactCard";
 import ContactForm from "./_components/ContactForm";
 
 export const metadata = {
-	title: "Contact | Elevate DevWorks",
+	title: "Contact",
 	description:
 		"Get in touch with Elevate DevWorks. Tell us about your project or request a free quote. We typically reply within one business day.",
 	alternates: { canonical: "https://elevatedevworks.com/contact" },

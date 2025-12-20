@@ -9,9 +9,9 @@ import HowWeWork from "./_components/HowWeWork";
 import Values from "./_components/Values";
 
 export const metadata: Metadata = {
-	title: "About | Elevate DevWorks",
+	title: "About",
 	description:
-		"Learn about Elevate DevWorks — a friendly, modern web development studio helping small businesses and creative professionals build fast, SEO-ready websites with care.",
+		"Learn about Elevate DevWorks - a friendly, modern web design and development studio helping small businesses and creative professionals build fast, SEO-ready websites.",
 	openGraph: {
 		title: "About Elevate DevWorks | Web Development for Small Businesses & Designers",
 		description:

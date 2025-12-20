@@ -11,23 +11,23 @@ import ContentSection from "@/components/sections/ContentSection";
 import FAQSection from "../../../components/sections/FAQSection";
 
 export const metadata: Metadata = {
-	title: "Website Design & Web Application Services | Elevate DevWorks",
+	title: "Website Design, SEO & Hosting Services for Small Businesses",
 	description:
-		"Learn about Elevate DevWorks — a friendly, modern web development studio helping small businesses and creative professionals build fast, SEO-ready websites with care.",
+		"Website design, development, SEO, and ongoing care for small businesses. Elevate DevWorks builds fast, reliable, SEO-ready websites that support real growth.",
 	openGraph: {
-		title: "Services | Web Development for Small Businesses & Designers",
+		title: "Website Design, SEO & Hosting Services | Elevate DevWorks",
 		description:
-			"Discover our services that we offer for Small Business for Web Development",
-		url: "https://elevatedevworks.com/work",
+			"Explore website design, development, SEO, hosting, and ongoing care services built for small businesses that need performance, clarity, and reliability.",
+		url: "https://elevatedevworks.com/services",
 		images: ["/elevate_devworks_seo_image.png"],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Our Work | Elevate DevWorks",
+		title: "Services | Elevate DevWorks",
 		description:
-			"Discover our services that we offer for Small Business for Web Development.",
-		images: ["https://elevatedevworks.com/elevate_devworks_seo_image.png"],
+			"Website design, SEO, hosting, and ongoing care for small businesses.",
+		images: ["https://elevateddevworks.com/elevate_devworks_seo_image.png"],
 	},
 };
 
