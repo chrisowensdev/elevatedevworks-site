@@ -13,10 +13,12 @@ export const viewport: Viewport = { themeColor: "#2175a2" };
 export const metadata: Metadata = {
 	metadataBase: new URL("https://elevatedevworks.com"),
 	title: {
-		default: "Elevate DevWorks - Web/Application Development",
-		template: "%s | Elevate DevWorks - Web/Application Development",
+		default:
+			"Web Design & Development for Small Businesses | Elevate DevWorks",
+		template: "%s | Elevate DevWorks",
 	},
-	description: "Building High-Quality Websites for Business",
+	description:
+		"We design, build, and maintain fast, SEO-ready websites for small businesses and professional services. Richmond, VA-based and remote-friendly.",
 	openGraph: {
 		type: "website",
 		url: "https://elevatedevworks.com",
