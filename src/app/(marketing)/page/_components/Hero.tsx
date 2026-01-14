@@ -10,67 +10,115 @@ const BRAND = { primary: "#2175a2", accent: "#21a37c" };
 export default function Hero() {
 	return (
 		<section className="relative overflow-hidden">
-			<Container
-				className="py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center"
-				size="wide"
-			>
+			<Container className="relative py-10 md:py-16" size="wide">
+				{/* Top: Copy */}
 				<FadeIn>
-					<h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight">
-						High-performing websites for small businesses that want
-						to grow.
-					</h1>
-					<p className="mt-5 text-lg text-neutral-600">
-						Design, development, and hosting handled end-to-end — so
-						your site stays fast, reliable, and easy to manage.
-					</p>
-					<CTAButtons secondaryCTA />
-				</FadeIn>
+					<div className="mx-auto max-w-4xl text-center">
+						<p className="text-sm font-medium tracking-wide text-neutral-600">
+							Richmond, VA • Web Design + Development
+						</p>
 
-				<FadeIn delay={0.1}>
-					<div
-						className="w-full rounded-3xl bg-white shadow-lg border border-neutral-200 overflow-hidden relative"
-						style={{ aspectRatio: "4 / 3" }}
-					>
-						{/* brand border accent */}
-						<div
-							className="absolute inset-0 pointer-events-none"
-							style={{
-								padding: 2,
-								background: `linear-gradient(135deg, ${BRAND.primary} 0%, ${BRAND.accent} 100%)`,
-								WebkitMask:
-									"linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-								WebkitMaskComposite: "xor",
-								maskComposite: "exclude",
-							}}
-						/>
-						<div
-							className="h-full w-full grid place-items-center"
-							style={{ backgroundColor: "rgba(0,0,0,0.02)" }}
-						>
-							<div
-								className="relative rounded-xl border border-neutral-200 bg-black overflow-hidden"
-								style={{ aspectRatio: "16 / 10", width: "92%" }}
-							>
-								<video
-									src="/hero-demo.mp4"
-									poster="/hero-poster.webp"
-									autoPlay
-									muted
-									loop
-									playsInline
-									className="absolute inset-0 h-full w-full object-cover"
+						{/* <h1 className="mt-4 text-4xl md:text-5xl font-semibold leading-[1.05] tracking-tight text-neutral-900"> */}
+						<h1 className="mt-4 max-w-4xl mx-auto text-4xl md:text-6xl font-semibold leading-[1.02] tracking-tight text-neutral-900">
+							High-performing websites for small businesses that
+							want to grow.
+						</h1>
+
+						<p className="mt-4 max-w-3xl mx-auto text-md text-neutral-600">
+							Design, development, and hosting handled end-to-end
+							— built for speed, SEO foundations, and more calls
+							from the right customers.
+						</p>
+
+						<div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-neutral-700">
+							<span className="inline-flex items-center gap-2">
+								<span
+									className="h-2 w-2 rounded-full"
+									style={{ backgroundColor: BRAND.accent }}
 								/>
-								<div
-									className="absolute top-2 left-1/2 -translate-x-1/2 h-1.5 w-1.5 rounded-full"
-									style={{
-										backgroundColor:
-											"rgba(255,255,255,0.6)",
-									}}
+								Fast + SEO-ready
+							</span>
+							<span className="inline-flex items-center gap-2">
+								<span
+									className="h-2 w-2 rounded-full"
+									style={{ backgroundColor: BRAND.accent }}
 								/>
-							</div>
+								Built to convert
+							</span>
+							<span className="inline-flex items-center gap-2">
+								<span
+									className="h-2 w-2 rounded-full"
+									style={{ backgroundColor: BRAND.accent }}
+								/>
+								Hosting + updates handled
+							</span>
+						</div>
+
+						<div className="mt-5 flex justify-center">
+							<CTAButtons secondaryCTA />
 						</div>
 					</div>
 				</FadeIn>
+
+				{/* Bottom: Proof */}
+				<FadeIn delay={0.08}>
+					<div className="mt-7">
+						<div className="relative mx-auto max-w-2xl">
+							{/* <div className="mb-3 text-center text-[11px] font-medium tracking-wide text-neutral-500">
+								FEATURED WORK
+							</div> */}
+							{/* Browser frame */}
+							<div className="overflow-hidden rounded-lg md:rounded-3xl border border-neutral-200 bg-white shadow-[0_18px_50px_rgba(0,0,0,0.12)] pt-1">
+								{/* <div className="flex items-center gap-2 border-b border-neutral-200 px-4 py-2.5">
+									<span className="h-3 w-3 rounded-full bg-neutral-300" />
+									<span className="h-3 w-3 rounded-full bg-neutral-300" />
+									<span className="h-3 w-3 rounded-full bg-neutral-300" />
+									<div className="ml-4 h-5 flex-1 rounded-md bg-neutral-100" />
+								</div> */}
+
+								<div className="bg-neutral-50">
+									<img
+										src="/work/clearpath-1200.webp"
+										alt="ClearPath desktop website preview"
+										className="block w-full h-auto [filter:contrast(1.03)_saturate(1.02)]"
+										loading="eager"
+									/>
+								</div>
+							</div>
+
+							{/* Phone overlay (desktop only) */}
+							<div className="hidden sm:block absolute -bottom-5 right-6 w-[60px] md:w-[130px]">
+								<div className="overflow-hidden  border-0 rounded-lg md:rounded-3xl shadow-[0_14px_34px_rgba(0,0,0,0.16)]">
+									<img
+										src="/clearpath-mobile-mockup-1.png"
+										alt="ClearPath mobile preview"
+										className="block w-full h-auto"
+									/>
+								</div>
+							</div>
+
+							{/* Caption */}
+							{/* <div className="mt-3 text-center text-xs text-neutral-500">
+								ClearPath (desktop + mobile)
+							</div> */}
+						</div>
+					</div>
+				</FadeIn>
+
+				{/* Under-hero trust row */}
+				{/* <div className="mt-10 border-t border-neutral-200 pt-6 text-sm text-neutral-600 flex flex-wrap justify-center gap-x-4 gap-y-2"> */}
+				<div className="mt-15 border-t border-neutral-200 pt-5 text-xs text-neutral-500 flex flex-wrap justify-center gap-x-3 gap-y-2">
+					<span className="font-medium text-neutral-800">
+						Built with:
+					</span>
+					<span>Next.js</span>
+					<span className="text-neutral-300">•</span>
+					<span>SEO foundations</span>
+					<span className="text-neutral-300">•</span>
+					<span>Analytics</span>
+					<span className="text-neutral-300">•</span>
+					<span>Secure hosting</span>
+				</div>
 			</Container>
 		</section>
 	);
