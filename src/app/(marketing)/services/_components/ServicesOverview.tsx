@@ -84,7 +84,8 @@ export default function ServicesOverview({
 						const Icon = service.icon;
 						return (
 							<FadeIn key={service.title} delay={i * 0.05}>
-								<article className="rounded-2xl border bg-white/90 p-6 shadow-sm border-t-4 border-t-brand-accent">
+								<article className="relative rounded-2xl border bg-white/90 p-6">
+									<div className="rounded-tl-full  absolute left-[3px] top-0 h-1 w-full bg-gradient-to-r from-emerald-600/60 to-emerald-600/0" />
 									<div className="flex items-center gap-3">
 										<Icon
 											className="h-5 w-5 text-emerald-600"
