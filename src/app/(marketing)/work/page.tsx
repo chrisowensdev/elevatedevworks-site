@@ -1,7 +1,7 @@
 import Main from "@/components/layout/Main";
 import PageHero from "@/components/sections/PageHero";
 import WorkSection from "./_components/WorkSection";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import CTASection from "@/components/sections/CTASection";
 import ContentSection from "@/components/sections/ContentSection";
 

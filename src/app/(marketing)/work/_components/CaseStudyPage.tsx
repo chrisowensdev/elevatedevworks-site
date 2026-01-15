@@ -1,4 +1,4 @@
-import { CaseStudy } from "@/content/caseStudies";
+import type { CaseStudy } from "@/content/caseStudies";
 import { Container } from "@/components/layout";
 import CaseStudyHeader from "./CaseStudyHeader";
 

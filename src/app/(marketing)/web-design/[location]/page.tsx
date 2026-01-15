@@ -2,14 +2,13 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { webDesignLocations } from "@/content/locations.web-design";
 
-// Reuse your existing building blocks
 import PageHero from "@/components/sections/PageHero";
 import SectionCTA from "@/components/layout/SectionCTA";
 import SectionHeader from "@/components/sections/SectionHeader";
 import { Container } from "@/components/layout";
 import Cards from "@/components/ui/Cards";
 
-type Props = { params: { location: string } };
+type Props = { params: Promise<{ location: string }> };
 
 function getLocation(slug: string) {
 	return webDesignLocations.find((l) => l.slug === slug);
@@ -19,8 +18,9 @@ export function generateStaticParams() {
 	return webDesignLocations.map((l) => ({ location: l.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-	const loc = getLocation(params.location);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { location } = await params;
+	const loc = getLocation(location);
 	if (!loc) return {};
 
 	const title = `Web Design in ${loc.city}, ${loc.state} | Elevate DevWorks`;
@@ -48,8 +48,9 @@ export function generateMetadata({ params }: Props): Metadata {
 	};
 }
 
-export default function WebDesignLocationPage({ params }: Props) {
-	const loc = getLocation(params.location);
+export default async function WebDesignLocationPage({ params }: Props) {
+	const { location } = await params;
+	const loc = getLocation(location);
 	if (!loc) notFound();
 
 	return (

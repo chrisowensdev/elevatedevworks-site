@@ -1,6 +1,5 @@
 import { Container } from "@/components/layout";
 import SectionHeader from "@/components/sections/SectionHeader";
-import Link from "next/link";
 
 const quickWins = [
 	{

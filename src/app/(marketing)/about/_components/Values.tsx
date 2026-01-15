@@ -1,6 +1,5 @@
 import { Container } from "@/components/layout";
 import SectionHeader from "@/components/sections/SectionHeader";
-import ContentEyebrow from "@/components/ui/ContentEyebrow";
 import ValueCard from "@/components/ui/ValueCard";
 
 export default function Values() {

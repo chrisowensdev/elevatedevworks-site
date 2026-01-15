@@ -4,11 +4,13 @@ import Container from "../layout/Container";
 type CTASectionProps = {
 	bgColor?: "clear" | "bgWhite";
 	title?: string;
+	description?: string;
 };
 
 export default function CTASection({
 	bgColor = "bgWhite",
 	title = "Read to start your project?",
+	description = "Let's talk about your goals and see if Elevate DevWorks is the right fit.",
 }: CTASectionProps) {
 	const bgColors = {
 		clear: "",
@@ -22,8 +24,7 @@ export default function CTASection({
 					{title}
 				</h2>
 				<p className="mt-3 max-w-xl mx-auto text-gray-600">
-					Let’s talk about your goals and see if Elevate DevWorks is
-					the right fit.
+					{description}
 				</p>
 				<div className="mt-8">
 					<Link

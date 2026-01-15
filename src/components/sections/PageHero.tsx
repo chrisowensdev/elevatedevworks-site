@@ -49,12 +49,12 @@ export default function PageHero({
 }: PageHeroProps) {
 	const Heading = headingLevel;
 
-	const toneClasses =
-		tone === "brand"
-			? "bg-brand text-white"
-			: tone === "muted"
-			? "bg-brand-light text-neutral-900"
-			: "bg-white text-neutral-900";
+	// const toneClasses =
+	// 	tone === "brand"
+	// 		? "bg-brand text-white"
+	// 		: tone === "muted"
+	// 		? "bg-brand-light text-neutral-900"
+	// 		: "bg-white text-neutral-900";
 
 	const alignClasses =
 		align === "center"
@@ -62,7 +62,7 @@ export default function PageHero({
 			: "text-left items-start";
 
 	return (
-		<section className={cn("relative isolate border-b", className)}>
+		<section className={cn("relative isolate", className)}>
 			<Container size="wide">
 				<FadeIn>
 					<div
