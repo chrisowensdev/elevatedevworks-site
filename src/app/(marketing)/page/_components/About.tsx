@@ -9,7 +9,7 @@ import SectionCTA from "@/components/layout/SectionCTA";
 
 export default function About() {
 	return (
-		<section id="about" className="bg-white/70">
+		<section id="about">
 			<Container className="py-16 md:py-24">
 				<div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] items-center">
 					{/* LEFT: copy */}
