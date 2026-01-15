@@ -1,6 +1,6 @@
 import Main from "@/components/layout/Main";
 import PageHero from "@/components/sections/PageHero";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import CTASection from "@/components/sections/CTASection";
 import WebsitePackagesSection from "./_components/WebsitePackages";
 import CarePackagesSection from "./_components/CarePackages";

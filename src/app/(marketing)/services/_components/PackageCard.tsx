@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 type PackageCardProps = {
 	eyebrow?: string;
 	title: string;
@@ -20,8 +18,6 @@ export default function PackageCard({
 	description,
 	perfectFor,
 	features,
-	ctaHref = "/contact",
-	ctaLabel = "Learn More",
 	badge,
 	accent = "emerald",
 }: PackageCardProps) {

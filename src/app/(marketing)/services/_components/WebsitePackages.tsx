@@ -6,13 +6,13 @@ import SectionHeader from "@/components/sections/SectionHeader";
 const packages = [
 	{
 		title: "Starter Website",
-		price: "$1,200–$1,800",
+		price: "$1,200-$1,800",
 		description:
 			"A clean, modern website that builds instant trust and helps customers contact you quickly.",
 		perfectFor:
 			"new businesses, simple service providers, or a polished presence without complexity",
 		features: [
-			"1–5 professionally designed pages",
+			"1-5 professionally designed pages",
 			"Mobile-responsive layouts",
 			"On-page SEO setup",
 			"Contact form + Google Maps integration",
@@ -21,7 +21,7 @@ const packages = [
 	},
 	{
 		title: "Professional Presence",
-		price: "$2,500–$3,500",
+		price: "$2,500-$3,500",
 		description:
 			"A cohesive, professionally branded website that elevates your business and builds authority.",
 		perfectFor:
@@ -36,7 +36,7 @@ const packages = [
 	},
 	{
 		title: "Growth Site / Lead Engine",
-		price: "$4,500–$6,500",
+		price: "$4,500-$6,500",
 		description:
 			"An SEO-optimized site built to attract traffic, convert visitors, and support long-term growth.",
 		perfectFor: "businesses ready to invest in leads and measurable growth",
@@ -51,7 +51,7 @@ const packages = [
 
 export default function WebsitePackagesSection() {
 	return (
-		<section className="border-y ">
+		<section className="border-y" id="website-packages">
 			<Container className="py-16 md:py-24">
 				<SectionHeader
 					eyebrow="Website Packages"
@@ -76,7 +76,7 @@ export default function WebsitePackagesSection() {
 					</Link>
 				</div>
 				<p className="mt-3 text-sm text-gray-600 mx-auto text-center">
-					A quick message is all it takes — I’ll follow up personally.
+					A quick message is all it takes — I'll follow up personally.
 				</p>
 			</Container>
 		</section>

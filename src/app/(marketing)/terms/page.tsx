@@ -1,6 +1,6 @@
 import Container from "@/components/layout/Container";
 import Main from "@/components/layout/Main";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Terms of Service",

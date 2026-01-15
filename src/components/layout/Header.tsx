@@ -42,7 +42,7 @@ export default function Header() {
 	return (
 		<>
 			<header
-				className="sticky top-0 z-50 border-b backdrop-blur"
+				className="sticky top-0 z-51 border-b backdrop-blur"
 				style={{ backgroundColor: "rgba(255,255,255,0.8)" }}
 			>
 				<Container

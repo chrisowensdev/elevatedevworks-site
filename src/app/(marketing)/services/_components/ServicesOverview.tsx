@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Laptop, Server, LineChart } from "lucide-react";
 import { Container } from "@/components/layout";
 import { FadeIn } from "@/components/media";
@@ -11,6 +12,7 @@ type ServiceItem = {
 	description: string;
 	points: string[];
 	icon: React.ElementType;
+	href?: string; // ✅ add
 };
 
 const services: ServiceItem[] = [
@@ -25,6 +27,7 @@ const services: ServiceItem[] = [
 			"Clean, maintainable code",
 		],
 		icon: Laptop,
+		href: "/web-design", // ✅ link hub
 	},
 	{
 		title: "Hosting & Maintenance",
@@ -37,6 +40,8 @@ const services: ServiceItem[] = [
 			"Updates & small fixes",
 		],
 		icon: Server,
+		href: "/maintenance",
+		// href: "/maintenance" // add later if/when it exists
 	},
 	{
 		title: "SEO & Growth",
@@ -49,6 +54,8 @@ const services: ServiceItem[] = [
 			"Ongoing visibility improvements",
 		],
 		icon: LineChart,
+		href: "/seo",
+		// href: "/seo" // add later if/when it exists
 	},
 ];
 
@@ -78,46 +85,72 @@ export default function ServicesOverview({
 					maintainability.
 				</p>
 
-				{/* Services grid */}
 				<div className="mt-10 grid gap-6 md:grid-cols-3">
 					{services.map((service, i) => {
 						const Icon = service.icon;
+
+						const Card = (
+							<article
+								className={[
+									"relative rounded-2xl border bg-white/90 p-6 transition",
+									service.href
+										? "hover:bg-white focus-within:ring-2"
+										: "",
+								].join(" ")}
+							>
+								<div className="absolute left-[3px] top-0 h-1 w-full rounded-tl-full bg-gradient-to-r from-emerald-600/60 to-emerald-600/0" />
+
+								<div className="flex items-center gap-3">
+									<Icon
+										className="h-5 w-5 text-emerald-600"
+										aria-hidden
+									/>
+									<h3 className="text-base font-semibold text-gray-900 tracking-tight">
+										{service.title}
+									</h3>
+								</div>
+
+								<p className="mt-3 text-sm text-gray-600">
+									{service.description}
+								</p>
+
+								<ul className="mt-4 space-y-2 text-sm text-gray-700">
+									{service.points.map((point) => (
+										<li key={point} className="flex gap-2">
+											<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600" />
+											<span className="leading-6">
+												{point}
+											</span>
+										</li>
+									))}
+								</ul>
+
+								{service.href ? (
+									<div className="mt-5 text-sm font-medium text-emerald-700">
+										Learn more <span aria-hidden>→</span>
+									</div>
+								) : null}
+							</article>
+						);
+
 						return (
 							<FadeIn key={service.title} delay={i * 0.05}>
-								<article className="relative rounded-2xl border bg-white/90 p-6">
-									<div className="rounded-tl-full  absolute left-[3px] top-0 h-1 w-full bg-gradient-to-r from-emerald-600/60 to-emerald-600/0" />
-									<div className="flex items-center gap-3">
-										<Icon
-											className="h-5 w-5 text-emerald-600"
-											aria-hidden
-										/>
-										<h3 className="text-lg font-semibold text-gray-900">
-											{service.title}
-										</h3>
-									</div>
-
-									<p className="mt-3 text-sm text-gray-600">
-										{service.description}
-									</p>
-
-									<ul className="mt-4 space-y-2 text-sm text-gray-700">
-										{service.points.map((point) => (
-											<li
-												key={point}
-												className="flex gap-2"
-											>
-												<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600" />
-												<span className="leading-6">
-													{point}
-												</span>
-											</li>
-										))}
-									</ul>
-								</article>
+								{service.href ? (
+									<Link
+										href={service.href}
+										className="group block rounded-2xl focus:outline-none"
+										aria-label={`Learn more about ${service.title}`}
+									>
+										{Card}
+									</Link>
+								) : (
+									Card
+								)}
 							</FadeIn>
 						);
 					})}
 				</div>
+
 				{ctaText && ctaUrl && (
 					<SectionCTA ctaText={ctaText} ctaUrl={ctaUrl} />
 				)}

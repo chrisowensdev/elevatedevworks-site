@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 
 type Crumb = { href: string; label: string };
 
@@ -24,7 +23,6 @@ export type CaseStudyHeaderProps = {
 };
 
 export default function CaseStudyHeader({
-	breadcrumbs,
 	eyebrow,
 	title,
 	description,
@@ -46,10 +44,10 @@ export default function CaseStudyHeader({
 			? "bg-brand-light text-neutral-900"
 			: "bg-white text-neutral-900";
 
-	const textAlign =
-		align === "center"
-			? "text-center items-center"
-			: "text-left items-start";
+	// const textAlign =
+	// 	align === "center"
+	// 		? "text-center items-center"
+	// 		: "text-left items-start";
 
 	return (
 		<header
