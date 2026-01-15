@@ -23,7 +23,7 @@ export default function CTAButtons({ secondaryCTA }: CTAButtonsProps) {
 					</Link>
 				)}
 			</div>
-			<p className="mt-3 text-sm text-gray-600">
+			<p className="mt-3 text-xs text-gray-600">
 				A quick message is all it takes — I’ll follow up personally.
 			</p>
 		</div>
