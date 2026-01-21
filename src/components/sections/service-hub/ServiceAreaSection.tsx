@@ -23,6 +23,7 @@ type Props = {
 	basePath?: string; // e.g. "/web-design"
 	ctaHref?: string; // e.g. "/contact"
 	max?: number;
+	actions?: { text: string; href: string }[];
 };
 
 export default function ServiceAreaSection({
@@ -32,6 +33,7 @@ export default function ServiceAreaSection({
 	locations,
 	basePath = "/web-design",
 	ctaHref = "/contact",
+	// actions,
 	max = 9,
 }: Props) {
 	const featured = React.useMemo(() => {

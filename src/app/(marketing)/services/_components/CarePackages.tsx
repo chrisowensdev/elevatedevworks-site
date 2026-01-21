@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { FadeIn } from "@/components/media";
 import PackageCard from "./PackageCard";
-import { Container } from "@/components/layout";
-import SectionHeader from "@/components/sections/SectionHeader";
+import Section from "@/components/layout/Section";
+import { SectionActions } from "@/components/sections/SectionActions";
 
 const carePackages = [
 	{
@@ -39,34 +39,22 @@ const carePackages = [
 
 export default function CarePackagesSection() {
 	return (
-		<section className="bg-white/70">
-			<Container className="py-16 md:py-24">
-				<SectionHeader
-					eyebrow="Ongoing Care"
-					title="Keep your site fast, secure, and improving"
-				/>
-				<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-					These plans are built for peace of mind and steady growth —
-					without needing to “babysit” your website.
-				</p>
-
-				<div className="mt-10 grid gap-6 md:grid-cols-3">
-					{carePackages.map((p) => (
+		<Section
+			eyebrow="Ongoing Care"
+			title="Keep your site fast, secure, and improving"
+			description="These plans are build for peace of mind and steady growth so you can focus on your business, not website upkeep."
+			id="ongoing-care"
+		>
+			<div className="mt-10 grid gap-6 md:grid-cols-3">
+				{carePackages.map((p, i) => (
+					<FadeIn key={p.title} delay={i * 0.05}>
 						<PackageCard key={p.title} {...p} />
-					))}
-				</div>
-				<div className="mt-10 mx-auto text-center">
-					<Link
-						href="/contact"
-						className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-6 py-3 text-white font-medium hover:opacity-90"
-					>
-						Discuss your project
-					</Link>
-				</div>
-				<p className="mt-3 text-sm text-gray-600 mx-auto text-center">
-					A quick message is all it takes — I’ll follow up personally.
-				</p>
-			</Container>
-		</section>
+					</FadeIn>
+				))}
+			</div>
+			<SectionActions
+				links={[{ text: "Learn about Ongoing Care", href: "/care" }]}
+			/>
+		</Section>
 	);
 }

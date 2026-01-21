@@ -7,11 +7,15 @@ import PageHero from "@/components/sections/PageHero";
 import type { CardProps } from "@/components/layout/Card";
 import ServiceApproachSection from "@/components/sections/service-hub/ServiceApproachSection";
 import ServiceDeliverablesSection from "@/components/sections/service-hub/ServiceDeliverablesSection";
-import ServiceProcessSection from "@/components/sections/service-hub/ServiceProcessSection";
+// import ServiceProcessSection from "@/components/sections/service-hub/ServiceProcessSection";
 import ServiceAreaSection, {
 	type ServiceHubLocation,
 } from "@/components/sections/service-hub/ServiceAreaSection";
 import CTASection from "@/components/sections/CTASection";
+import ServiceGoodFitSection from "@/components/sections/service-hub/ServiceGoodFitSection";
+import ServiceScopeSection from "@/components/sections/service-hub/ServiceScopeSection";
+import ServiceAfterLaunchSection from "@/components/sections/service-hub/ServiceAfterLaunchSection";
+import ServiceTimelineSection from "@/components/sections/service-hub/ServiceTimelineSection";
 
 export type WebDesignHubLocation = ServiceHubLocation;
 
@@ -96,36 +100,36 @@ export default function WebDesignHub({
 		},
 	];
 
-	const processCards: CardProps[] = [
-		{
-			eyebrow: "01",
-			title: "Walkthrough",
-			description:
-				"A quick call to understand your business, goals, and what a good outcome looks like.",
-			variant: "mini",
-		},
-		{
-			eyebrow: "02",
-			title: "Structure",
-			description:
-				"A simple plan for pages + content so everything has a purpose and nothing feels cluttered.",
-			variant: "mini",
-		},
-		{
-			eyebrow: "03",
-			title: "Design + build",
-			description:
-				"Clean UI built with reusable components—designed for speed, clarity, and maintainability.",
-			variant: "mini",
-		},
-		{
-			eyebrow: "04",
-			title: "Launch",
-			description:
-				"Final checks, SEO basics, and a smooth go-live—so your site is ready for real traffic.",
-			variant: "mini",
-		},
-	];
+	// const processCards: CardProps[] = [
+	// 	{
+	// 		eyebrow: "01",
+	// 		title: "Walkthrough",
+	// 		description:
+	// 			"A quick call to understand your business, goals, and what a good outcome looks like.",
+	// 		variant: "mini",
+	// 	},
+	// 	{
+	// 		eyebrow: "02",
+	// 		title: "Structure",
+	// 		description:
+	// 			"A simple plan for pages + content so everything has a purpose and nothing feels cluttered.",
+	// 		variant: "mini",
+	// 	},
+	// 	{
+	// 		eyebrow: "03",
+	// 		title: "Design + build",
+	// 		description:
+	// 			"Clean UI built with reusable components—designed for speed, clarity, and maintainability.",
+	// 		variant: "mini",
+	// 	},
+	// 	{
+	// 		eyebrow: "04",
+	// 		title: "Launch",
+	// 		description:
+	// 			"Final checks, SEO basics, and a smooth go-live—so your site is ready for real traffic.",
+	// 		variant: "mini",
+	// 	},
+	// ];
 
 	return (
 		<>
@@ -134,8 +138,12 @@ export default function WebDesignHub({
 				title="Fast, SEO-ready websites for small businesses"
 				description="We design and build calm, professional sites that load fast, communicate clearly, and make it easy for customers to reach you—without the salesy agency experience."
 				primaryCta={{ label: ctaLabel, href: ctaHref }}
-				secondaryCta={{ label: "View work", href: "/work" }}
+				secondaryCta={{
+					label: "View website packages",
+					href: "/services#website-packages",
+				}}
 			/>
+			<ServiceGoodFitSection />
 
 			<ServiceApproachSection
 				title="What “custom web design” means at Elevate DevWorks"
@@ -147,16 +155,33 @@ export default function WebDesignHub({
 				title="What you’ll leave with"
 				description="A finished site that looks professional, loads quickly, and is ready to bring in leads."
 				items={deliverableCards}
-				ctaHref={ctaHref}
-				ctaLabel={ctaLabel}
-				secondaryHref="/process"
-				secondaryLabel="See the process →"
+				actions={[
+					{
+						text: "View website packages",
+						href: "/services#website-packages",
+					},
+				]}
 			/>
 
-			<ServiceProcessSection
+			<ServiceScopeSection
+				actions={[
+					{
+						text: "See add-ons and quick wins",
+						href: "/services#add-ons",
+					},
+				]}
+			/>
+
+			<ServiceTimelineSection />
+
+			{/* <ServiceProcessSection
 				title="A calm, organized build"
 				description="No ambiguity, no pressure—just clear steps and steady progress from kickoff to launch."
 				items={processCards}
+			/> */}
+
+			<ServiceAfterLaunchSection
+				actions={[{ text: "Learn about ongoing care", href: "/care" }]}
 			/>
 
 			{showLocations ? (

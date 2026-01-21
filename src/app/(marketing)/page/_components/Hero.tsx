@@ -1,4 +1,3 @@
-// components/Hero.tsx
 "use client";
 
 import { Container } from "@/components/layout";
@@ -18,15 +17,14 @@ export default function Hero() {
 							Richmond, VA • Web Design + Development
 						</p>
 
-						{/* <h1 className="mt-4 text-4xl md:text-5xl font-semibold leading-[1.05] tracking-tight text-neutral-900"> */}
 						<h1 className="mt-4 max-w-4xl mx-auto text-4xl md:text-6xl font-semibold leading-[1.02] tracking-tight text-neutral-900">
 							High-performing websites for small businesses that
 							want to grow.
 						</h1>
 
 						<p className="mt-4 max-w-3xl mx-auto text-md text-neutral-600">
-							Design, development, and hosting handled end-to-end
-							— built for speed, SEO foundations, and more calls
+							Design, development, and hosting handled end-to-end.
+							Built for speed, SEO foundations, and more calls
 							from the right customers.
 						</p>
 
@@ -60,22 +58,10 @@ export default function Hero() {
 					</div>
 				</FadeIn>
 
-				{/* Bottom: Proof */}
 				<FadeIn delay={0.08}>
 					<div className="mt-7">
 						<div className="relative mx-auto max-w-2xl">
-							{/* <div className="mb-3 text-center text-[11px] font-medium tracking-wide text-neutral-500">
-								FEATURED WORK
-							</div> */}
-							{/* Browser frame */}
 							<div className="overflow-hidden rounded-lg md:rounded-3xl border border-neutral-200 bg-white shadow-[0_18px_50px_rgba(0,0,0,0.12)] pt-1">
-								{/* <div className="flex items-center gap-2 border-b border-neutral-200 px-4 py-2.5">
-									<span className="h-3 w-3 rounded-full bg-neutral-300" />
-									<span className="h-3 w-3 rounded-full bg-neutral-300" />
-									<span className="h-3 w-3 rounded-full bg-neutral-300" />
-									<div className="ml-4 h-5 flex-1 rounded-md bg-neutral-100" />
-								</div> */}
-
 								<div className="bg-neutral-50">
 									<img
 										src="/work/clearpath-1200.webp"
@@ -96,17 +82,10 @@ export default function Hero() {
 									/>
 								</div>
 							</div>
-
-							{/* Caption */}
-							{/* <div className="mt-3 text-center text-xs text-neutral-500">
-								ClearPath (desktop + mobile)
-							</div> */}
 						</div>
 					</div>
 				</FadeIn>
 
-				{/* Under-hero trust row */}
-				{/* <div className="mt-10 border-t border-neutral-200 pt-6 text-sm text-neutral-600 flex flex-wrap justify-center gap-x-4 gap-y-2"> */}
 				<div className="mt-15 border-t border-neutral-200 pt-5 text-xs text-neutral-500 flex flex-wrap justify-center gap-x-3 gap-y-2">
 					<span className="font-medium text-neutral-800">
 						Built with:

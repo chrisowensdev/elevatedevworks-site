@@ -2,10 +2,8 @@
 "use client";
 
 import { AlertTriangle, PhoneOff, Wrench, TrendingDown } from "lucide-react";
-import { Container } from "@/components/layout";
-import { FadeIn } from "@/components/media";
-import SectionHeader from "@/components/sections/SectionHeader";
-import SectionCTA from "@/components/layout/SectionCTA";
+import Section from "@/components/layout/Section";
+import { SectionActions } from "@/components/sections/SectionActions";
 
 const problems = [
 	{
@@ -26,53 +24,47 @@ const problems = [
 ];
 
 export default function Problem({
-	className,
-	ctaText,
-	ctaUrl,
+	actionText,
+	actionUrl,
 }: {
-	className?: string;
-	ctaText?: string;
-	ctaUrl?: string;
+	actionText?: string;
+	actionUrl?: string;
 }) {
 	return (
-		<section aria-labelledby="problem-heading" className={className}>
-			<Container className="py-16 md:py-24">
-				<SectionHeader
-					eyebrow="The Problem"
-					title="A website can look “fine” and still lose you customers"
-				/>
-				<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-					Most issues come down to clarity, trust, and a missing path
-					to action. These are the common blockers we fix first.
-				</p>
-
+		<>
+			<Section
+				eyebrow="The Problem"
+				title="A website can look “fine” and still lose you customers"
+				description="Most issues come down to clarity, trust, and a missing path to action. These are the common blockers we fix first."
+			>
 				<div className="mt-10 grid gap-6 lg:grid-cols-12">
 					{/* Left: compact list */}
 					<div className="lg:col-span-7">
 						<div className="space-y-4">
-							{problems.map((p, i) => {
+							{problems.map((p) => {
 								const Icon = p.icon;
 								return (
-									<FadeIn key={p.title} delay={i * 0.05}>
-										<div className="rounded-2xl border bg-white/90 p-5 shadow-sm">
-											<div className="flex items-start gap-3">
-												<span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50">
-													<Icon
-														className="h-5 w-5 text-emerald-600"
-														aria-hidden
-													/>
-												</span>
-												<div>
-													<div className="text-base font-semibold text-gray-900">
-														{p.title}
-													</div>
-													<p className="mt-1 text-sm text-gray-600">
-														{p.body}
-													</p>
-												</div>
+									<div
+										className="rounded-2xl border bg-white/90 p-5 shadow-sm"
+										key={p.title}
+									>
+										<div className="flex items-start gap-3">
+											<span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50">
+												<Icon
+													className="h-5 w-5 text-emerald-600"
+													aria-hidden
+												/>
+											</span>
+											<div>
+												<h3 className="text-base tracking-tight font-semibold text-gray-900">
+													{p.title}
+												</h3>
+												<p className="mt-1 text-sm text-gray-600">
+													{p.body}
+												</p>
 											</div>
 										</div>
-									</FadeIn>
+									</div>
 								);
 							})}
 						</div>
@@ -88,7 +80,7 @@ export default function Problem({
 									className="h-5 w-5 text-emerald-600"
 									aria-hidden
 								/>
-								<h3 className="text-lg font-semibold text-gray-900">
+								<h3 className="text-base font-semibold text-gray-900">
 									What it costs you
 								</h3>
 							</div>
@@ -122,10 +114,17 @@ export default function Problem({
 					</aside>
 				</div>
 
-				{ctaText && ctaUrl && (
-					<SectionCTA ctaText={ctaText} ctaUrl={ctaUrl} />
+				{actionText && actionUrl && (
+					<SectionActions
+						links={[
+							{
+								text: actionText,
+								href: actionUrl,
+							},
+						]}
+					/>
 				)}
-			</Container>
-		</section>
+			</Section>
+		</>
 	);
 }

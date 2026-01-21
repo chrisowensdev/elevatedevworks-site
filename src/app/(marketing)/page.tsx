@@ -12,10 +12,13 @@ export default function Page() {
 	return (
 		<Main>
 			<Hero />
-			<Problem ctaText="Discuss your project" ctaUrl="/Contact" />
-			<Plan ctaText="See services" ctaUrl="/services" />
-			<ServicesOverview ctaText="View services" ctaUrl="/services" />
-			<WorkSection ctaText="View all projects" ctaUrl="/work" />
+			<Problem actionText="Discuss your project" actionUrl="/contact" />
+			<Plan actionText="See services" actionUrl="/services" />
+			<ServicesOverview
+				actionText="View all services"
+				actionUrl="/services"
+			/>
+			<WorkSection actionText="View all projects" actionUrl="/work" />
 			<About />
 			<FAQSection context="home" />
 			<CTASection />

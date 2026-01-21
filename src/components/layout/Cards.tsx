@@ -12,6 +12,7 @@ type Props = {
 	accent?: boolean;
 };
 
+// components/ui/Cards.tsx
 export default function Cards({
 	items,
 	columns = 3,
@@ -28,7 +29,11 @@ export default function Cards({
 
 	return (
 		<div
-			className={["grid gap-4", gridCols, className]
+			className={[
+				"grid gap-4 items-stretch", // ✅ add
+				gridCols,
+				className,
+			]
 				.filter(Boolean)
 				.join(" ")}
 		>

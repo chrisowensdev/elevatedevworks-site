@@ -1,5 +1,5 @@
-import { Container } from "@/components/layout";
-import SectionHeader from "@/components/sections/SectionHeader";
+import Section from "@/components/layout/Section";
+import { FadeIn } from "@/components/media";
 
 const quickWins = [
 	{
@@ -23,19 +23,15 @@ const quickWins = [
 
 export default function QuickWins() {
 	return (
-		<section className="border-y bg-white/70">
-			<Container className="py-16 md:py-24">
-				<SectionHeader
-					eyebrow="Quick Wins"
-					title="Fast Improvements with clear outcomes"
-				/>
-				<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-					These plans are built for peace of mind and steady growth —
-					without needing to “babysit” your website.
-				</p>
-
-				<div className="mt-10 grid gap-6 md:grid-cols-3">
-					{quickWins.map((p) => (
+		<Section
+			eyebrow="Quick Wins"
+			title="Fast Improvements with clear outcomes"
+			description="Quick Wins are small, high-impact improvements you can make in a short time to boost clarity, trust, and conversions."
+			id="quick-wins"
+		>
+			<div className="mt-10 grid gap-6 md:grid-cols-3">
+				{quickWins.map((p, i) => (
+					<FadeIn key={p.title} delay={i * 0.05}>
 						<article
 							className={[
 								"group relative flex h-full flex-col rounded-2xl border bg-white/90 p-6 shadow-sm",
@@ -64,20 +60,11 @@ export default function QuickWins() {
 										{p.price}
 									</p>
 								</div>
-
-								{/* <div className="mt-5">
-					<Link
-						href={ctaHref}
-						className="inline-flex w-full items-center justify-center rounded-xl border-2 border-brand-accent px-5 py-3 text-sm font-medium text-brand-accent shadow-sm transition hover:bg-brand-accent hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-					>
-						{ctaLabel}
-					</Link>
-				</div> */}
 							</div>
 						</article>
-					))}
-				</div>
-			</Container>
-		</section>
+					</FadeIn>
+				))}
+			</div>
+		</Section>
 	);
 }

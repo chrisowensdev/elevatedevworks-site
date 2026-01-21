@@ -1,5 +1,5 @@
-import { Container } from "@/components/layout";
-import SectionHeader from "@/components/sections/SectionHeader";
+import Section from "@/components/layout/Section";
+import { FadeIn } from "@/components/media";
 
 const addOns = [
 	{
@@ -48,19 +48,15 @@ const addOns = [
 
 export default function AddOns() {
 	return (
-		<section className="border-y ">
-			<Container className="py-16 md:py-24">
-				<SectionHeader
-					eyebrow="Add-Ons"
-					title="Upgrade what matters most"
-				/>
-				<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-					These plans are built for peace of mind and steady growth —
-					without needing to “babysit” your website.
-				</p>
-
-				<div className="mt-10 grid gap-6 md:grid-cols-3">
-					{addOns.map((p) => (
+		<Section
+			eyebrow="Add-Ons"
+			title="Upgrade what matters most"
+			description="Add-ons are focused upgrades you can layer onto any website package to improve performance, clarity, and conversions."
+			id="add-ons"
+		>
+			<div className="mt-10 grid gap-6 md:grid-cols-3">
+				{addOns.map((p, i) => (
+					<FadeIn key={p.title} delay={i * 0.05}>
 						<article
 							className={[
 								"group relative flex h-full flex-col rounded-2xl border bg-white/90 p-6 shadow-sm",
@@ -89,20 +85,11 @@ export default function AddOns() {
 										{p.price}
 									</p>
 								</div>
-
-								{/* <div className="mt-5">
-					<Link
-						href={ctaHref}
-						className="inline-flex w-full items-center justify-center rounded-xl border-2 border-brand-accent px-5 py-3 text-sm font-medium text-brand-accent shadow-sm transition hover:bg-brand-accent hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-					>
-						{ctaLabel}
-					</Link>
-				</div> */}
 							</div>
 						</article>
-					))}
-				</div>
-			</Container>
-		</section>
+					</FadeIn>
+				))}
+			</div>
+		</Section>
 	);
 }

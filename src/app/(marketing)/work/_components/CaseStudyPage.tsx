@@ -26,18 +26,6 @@ export default function CaseStudyPage({ data }: { data: CaseStudy }) {
 				fgImageHeight={640}
 			/>
 			<div className="mx-auto max-w-5xl px-4 space-y-16">
-				{/* Header */}
-				{/* <section className="space-y-4">
-					<h1 className="text-4xl font-semibold tracking-tight text-slate-900">
-						{data.name}
-						<span className="block text-2xl text-emerald-600">
-							{data.subtitle}
-						</span>
-					</h1>
-					<p className="max-w-3xl text-slate-600 text-base leading-relaxed">
-						{data.intro}
-					</p>
-				</section> */}
 				<Container className="py-16 md:py-24">
 					{/* Details */}
 					<section className="grid grid-cols-1 sm:grid-cols-3 gap-8 pb-10">

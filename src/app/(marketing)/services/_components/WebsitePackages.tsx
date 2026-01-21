@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { FadeIn } from "@/components/media";
 import PackageCard from "./PackageCard";
-import { Container } from "@/components/layout";
-import SectionHeader from "@/components/sections/SectionHeader";
+import Section from "@/components/layout/Section";
+import { SectionActions } from "@/components/sections/SectionActions";
 
 const packages = [
 	{
@@ -51,34 +51,24 @@ const packages = [
 
 export default function WebsitePackagesSection() {
 	return (
-		<section className="border-y" id="website-packages">
-			<Container className="py-16 md:py-24">
-				<SectionHeader
-					eyebrow="Website Packages"
-					title="Choose the build that fits your stage"
-				/>
-				<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-					Clear options depending on where you are today — starter,
-					professional, or growth-focused.
-				</p>
-
-				<div className="mt-10 grid gap-6 md:grid-cols-3">
-					{packages.map((p) => (
+		<Section
+			eyebrow="Website Packages"
+			title="Choose the build that fits your stage"
+			description="Clear options depending on where you are today — starter, professional, or growth-focused."
+			id="website-packages"
+		>
+			<div className="mt-10 grid gap-6 md:grid-cols-3">
+				{packages.map((p, i) => (
+					<FadeIn key={p.title} delay={i * 0.05}>
 						<PackageCard key={p.title} {...p} />
-					))}
-				</div>
-				<div className="mt-10 mx-auto text-center">
-					<Link
-						href="/contact"
-						className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-6 py-3 text-white font-medium hover:opacity-90"
-					>
-						Discuss your project
-					</Link>
-				</div>
-				<p className="mt-3 text-sm text-gray-600 mx-auto text-center">
-					A quick message is all it takes — I'll follow up personally.
-				</p>
-			</Container>
-		</section>
+					</FadeIn>
+				))}
+			</div>
+			<SectionActions
+				links={[
+					{ text: "Learn about Web Design", href: "/web-design" },
+				]}
+			/>
+		</Section>
 	);
 }

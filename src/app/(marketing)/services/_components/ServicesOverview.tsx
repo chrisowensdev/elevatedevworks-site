@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { Laptop, Server, LineChart } from "lucide-react";
-import { Container } from "@/components/layout";
 import { FadeIn } from "@/components/media";
-import SectionHeader from "@/components/sections/SectionHeader";
-import SectionCTA from "@/components/layout/SectionCTA";
+import Section from "@/components/layout/Section";
+import { SectionActions } from "@/components/sections/SectionActions";
 
 type ServiceItem = {
 	title: string;
@@ -60,52 +59,45 @@ const services: ServiceItem[] = [
 ];
 
 export default function ServicesOverview({
-	className,
-	ctaText,
-	ctaUrl,
+	actionText,
+	actionUrl,
 }: {
 	className?: string;
-	ctaText?: string;
-	ctaUrl?: string;
+	actionText?: string;
+	actionUrl?: string;
 }) {
 	return (
-		<section
-			aria-labelledby="services-overview-heading"
-			className={className}
-		>
-			<Container className="py-16 md:py-24">
-				<SectionHeader
-					eyebrow="What We Do"
-					title="End-to-end website design, development, and growth"
-				/>
-				<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-					We handle the full lifecycle of your website — from design
+		<Section
+			id="services"
+			eyebrow="Services"
+			title="End-to-end website design, development, and growth"
+			description="We handle the full lifecycle of your website, from design
 					and development to hosting, maintenance, and ongoing SEO.
 					Our focus is clarity, performance, and long-term
-					maintainability.
-				</p>
+					maintainability."
+		>
+			<div className="mt-10 grid gap-6 items-stretch md:grid-cols-3 h-full">
+				{services.map((service, i) => {
+					const Icon = service.icon;
 
-				<div className="mt-10 grid gap-6 md:grid-cols-3">
-					{services.map((service, i) => {
-						const Icon = service.icon;
-
-						const Card = (
-							<article
-								className={[
-									"relative rounded-2xl border bg-white/90 p-6 transition",
-									service.href
-										? "hover:bg-white focus-within:ring-2"
-										: "",
-								].join(" ")}
-							>
-								<div className="absolute left-[3px] top-0 h-1 w-full rounded-tl-full bg-gradient-to-r from-emerald-600/60 to-emerald-600/0" />
-
+					const Card = (
+						<article
+							className={[
+								"relative h-full rounded-2xl border bg-white/90 p-6 transition",
+								"flex flex-col",
+								service.href
+									? "hover:bg-white focus-within:ring-2"
+									: "",
+							].join(" ")}
+						>
+							<div className="absolute left-[3px] top-0 h-1 w-full rounded-tl-full bg-gradient-to-r from-emerald-600/60 to-emerald-600/0" />
+							<div>
 								<div className="flex items-center gap-3">
 									<Icon
 										className="h-5 w-5 text-emerald-600"
 										aria-hidden
 									/>
-									<h3 className="text-base font-semibold text-gray-900 tracking-tight">
+									<h3 className="text-lg font-semibold text-gray-900 tracking-tight">
 										{service.title}
 									</h3>
 								</div>
@@ -124,37 +116,44 @@ export default function ServicesOverview({
 										</li>
 									))}
 								</ul>
+							</div>
 
-								{service.href ? (
-									<div className="mt-5 text-sm font-medium text-emerald-700">
-										Learn more <span aria-hidden>→</span>
-									</div>
-								) : null}
-							</article>
-						);
+							{service.href ? (
+								<div className="mt-auto pt-5 text-sm font-medium text-emerald-700">
+									Learn more <span aria-hidden>→</span>
+								</div>
+							) : null}
+						</article>
+					);
 
-						return (
-							<FadeIn key={service.title} delay={i * 0.05}>
-								{service.href ? (
-									<Link
-										href={service.href}
-										className="group block rounded-2xl focus:outline-none"
-										aria-label={`Learn more about ${service.title}`}
-									>
-										{Card}
-									</Link>
-								) : (
-									Card
-								)}
-							</FadeIn>
-						);
-					})}
-				</div>
+					return (
+						<FadeIn key={service.title} delay={i * 0.05}>
+							{service.href ? (
+								<Link
+									href={service.href}
+									className="group block h-full rounded-2xl focus:outline-none"
+									aria-label={`Learn more about ${service.title}`}
+								>
+									{Card}
+								</Link>
+							) : (
+								Card
+							)}
+						</FadeIn>
+					);
+				})}
+			</div>
 
-				{ctaText && ctaUrl && (
-					<SectionCTA ctaText={ctaText} ctaUrl={ctaUrl} />
-				)}
-			</Container>
-		</section>
+			{actionText && actionUrl && (
+				<SectionActions
+					links={[
+						{
+							text: actionText,
+							href: actionUrl,
+						},
+					]}
+				/>
+			)}
+		</Section>
 	);
 }
