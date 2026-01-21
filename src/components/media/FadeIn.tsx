@@ -2,7 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 export default function FadeIn({
 	children,

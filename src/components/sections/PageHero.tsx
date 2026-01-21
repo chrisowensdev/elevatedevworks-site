@@ -49,12 +49,12 @@ export default function PageHero({
 }: PageHeroProps) {
 	const Heading = headingLevel;
 
-	const toneClasses =
-		tone === "brand"
-			? "bg-brand text-white"
-			: tone === "muted"
-			? "bg-brand-light text-neutral-900"
-			: "bg-white text-neutral-900";
+	// const toneClasses =
+	// 	tone === "brand"
+	// 		? "bg-brand text-white"
+	// 		: tone === "muted"
+	// 		? "bg-brand-light text-neutral-900"
+	// 		: "bg-white text-neutral-900";
 
 	const alignClasses =
 		align === "center"
@@ -62,14 +62,14 @@ export default function PageHero({
 			: "text-left items-start";
 
 	return (
-		<section className={cn("relative isolate border-b", className)}>
+		<section className={cn("relative isolate", className)}>
 			<Container size="wide">
 				<FadeIn>
 					<div
 						className={cn(
 							"mx-auto max-w-6xl pt-16 pb-10 sm:pt-24 sm:pb-16 flex flex-col",
 							alignClasses,
-							innerClassName
+							innerClassName,
 						)}
 					>
 						{eyebrow ? (
@@ -83,7 +83,7 @@ export default function PageHero({
 								"mt-3 text-3xl font-bold tracking-tight sm:text-5xl",
 								tone === "brand"
 									? "text-white"
-									: "text-gray-900"
+									: "text-gray-900",
 							)}
 						>
 							{title}
@@ -96,7 +96,7 @@ export default function PageHero({
 									tone === "brand"
 										? "text-white/90"
 										: "text-gray-600",
-									align === "center" && "mx-auto"
+									align === "center" && "mx-auto",
 								)}
 							>
 								{description}
@@ -108,23 +108,22 @@ export default function PageHero({
 							<div
 								className={cn(
 									"mt-8",
-									align === "center" && "flex justify-center"
+									align === "center" && "flex justify-center",
 								)}
 							>
 								{actionsSlot}
 							</div>
 						) : primaryCta || secondaryCta ? (
-							// <div className="w-full pt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
 							<div
 								className={cn(
 									"w-full mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4 ",
-									align === "center" && "justify-center"
+									align === "center" && "justify-center",
 								)}
 							>
 								{primaryCta ? (
 									<Link
 										href={primaryCta.href}
-										className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-white shadow-sm transition hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+										className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-white transition hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 shadow-[0_3px_10px_rgba(0,0,0,0.30)]"
 									>
 										{primaryCta.label}
 									</Link>
@@ -134,10 +133,10 @@ export default function PageHero({
 									<Link
 										href={secondaryCta.href}
 										className={cn(
-											"inline-flex items-center justify-center rounded-xl border px-5 py-3 shadow-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500",
+											"inline-flex items-center justify-center rounded-xl border px-5 py-3 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 shadow-[0_3px_10px_rgba(0,0,0,0.30)]",
 											tone === "brand"
 												? "border-white/60 text-white hover:bg-white/10"
-												: "border-gray-300 text-gray-900 hover:bg-gray-50"
+												: "border-gray-300 text-gray-900 hover:bg-gray-50",
 										)}
 									>
 										{secondaryCta.label}

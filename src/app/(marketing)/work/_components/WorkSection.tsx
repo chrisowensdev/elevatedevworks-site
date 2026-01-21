@@ -1,34 +1,35 @@
-import { Container } from "@/components/layout";
 import { projects } from "@/content/projects";
 import WorkGrid from "./WorkGrid";
-import SectionHeader from "@/components/sections/SectionHeader";
-import SectionCTA from "@/components/layout/SectionCTA";
+import Section from "@/components/layout/Section";
+import { SectionActions } from "@/components/sections/SectionActions";
 
 export default function WorkSection({
-	className,
-	ctaText,
-	ctaUrl,
+	actionText,
+	actionUrl,
 }: {
-	className?: string;
-	ctaText?: string;
-	ctaUrl?: string;
+	actionText?: string;
+	actionUrl?: string;
 }) {
 	return (
-		<section id="work" aria-labelledby="work-heading" className={className}>
-			<Container className="py-16 md:py-24">
-				<SectionHeader
-					eyebrow="Recent Projects"
-					title="Projects that tell our story"
-				>
-					A few examples of how Elevate DevWorks helps small
-					businesses and creative professionals turn ideas into fast,
-					beautiful, high-performing web experiences.
-				</SectionHeader>
-				<WorkGrid projects={projects} />
-				{ctaText && ctaUrl && (
-					<SectionCTA ctaText={ctaText} ctaUrl={ctaUrl} />
-				)}
-			</Container>
-		</section>
+		<Section
+			id="recent-projects"
+			eyebrow="Recent Projects"
+			title="Projects that tell our story"
+			description="A few examples of how Elevate DevWorks helps small
+						businesses and creative professionals turn ideas into
+						fast, beautiful, high-performing web experiences."
+		>
+			<WorkGrid projects={projects} />
+			{actionText && actionUrl && (
+				<SectionActions
+					links={[
+						{
+							text: actionText,
+							href: actionUrl,
+						},
+					]}
+				/>
+			)}
+		</Section>
 	);
 }

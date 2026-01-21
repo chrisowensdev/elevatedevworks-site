@@ -1,5 +1,5 @@
 import { FadeIn } from "@/components/media";
-import { Project, projects } from "@/content/projects";
+import type { Project } from "@/content/projects";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

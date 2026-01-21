@@ -1,14 +1,14 @@
 import Main from "@/components/layout/Main";
 import PageHero from "@/components/sections/PageHero";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import CTASection from "@/components/sections/CTASection";
 import WebsitePackagesSection from "./_components/WebsitePackages";
 import CarePackagesSection from "./_components/CarePackages";
 import AddOns from "./_components/AddOns";
 import QuickWins from "./_components/QuickWins";
 import ServicesOverview from "./_components/ServicesOverview";
-import ContentSection from "@/components/sections/ContentSection";
 import FAQSection from "../../../components/sections/FAQSection";
+import Section from "@/components/layout/Section";
 
 export const metadata: Metadata = {
 	title: "Website Design, SEO & Hosting Services for Small Businesses",
@@ -49,26 +49,22 @@ export default function ServicesPage() {
 			<CarePackagesSection />
 			<AddOns />
 			<QuickWins />
-			<ContentSection
+			<Section
 				eyebrow="For Designers"
 				title="Development support for designers and studios"
-				className="py-16 md:py-24"
-			>
-				<p className="mt-4">
-					If you handle branding and UI, I can partner with you to
+				description="If you handle branding and UI, I can partner with you to
 					build production-ready Next.js or WordPress implementations.
 					Clean code, fast delivery, and calm communication.
-					White-label friendly.
-				</p>
-			</ContentSection>
+					White-label friendly."
+			/>
+
 			<FAQSection
 				context="services"
 				title="Questions about services, pricing, and timelines"
-				description="If you’re not sure what package fits, send a quick note and I’ll recommend the simplest option that meets your goals."
-				sectionBg="bg-white/70"
+				description="If you're not sure what package fits, send a quick note and I'll recommend the simplest option that meets your goals."
 			/>
 
-			<CTASection bgColor="clear" />
+			<CTASection />
 		</Main>
 	);
 }

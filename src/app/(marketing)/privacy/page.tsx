@@ -2,7 +2,7 @@ import Container from "@/components/layout/Container";
 import Main from "@/components/layout/Main";
 
 import { siteConfig } from "@/content/siteConfig";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Privacy Policy",

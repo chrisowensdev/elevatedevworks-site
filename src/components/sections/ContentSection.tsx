@@ -1,5 +1,4 @@
 import { Container } from "@/components/layout";
-import ContentEyebrow from "@/components/ui/ContentEyebrow";
 import { FadeIn } from "../media";
 import SectionHeader from "./SectionHeader";
 

@@ -5,7 +5,7 @@ export const about = {
 	location: "Richmond, VA",
 	email: "chris@elevatedevworks.com",
 	headshot: "/about.png", // put a square image in /public
-	blurb: "Elevate Devworks is a leading web and software development company that specializes in creating custom websites, webapps, and mobile applications. We are dedicated to delivering innovative solutions that meet our clients' unique needs and exceed their expectations.",
+	blurb: "Elevate Devworks is a leading web and software development company that specializes in creating custom websites, web apps, and mobile applications. We are dedicated to delivering innovative solutions that meet our clients' unique needs and exceed their expectations.",
 	highlights: [
 		"5+ years building web & mobile (Next.js, WordPress, React Native)",
 		"Performance & Core Web Vitals minded",

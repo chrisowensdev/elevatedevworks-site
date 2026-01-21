@@ -1,18 +1,18 @@
-import Link from "next/link";
+import { FadeIn } from "@/components/media";
 import PackageCard from "./PackageCard";
-import { Container } from "@/components/layout";
-import SectionHeader from "@/components/sections/SectionHeader";
+import Section from "@/components/layout/Section";
+import { SectionActions } from "@/components/sections/SectionActions";
 
 const packages = [
 	{
 		title: "Starter Website",
-		price: "$1,200–$1,800",
+		price: "$1,200-$1,800",
 		description:
 			"A clean, modern website that builds instant trust and helps customers contact you quickly.",
 		perfectFor:
 			"new businesses, simple service providers, or a polished presence without complexity",
 		features: [
-			"1–5 professionally designed pages",
+			"1-5 professionally designed pages",
 			"Mobile-responsive layouts",
 			"On-page SEO setup",
 			"Contact form + Google Maps integration",
@@ -21,7 +21,7 @@ const packages = [
 	},
 	{
 		title: "Professional Presence",
-		price: "$2,500–$3,500",
+		price: "$2,500-$3,500",
 		description:
 			"A cohesive, professionally branded website that elevates your business and builds authority.",
 		perfectFor:
@@ -36,7 +36,7 @@ const packages = [
 	},
 	{
 		title: "Growth Site / Lead Engine",
-		price: "$4,500–$6,500",
+		price: "$4,500-$6,500",
 		description:
 			"An SEO-optimized site built to attract traffic, convert visitors, and support long-term growth.",
 		perfectFor: "businesses ready to invest in leads and measurable growth",
@@ -51,34 +51,24 @@ const packages = [
 
 export default function WebsitePackagesSection() {
 	return (
-		<section className="border-y ">
-			<Container className="py-16 md:py-24">
-				<SectionHeader
-					eyebrow="Website Packages"
-					title="Choose the build that fits your stage"
-				/>
-				<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-					Clear options depending on where you are today — starter,
-					professional, or growth-focused.
-				</p>
-
-				<div className="mt-10 grid gap-6 md:grid-cols-3">
-					{packages.map((p) => (
+		<Section
+			eyebrow="Website Packages"
+			title="Choose the build that fits your stage"
+			description="Clear options depending on where you are today — starter, professional, or growth-focused."
+			id="website-packages"
+		>
+			<div className="mt-10 grid gap-6 md:grid-cols-3">
+				{packages.map((p, i) => (
+					<FadeIn key={p.title} delay={i * 0.05}>
 						<PackageCard key={p.title} {...p} />
-					))}
-				</div>
-				<div className="mt-10 mx-auto text-center">
-					<Link
-						href="/contact"
-						className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-6 py-3 text-white font-medium hover:opacity-90"
-					>
-						Discuss your project
-					</Link>
-				</div>
-				<p className="mt-3 text-sm text-gray-600 mx-auto text-center">
-					A quick message is all it takes — I’ll follow up personally.
-				</p>
-			</Container>
-		</section>
+					</FadeIn>
+				))}
+			</div>
+			<SectionActions
+				links={[
+					{ text: "Learn about Web Design", href: "/web-design" },
+				]}
+			/>
+		</Section>
 	);
 }
