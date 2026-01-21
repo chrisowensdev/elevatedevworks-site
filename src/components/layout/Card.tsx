@@ -8,6 +8,7 @@ export type CardProps = {
 	title: string;
 	description?: React.ReactNode;
 	eyebrow?: string;
+	emoji?: string;
 	icon?: React.ElementType;
 	href?: string;
 
@@ -24,6 +25,7 @@ export default function Card({
 	title,
 	description,
 	eyebrow,
+	emoji,
 	icon,
 	href,
 	className,
@@ -58,7 +60,7 @@ export default function Card({
 		<Wrapper
 			{...wrapperProps}
 			className={[
-				"group block rounded-2xl focus:outline-none focus:ring-2",
+				"group block h-full rounded-2xl focus:outline-none focus:ring-2",
 				href ? "cursor-pointer" : "",
 			]
 				.filter(Boolean)
@@ -67,7 +69,7 @@ export default function Card({
 		>
 			<article
 				className={[
-					"relative rounded-2xl border bg-white/90 transition",
+					"relative h-full rounded-2xl border bg-white/90 transition",
 					pad,
 					className,
 				]
@@ -83,27 +85,46 @@ export default function Card({
 						.filter(Boolean)
 						.join(" ")}
 				>
-					{Icon ? (
-						<div className="mt-0.5 rounded-xl border p-2">
-							<Icon
-								className="h-5 w-5 text-emerald-600"
-								aria-hidden
-							/>
-						</div>
-					) : null}
-
 					<div className="min-w-0">
-						{eyebrow ? (
-							<div className="text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-3">
-								{eyebrow}
-							</div>
-						) : null}
+						<div className="flex justify-between items-center mb-3">
+							{eyebrow ? (
+								<div className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
+									{eyebrow}
+								</div>
+							) : null}
+							{Icon ? (
+								<div className="rounded-xl">
+									<Icon
+										className="h-5 w-5 text-emerald-600"
+										aria-hidden
+									/>
+								</div>
+							) : null}
+						</div>
 
-						<h3
-							className={[titleClass, "tracking-tight"].join(" ")}
-						>
-							{title}
-						</h3>
+						{emoji ? (
+							<div className="flex items-center gap-2">
+								<span className="text-xl" aria-hidden>
+									{emoji}
+								</span>
+								<h3
+									className={[
+										titleClass,
+										"tracking-tight",
+									].join(" ")}
+								>
+									{title}
+								</h3>
+							</div>
+						) : (
+							<h3
+								className={[titleClass, "tracking-tight"].join(
+									" "
+								)}
+							>
+								{title}
+							</h3>
+						)}
 
 						{description ? (
 							<div

@@ -27,7 +27,7 @@ export default function Section({
 	title,
 	description,
 	children,
-	padding = "lg",
+	padding = "md",
 	align = "left",
 	muted = false,
 }: Props) {
@@ -35,8 +35,8 @@ export default function Section({
 		padding === "sm"
 			? "py-10 md:py-14"
 			: padding === "md"
-			? "py-14 md:py-20"
-			: "py-16 md:py-24";
+				? "py-14 md:py-20"
+				: "py-16 md:py-24";
 
 	const alignText = align === "center" ? "text-center" : "text-left";
 	const headerWidth = align === "center" ? "mx-auto" : "";

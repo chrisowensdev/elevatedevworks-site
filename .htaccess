@@ -3,23 +3,47 @@
 ErrorDocument 404 /404.html
 
 RewriteEngine On
-RewriteCond %{HTTP_HOST} !^elevatedevworks\.com$ [NC,OR]
+
+# ------------------------------------------------------------
+
+# 1) Canonical host + HTTPS (single hop)
+
+# - Forces https://elevateddevworks.com/ for all variants:
+
+# http, www, other hosts, proxy http -> https, etc.
+
+# ------------------------------------------------------------
+
+RewriteCond %{HTTP_HOST} !^elevateddevworks\.com$ [NC,OR]
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^ https://elevatedevworks.com%{REQUEST_URI} [L,R=301]
+RewriteRule ^ https://elevateddevworks.com%{REQUEST_URI} [R=301,L]
 
-RewriteRule ^(.\*/)?index\.(html?|php)$ https://elevatedevworks.com/$1 [L,R=301,NC]
+# ------------------------------------------------------------
+
+# 2) Remove /index.html (and /index.php) from URLs
+
+# - Uses THE_REQUEST to avoid loops and only redirect real requests
+
+# ------------------------------------------------------------
+
+RewriteCond %{THE_REQUEST} \s/+(._/)?index\.(html?|php)(\s|\?) [NC]
+RewriteRule ^(._/)?index\.(html?|php)$ https://elevateddevworks.com/$1 [R=301,L,NC]
 
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set X-Frame-Options "SAMEORIGIN"
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains;"
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains;"
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), usb=()"
-  AddDefaultCharset utf-8
-  AddCharset utf-8 .html .css .js .svg .json
-  # Don't blanket-block "bot" user agents; allow major crawlers
+
+# HSTS (set once)
+
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+AddDefaultCharset utf-8
+AddCharset utf-8 .html .css .js .svg .json
+
+# Don't blanket-block "bot" user agents; allow major crawlers
+
 BrowserMatchNoCase "googlebot|bingbot|duckduckbot|adsbot-google" good_bot
-# Example: if you rate-limit, exempt good_bot group.
 </IfModule>

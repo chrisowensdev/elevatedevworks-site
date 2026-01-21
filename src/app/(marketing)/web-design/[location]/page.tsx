@@ -1,12 +1,14 @@
+// src/app/(marketing)/web-design/[location]/page.tsx
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { webDesignLocations } from "@/content/locations.web-design";
 
 import PageHero from "@/components/sections/PageHero";
-import SectionCTA from "@/components/layout/SectionCTA";
-import SectionHeader from "@/components/sections/SectionHeader";
-import { Container } from "@/components/layout";
-import Cards from "@/components/ui/Cards";
+import Section from "@/components/layout/Section";
+import Cards from "@/components/layout/Cards";
+import type { CardProps } from "@/components/layout/Card";
+import CTASection from "@/components/sections/CTASection";
+import { SectionActions } from "@/components/sections/SectionActions";
 
 type Props = { params: Promise<{ location: string }> };
 
@@ -26,7 +28,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const title = `Web Design in ${loc.city}, ${loc.state} | Elevate DevWorks`;
 	const description = `Fast, SEO-ready websites for ${loc.city} small businesses. Calm process, clean design, and performance-first builds.`;
 
-	// If you want to control indexing per location
 	const robots =
 		loc.index === false
 			? { index: false, follow: false }
@@ -36,14 +37,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		title,
 		description,
 		robots,
-		alternates: {
-			canonical: `/web-design/${loc.slug}`,
-		},
+		alternates: { canonical: `/web-design/${loc.slug}` },
 		openGraph: {
 			title,
 			description,
 			url: `/web-design/${loc.slug}`,
 			type: "website",
+		},
+		twitter: {
+			card: "summary_large_image",
+			title,
+			description,
 		},
 	};
 }
@@ -53,144 +57,173 @@ export default async function WebDesignLocationPage({ params }: Props) {
 	const loc = getLocation(location);
 	if (!loc) notFound();
 
+	const ctaHref = "/contact";
+	const hubHref = "/web-design";
+	const packagesHref = "/services#website-packages";
+
+	const whatYouGetCards: CardProps[] = [
+		{
+			title: "Fast, SEO-ready foundation",
+			description:
+				"Clean structure, strong technical basics, and performance-minded builds from day one.",
+			variant: "compact",
+		},
+		{
+			title: "Clear messaging + page flow",
+			description:
+				"Simple hierarchy and page paths so visitors understand what you do and what to do next.",
+			variant: "compact",
+		},
+		{
+			title: "Calm, organized process",
+			description:
+				"Clear steps, steady progress, and a professional experience without the agency pressure.",
+			variant: "compact",
+		},
+	];
+
+	// const fitCards: CardProps[] = [
+	// 	{
+	// 		title: "Great fit for",
+	// 		description: (
+	// 			<ul className="mt-1 space-y-2 text-sm text-gray-700">
+	// 				{[
+	// 					"Service businesses that need more calls, leads, or bookings",
+	// 					"Small teams that want clarity and maintainability",
+	// 					"Owners who want a website that feels trustworthy and fast",
+	// 				].map((x) => (
+	// 					<li key={x} className="flex gap-2">
+	// 						<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600" />
+	// 						<span className="leading-6">{x}</span>
+	// 					</li>
+	// 				))}
+	// 			</ul>
+	// 		),
+	// 		variant: "compact",
+	// 	},
+	// 	{
+	// 		title: "If you only need a quick fix",
+	// 		description: (
+	// 			<p className="text-sm text-gray-700 leading-6">
+	// 				A Quick Win may be the simplest option. If you’re not sure,
+	// 				we’ll recommend the most straightforward next step.
+	// 			</p>
+	// 		),
+	// 		variant: "compact",
+	// 	},
+	// ];
+
 	return (
 		<>
 			<PageHero
 				eyebrow="Web Design"
 				title={`Web design for ${loc.city} small businesses`}
-				description={loc.introBlurb}
-				primaryCta={{ label: "Discuss your project", href: "/contact" }}
-				secondaryCta={{ label: "See how we work", href: "/process" }}
+				description={
+					loc.introBlurb ??
+					`Calm, professional websites built for speed, clarity, and conversion.`
+				}
+				primaryCta={{ label: "Discuss your project", href: ctaHref }}
+				secondaryCta={{ label: "Back to Web Design", href: hubHref }}
 			/>
 
-			<Container className="z-10">
-				<SectionHeader
-					eyebrow="What We Do"
-					title="What you get with Elevate DevWorks"
-				/>
-				<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-					A clean, modern website built for speed, clarity, and
-					conversions—without the salesy agency experience.
-				</p>
+			<Section
+				eyebrow="What you get"
+				title="A modern site built for clarity, speed, and trust"
+				description="A clean, professional website that loads fast, communicates clearly, and makes it easy for customers to reach you."
+			>
 				<Cards
-					items={[
-						{
-							title: "Fast, SEO-ready foundation",
-							description:
-								"Technical setup, structure, and performance baked in from day one.",
-						},
-						{
-							title: "Clear messaging + page flow",
-							description:
-								"We shape the story so visitors quickly understand what you do and what to do next.",
-						},
-						{
-							title: "Calm, organized process",
-							description:
-								"Simple steps, predictable timelines, and zero pressure.",
-						},
+					items={whatYouGetCards}
+					columns={3}
+					cardVariant="compact"
+				/>
+				<SectionActions
+					links={[
+						{ text: "View website packages", href: packagesHref },
 					]}
 				/>
-			</Container>
+			</Section>
 
-			<Container>
-				<SectionHeader
-					eyebrow="What We Do"
-					title={`Serving ${loc.city} and nearby areas`}
-				/>
-				<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-					{loc.nearby?.length
+			<Section
+				eyebrow="Local"
+				title={`Serving ${loc.city} and nearby areas`}
+				description={
+					loc.nearby?.length
 						? `Commonly supporting businesses in ${loc.nearby.join(
-								", "
-						  )} and the surrounding area.`
-						: undefined}
-				</p>
-				<ul className="grid gap-2 md:grid-cols-2">
+								", ",
+							)} and the surrounding area.`
+						: "Supporting local businesses with calm, performance-first web design."
+				}
+			>
+				<ul className="grid gap-3 md:grid-cols-2">
 					{loc.whyThisLocation.map((point) => (
 						<li
 							key={point}
-							className="text-sm text-muted-foreground"
+							className="flex gap-2 text-sm text-gray-700"
 						>
-							• {point}
+							<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600/70" />
+							<span className="leading-6">{point}</span>
 						</li>
 					))}
 				</ul>
-			</Container>
+
+				<SectionActions
+					links={[
+						{ text: "View the main Web Design hub", href: hubHref },
+					]}
+				/>
+			</Section>
 
 			{loc.industries?.length ? (
-				<Container>
-					<SectionHeader
-						eyebrow="What We Do"
-						title="A good fit for"
-					/>
-					<p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-						{`Common projects around ${loc.city}:`}
-					</p>
+				<Section
+					eyebrow="Good fit"
+					title={`Common projects around ${loc.city}`}
+					description="A few types of businesses we often support with web design and rebuilds."
+				>
 					<div className="flex flex-wrap gap-2">
 						{loc.industries.map((x) => (
 							<span
 								key={x}
-								className="rounded-full border px-3 py-1 text-sm"
+								className="rounded-full border bg-white/60 px-3 py-1 text-sm text-gray-800"
 							>
 								{x}
 							</span>
 						))}
 					</div>
-				</Container>
+				</Section>
 			) : null}
 
-			<Container>
-				<SectionHeader eyebrow="What We Do" title="FAQ" />
-
+			<Section
+				eyebrow="FAQ"
+				title={`Web design in ${loc.city}: common questions`}
+				description="A few quick answers. If you want the simplest next step, reach out."
+			>
 				<div className="space-y-6">
 					{loc.faqs.map((f) => (
-						<div key={f.q}>
-							<h3 className="font-medium">{f.q}</h3>
-							<p className="mt-2 text-sm text-muted-foreground">
+						<div
+							key={f.q}
+							className="rounded-2xl border bg-white/60 p-5"
+						>
+							<h3 className="text-base font-semibold tracking-tight text-gray-900">
+								{f.q}
+							</h3>
+							<p className="mt-2 text-sm text-gray-700 leading-6">
 								{f.a}
 							</p>
 						</div>
 					))}
 				</div>
-			</Container>
 
-			<SectionCTA ctaText="Discuss your project" ctaUrl="/contact" />
+				<SectionActions
+					links={[
+						{ text: "View website packages", href: packagesHref },
+					]}
+				/>
+			</Section>
 
-			{/* Optional: JSON-LD (see next section) */}
-			<WebDesignLocationJsonLd
-				city={loc.city}
-				state={loc.state}
-				slug={loc.slug}
+			<CTASection
+				title={`Ready to improve your website in ${loc.city}?`}
+				description="If you want clarity, speed, and a calm build process, let’s talk through what you need."
 			/>
 		</>
-	);
-}
-
-function WebDesignLocationJsonLd({
-	city,
-	state,
-	slug,
-}: {
-	city: string;
-	state: string;
-	slug: string;
-}) {
-	const jsonLd = {
-		"@context": "https://schema.org",
-		"@type": "ProfessionalService",
-		name: "Elevate DevWorks",
-		areaServed: {
-			"@type": "City",
-			name: `${city}, ${state}`,
-		},
-		url: `https://elevateddevworks.com/web-design/${slug}`,
-		serviceType: "Web Design",
-	};
-
-	return (
-		<script
-			type="application/ld+json"
-			dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-		/>
 	);
 }

@@ -1,7 +1,10 @@
 // components/FixedBackground.tsx
 export default function FixedBackground() {
 	return (
-		<svg className="fixed inset-0 z-0 h-screen w-screen" aria-hidden="true">
+		<svg
+			className="fixed inset-0 -z-1 h-screen w-screen"
+			aria-hidden="true"
+		>
 			<defs>
 				<radialGradient id="g1" cx="20%" cy="15%">
 					<stop offset="0" stopColor="#2175a2" stopOpacity="0.18" />
