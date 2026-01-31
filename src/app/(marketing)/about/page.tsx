@@ -12,11 +12,12 @@ export const metadata: Metadata = {
 	title: "About",
 	description:
 		"Learn about Elevate DevWorks - a friendly, modern web design and development studio helping small businesses and creative professionals build fast, SEO-ready websites.",
+	alternates: { canonical: "/about/" },
 	openGraph: {
 		title: "About Elevate DevWorks | Web Development for Small Businesses & Designers",
 		description:
 			"Discover our story, mission, and values. See how we help small businesses and web designers bring their ideas to life online.",
-		url: "https://elevatedevworks.com/about",
+		url: "https://elevatedevworks.com/about/",
 		images: ["/elevate_devworks_seo_image.png"],
 		type: "website",
 	},
@@ -37,8 +38,8 @@ export default function AboutPage() {
 				eyebrow="About Elevate DevWorks"
 				title="Building better digital experiences, together."
 				description="Elevate DevWorks helps small businesses and creative professionals turn ideas into fast, modern, beautifully built websites."
-				primaryCta={{ href: "/contact", label: "Get a free quote" }}
-				secondaryCta={{ href: "/work", label: "View projects" }}
+				primaryCta={{ href: "/contact/", label: "Get a free quote" }}
+				secondaryCta={{ href: "/work/", label: "View projects" }}
 				tone="white"
 				align="left"
 				headingLevel="h1"

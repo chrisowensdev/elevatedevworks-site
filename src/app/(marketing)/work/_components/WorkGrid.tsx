@@ -39,7 +39,7 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
 								</Link>
 								{project.hasCaseStudy ? (
 									<Link
-										href={`/work/${project.slug}`}
+										href={`/work/${project.slug}/`}
 										aria-label="Get a free website assessment"
 										className="text-sm font-medium text-emerald-600 hover:opacity-90 "
 									>

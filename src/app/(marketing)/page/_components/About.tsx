@@ -47,7 +47,7 @@ export default function About() {
 						links={[
 							{
 								text: "Learn more about Elevate DevWorks",
-								href: "/about",
+								href: "/about/",
 							},
 						]}
 					/>

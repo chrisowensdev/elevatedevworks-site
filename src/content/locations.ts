@@ -72,9 +72,9 @@ export const locationPages: LocationServicePage[] = [
 			trustLine: "Richmond, VA-based • Remote-friendly • No pushy sales",
 			primaryCtaText: "Discuss your project",
 			primaryCtaHref:
-				"/contact?intent=web-design&location=richmond-va&subject=Web%20Design%20in%20Richmond%20VA",
+				"/contact/?intent=web-design&location=richmond-va&subject=Web%20Design%20in%20Richmond%20VA",
 			secondaryCtaText: "View recent work",
-			secondaryCtaHref: "/work",
+			secondaryCtaHref: "/work/",
 			note: "Prefer a low-pressure start? Request a Website Assessment for clear next steps.",
 		},
 		sections: [
@@ -87,7 +87,7 @@ export const locationPages: LocationServicePage[] = [
 				items: [
 					{
 						title: "Clear messaging & structure",
-						body: "We make it obvious what you do, who it’s for, and what to do next.",
+						body: "We make it obvious what you do, who it's for, and what to do next.",
 					},
 					{
 						title: "Mobile-first experience",
@@ -150,7 +150,7 @@ export const locationPages: LocationServicePage[] = [
 				items: [
 					{
 						q: "Do you only work with Richmond businesses?",
-						a: "Richmond is home base, but we’re remote-friendly and work with businesses across the US.",
+						a: "Richmond is home base, but we're remote-friendly and work with businesses across the US.",
 					},
 					{
 						q: "Do you handle hosting and maintenance?",
@@ -158,26 +158,26 @@ export const locationPages: LocationServicePage[] = [
 					},
 					{
 						q: "How long does a small business site take?",
-						a: "Most small sites launch in 3–6 weeks depending on scope and how ready the content is.",
+						a: "Most small sites launch in 3 - 6 weeks depending on scope and how ready the content is.",
 					},
 				],
 			},
 			{
 				type: "cta",
 				title: "Ready for a stronger website in Richmond?",
-				body: "If your site feels outdated, slow, or unclear, let’s map the simplest next step.",
+				body: "If your site feels outdated, slow, or unclear, let's map the simplest next step.",
 				primaryText: "Discuss your project",
 				primaryHref:
-					"/contact?intent=web-design&location=richmond-va&subject=Web%20Design%20in%20Richmond%20VA",
+					"/contact/?intent=web-design&location=richmond-va&subject=Web%20Design%20in%20Richmond%20VA",
 				secondaryText: "Request a website assessment",
-				secondaryHref: "/website-assessment",
+				secondaryHref: "/website-assessment/",
 			},
 		],
 		seo: {
 			title: "Web Design Richmond VA | Elevate DevWorks",
 			description:
 				"Web design for small businesses in Richmond, VA. Fast, SEO-ready websites built for clarity, performance, and lead generation.",
-			canonicalPath: "/web-design/richmond-va",
+			canonicalPath: "/web-design/richmond-va/",
 		},
 	},
 ];

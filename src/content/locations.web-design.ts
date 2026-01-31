@@ -27,7 +27,7 @@ export const webDesignLocations: WebDesignLocation[] = [
 			"Small professional firms",
 		],
 		introBlurb:
-			"Elevate DevWorks builds fast, SEO-ready websites for Richmond small businesses—clear messaging, clean design, and a calm process that doesn’t feel salesy.",
+			"Elevate DevWorks builds fast, SEO-ready websites for Richmond small businesses—clear messaging, clean design, and a calm process that doesn't feel salesy.",
 		whyThisLocation: [
 			"Designed for service businesses that rely on phone calls and quote requests.",
 			"Mobile-first layouts that make it easy to tap-to-call, request an estimate, or book a consult.",
@@ -40,11 +40,11 @@ export const webDesignLocations: WebDesignLocation[] = [
 			},
 			{
 				q: "How long does a typical small business website take?",
-				a: "Most sites land in a few weeks depending on content readiness. We’ll give you a clear timeline after a quick walkthrough.",
+				a: "Most sites land in a few weeks depending on content readiness. We'll give you a clear timeline after a quick walkthrough.",
 			},
 			{
 				q: "Can you improve an existing site instead of rebuilding?",
-				a: "Yes—if the foundation is workable. Otherwise we’ll recommend a rebuild for speed, structure, and SEO.",
+				a: "Yes—if the foundation is workable. Otherwise we'll recommend a rebuild for speed, structure, and SEO.",
 			},
 		],
 		priority: "high",

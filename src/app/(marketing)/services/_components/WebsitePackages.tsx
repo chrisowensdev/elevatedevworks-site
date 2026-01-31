@@ -66,7 +66,7 @@ export default function WebsitePackagesSection() {
 			</div>
 			<SectionActions
 				links={[
-					{ text: "Learn about Web Design", href: "/web-design" },
+					{ text: "Learn about Web Design", href: "/web-design/" },
 				]}
 			/>
 		</Section>

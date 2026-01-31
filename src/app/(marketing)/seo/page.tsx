@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 	title: "SEO for Small Businesses | Elevate DevWorks",
 	description:
 		"Practical SEO foundations and steady improvements that help your site get found and understood. Typically included as part of ongoing care packages.",
-	alternates: { canonical: "/seo" },
+	alternates: { canonical: "/seo/" },
 	openGraph: {
 		title: "SEO for Small Businesses | Elevate DevWorks",
 		description:
 			"Practical SEO foundations and steady improvements that help your site get found and understood. Typically included as part of ongoing care packages.",
-		url: "/seo",
+		url: "/seo/",
 		type: "website",
 	},
 	twitter: {
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
 };
 
 export default function SEOPage() {
-	const ctaHref = "/contact";
-	const careHref = "/care";
-	const carePackagesHref = "/services#ongoing-care";
-	const quickWinsHref = "/services#quick-wins";
+	const ctaHref = "/contact/";
+	const careHref = "/care/";
+	const carePackagesHref = "/services/#ongoing-care";
+	const quickWinsHref = "/services/#quick-wins";
 
 	const cards: CardProps[] = [
 		{

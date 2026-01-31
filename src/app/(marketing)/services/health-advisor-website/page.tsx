@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 	title: "Health Advisor Website | Elevate DevWorks",
 	description:
 		"Productized website launch for Health Advisors, Medicare agents, and ACA brokers. Trustworthy, senior-friendly design with clear conversion paths—starting at $750.",
-	alternates: { canonical: "/services/health-advisor-websites" },
+	alternates: { canonical: "/services/health-advisor-websites/" },
 	openGraph: {
 		title: "Health Advisor Website | Elevate DevWorks",
 		description:
 			"Productized website launch for Health Advisors, Medicare agents, and ACA brokers—starting at $750.",
-		url: "/services/health-advisor-websites",
+		url: "/services/health-advisor-websites/",
 		type: "website",
 	},
 	twitter: {

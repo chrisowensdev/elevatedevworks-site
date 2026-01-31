@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 	title: "Ongoing Website Care | Elevate DevWorks",
 	description:
 		"Maintenance, performance, and practical SEO—bundled into calm, consistent monthly care so your website stays fast, secure, and improving.",
-	alternates: { canonical: "/care" },
+	alternates: { canonical: "/care/" },
 	openGraph: {
 		title: "Ongoing Website Care | Elevate DevWorks",
 		description:
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
 };
 
 export default function CarePage() {
-	const ctaHref = "/contact";
-	const packagesHref = "/services#ongoing-care";
-	const quickWinsHref = "/services#quick-wins";
+	const ctaHref = "/contact/";
+	const packagesHref = "/services/#ongoing-care";
+	const quickWinsHref = "/services/#quick-wins";
 
 	const overviewCards: CardProps[] = [
 		{
