@@ -25,10 +25,10 @@ export default function Header() {
 
 	const servicesLinks: NavItem[] = useMemo(
 		() => [
-			{ label: "Web Design", href: "/web-design" },
-			{ label: "Ongoing Care", href: "/care" },
-			{ label: "Maintenance", href: "/maintenance" },
-			{ label: "SEO", href: "/seo" },
+			{ label: "Web Design", href: "/web-design/" },
+			{ label: "Ongoing Care", href: "/care/" },
+			{ label: "Maintenance", href: "/maintenance/" },
+			{ label: "SEO", href: "/seo/" },
 		],
 		[],
 	);
@@ -114,7 +114,7 @@ export default function Header() {
 					{/* Desktop nav */}
 					<nav className="hidden md:flex items-center gap-7 text-sm text-gray-900">
 						<Link
-							href="/about"
+							href="/about/"
 							className="rounded-md px-1 py-1 transition hover:text-emerald-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/40"
 						>
 							About
@@ -189,7 +189,7 @@ export default function Header() {
 									<div className="h-px bg-gray-100 my-1" />
 
 									<Link
-										href="/services"
+										href="/services/"
 										role="menuitem"
 										onClick={() => setServicesOpen(false)}
 										className="flex items-center justify-between rounded-xl px-3 py-2 text-sm font-medium text-emerald-700 hover:bg-emerald-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/40"
@@ -202,14 +202,14 @@ export default function Header() {
 						</div>
 
 						<Link
-							href="/work"
+							href="/work/"
 							className="rounded-md px-1 py-1 transition hover:text-emerald-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/40"
 						>
 							Work
 						</Link>
 
 						<Link
-							href="/contact"
+							href="/contact/"
 							className="rounded-md px-1 py-1 transition hover:text-emerald-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/40"
 						>
 							Contact
@@ -218,7 +218,7 @@ export default function Header() {
 
 					<div className="flex items-center gap-2">
 						<Link
-							href="/contact"
+							href="/contact/"
 							className="hidden md:inline-flex items-center rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_20px_rgba(16,185,129,0.25)] transition hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/50"
 						>
 							Discuss your Project
@@ -305,7 +305,7 @@ export default function Header() {
 
 						<div className="mt-3 space-y-1">
 							<Link
-								href="/about"
+								href="/about/"
 								onClick={() => setMobileOpen(false)}
 								className="block rounded-2xl px-3 py-3 text-lg font-semibold text-gray-900 hover:bg-neutral-50"
 							>
@@ -368,7 +368,7 @@ export default function Header() {
 										))}
 										<div className="h-px bg-gray-200 my-1" />
 										<Link
-											href="/services"
+											href="/services/"
 											onClick={() => setMobileOpen(false)}
 											className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium text-emerald-700 hover:bg-white"
 										>
@@ -380,7 +380,7 @@ export default function Header() {
 							</div>
 
 							<Link
-								href="/work"
+								href="/work/"
 								onClick={() => setMobileOpen(false)}
 								className="block rounded-2xl px-3 py-3 text-lg font-semibold text-gray-900 hover:bg-neutral-50"
 							>
@@ -388,7 +388,7 @@ export default function Header() {
 							</Link>
 
 							<Link
-								href="/contact"
+								href="/contact/"
 								onClick={() => setMobileOpen(false)}
 								className="block rounded-2xl px-3 py-3 text-lg font-semibold text-gray-900 hover:bg-neutral-50"
 							>
@@ -398,7 +398,7 @@ export default function Header() {
 
 						<div className="mt-4">
 							<Link
-								href="/contact"
+								href="/contact/"
 								onClick={() => setMobileOpen(false)}
 								className="block w-full rounded-2xl bg-emerald-600 px-4 py-4 text-center text-lg font-semibold text-white shadow-[0_16px_30px_rgba(16,185,129,0.28)] transition hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/50"
 							>

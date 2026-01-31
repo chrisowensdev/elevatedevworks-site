@@ -7,7 +7,6 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"export": "next export",
 		"sitemap": "next-sitemap",
 		"static": "npm run sitemap && npm run build"
 	},

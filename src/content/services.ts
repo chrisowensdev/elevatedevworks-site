@@ -43,7 +43,7 @@ export const services: Service[] = [
 	{
 		title: "SEO & Growth",
 		icon: "seo",
-		body: "Search visibility and measurement done right—keyword mapping, on-page SEO, Core Web Vitals tuning, and analytics/goals so you know what’s working.",
+		body: "Search visibility and measurement done right—keyword mapping, on-page SEO, Core Web Vitals tuning, and analytics/goals so you know what's working.",
 		points: [
 			"Keyword research & page mapping",
 			"On-page SEO (titles, meta, schema)",
@@ -63,7 +63,7 @@ export const packages: Packages[] = [
 		price: "From $1,200",
 		itemsHeader: "Includes:",
 		items: [
-			"1–5 professionally designed pages",
+			"1-5 professionally designed pages",
 			"Mobile-responsive layouts",
 			"On-page SEO setup (titles/meta, indexing basics)",
 			"Contact form + Google Maps integration",
@@ -74,7 +74,7 @@ export const packages: Packages[] = [
 		name: "Professional Presence",
 		blurb: "A cohesive, professionally branded website that elevates your business and builds authority.",
 		description:
-			"Great for businesses that want a site they’re proud to share — and messaging that’s clearer and more persuasive.",
+			"Great for businesses that want a site they're proud to share — and messaging that's clearer and more persuasive.",
 		price: "From $2,500",
 		itemsHeader: "Includes everything in Starter, plus:",
 		items: [
@@ -88,7 +88,7 @@ export const packages: Packages[] = [
 		name: "Growth Site / Lead Engine",
 		blurb: "Turn your website into a lead engine that supports growth long-term.",
 		description:
-			"Built for businesses ready to publish content, rank higher, and measure what’s working.",
+			"Built for businesses ready to publish content, rank higher, and measure what's working.",
 		price: "From $4,500",
 		itemsHeader: "Includes everything in Professional, plus:",
 		items: [

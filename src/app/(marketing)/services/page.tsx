@@ -14,11 +14,12 @@ export const metadata: Metadata = {
 	title: "Website Design, SEO & Hosting Services for Small Businesses",
 	description:
 		"Website design, development, SEO, and ongoing care for small businesses. Elevate DevWorks builds fast, reliable, SEO-ready websites that support real growth.",
+	alternates: { canonical: "/services/" },
 	openGraph: {
 		title: "Website Design, SEO & Hosting Services | Elevate DevWorks",
 		description:
 			"Explore website design, development, SEO, hosting, and ongoing care services built for small businesses that need performance, clarity, and reliability.",
-		url: "https://elevatedevworks.com/services",
+		url: "https://elevatedevworks.com/services/",
 		images: ["/elevate_devworks_seo_image.png"],
 		type: "website",
 	},
@@ -38,7 +39,7 @@ export default function ServicesPage() {
 				eyebrow="What we do"
 				title="Services built to ship fast and scale"
 				description="From small-business websites to designer handoffs and ongoing care—clean code, performance, measurable results."
-				primaryCta={{ href: "/contact", label: "Start a project" }}
+				primaryCta={{ href: "/contact/", label: "Start a project" }}
 				tone="muted"
 				align="left"
 				headingLevel="h1"

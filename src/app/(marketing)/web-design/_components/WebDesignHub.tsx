@@ -30,7 +30,7 @@ type Props = {
 export default function WebDesignHub({
 	locations = [],
 	basePath = "/web-design",
-	ctaHref = "/contact",
+	ctaHref = "/contact/",
 	ctaLabel = "Discuss your project",
 	showLocations = true,
 }: Props) {
@@ -140,25 +140,25 @@ export default function WebDesignHub({
 				primaryCta={{ label: ctaLabel, href: ctaHref }}
 				secondaryCta={{
 					label: "View website packages",
-					href: "/services#website-packages",
+					href: "/services/#website-packages",
 				}}
 			/>
 			<ServiceGoodFitSection />
 
 			<ServiceApproachSection
 				title="What “custom web design” means at Elevate DevWorks"
-				description="A modern website isn’t just a pretty homepage. It’s structure, clarity, performance, and trust—working together."
+				description="A modern website isn't just a pretty homepage. It's structure, clarity, performance, and trust—working together."
 				items={approachCards}
 			/>
 
 			<ServiceDeliverablesSection
-				title="What you’ll leave with"
+				title="What you'll leave with"
 				description="A finished site that looks professional, loads quickly, and is ready to bring in leads."
 				items={deliverableCards}
 				actions={[
 					{
 						text: "View website packages",
-						href: "/services#website-packages",
+						href: "/services/#website-packages",
 					},
 				]}
 			/>
@@ -167,7 +167,7 @@ export default function WebDesignHub({
 				actions={[
 					{
 						text: "See add-ons and quick wins",
-						href: "/services#add-ons",
+						href: "/service/s#add-ons",
 					},
 				]}
 			/>
@@ -181,7 +181,7 @@ export default function WebDesignHub({
 			/> */}
 
 			<ServiceAfterLaunchSection
-				actions={[{ text: "Learn about ongoing care", href: "/care" }]}
+				actions={[{ text: "Learn about ongoing care", href: "/care/" }]}
 			/>
 
 			{showLocations ? (
@@ -194,7 +194,7 @@ export default function WebDesignHub({
 
 			<CTASection
 				title="Ready for a website that feels professional and runs fast?"
-				description="If you want clarity, speed, and a calm build process, let’s talk through what you need."
+				description="If you want clarity, speed, and a calm build process, let's talk through what you need."
 			/>
 		</>
 	);

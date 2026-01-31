@@ -186,7 +186,7 @@ export default function ContactForm() {
 				<p className="mt-4 text-xs text-gray-500">
 					By sending this form you agree to our{" "}
 					<Link
-						href="/privacy"
+						href="/privacy/"
 						className="underline underline-offset-2"
 					>
 						Privacy Policy

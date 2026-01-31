@@ -8,7 +8,7 @@ export default function CaseStudyPage({ data }: { data: CaseStudy }) {
 			<CaseStudyHeader
 				breadcrumbs={[
 					{ href: "/", label: "Home" },
-					{ href: "/work", label: "Work" },
+					{ href: "/work/", label: "Work" },
 				]}
 				eyebrow="Case Study"
 				title={data.name}
@@ -118,7 +118,7 @@ export default function CaseStudyPage({ data }: { data: CaseStudy }) {
 							{data.closingText}
 						</p>
 						<a
-							href="/contact"
+							href="/contact/"
 							className="inline-block rounded-xl bg-slate-900 px-6 py-3 text-white font-semibold shadow-sm hover:bg-slate-700"
 						>
 							Contact

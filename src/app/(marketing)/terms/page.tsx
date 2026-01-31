@@ -1,16 +1,13 @@
 import Container from "@/components/layout/Container";
 import Main from "@/components/layout/Main";
+import { siteConfig } from "@/content/siteConfig";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Terms of Service",
 	description: "The terms that govern your use of Elevate DevWorks services.",
-	robots: {
-		index: true,
-		follow: true,
-	},
 	alternates: {
-		canonical: "https://elevatedevworks.com/terms",
+		canonical: "/terms/",
 	},
 };
 
@@ -77,9 +74,7 @@ export default function TermsPage() {
 					<h2>Contact</h2>
 					<p>
 						Questions?{" "}
-						<a href="mailto:chris@elevatedevworks.com">
-							chris@elevatedevworks.com
-						</a>
+						<a href={siteConfig.email}>chris@elevatedevworks.com</a>
 					</p>
 				</article>
 			</Container>
