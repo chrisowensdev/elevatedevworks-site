@@ -53,7 +53,7 @@ export default function CarePackagesSection() {
 				))}
 			</div>
 			<SectionActions
-				links={[{ text: "Learn about Ongoing Care", href: "/care" }]}
+				links={[{ text: "Learn about Ongoing Care", href: "/care/" }]}
 			/>
 		</Section>
 	);

@@ -9,12 +9,12 @@ export const metadata = {
 	title: "Contact",
 	description:
 		"Get in touch with Elevate DevWorks. Tell us about your project or request a free quote. We typically reply within one business day.",
-	alternates: { canonical: "https://elevatedevworks.com/contact" },
+	alternates: { canonical: "contact/" },
 	openGraph: {
 		title: "Contact | Elevate DevWorks",
 		description:
 			"Tell us about your project or request a free quote. We typically reply within one business day.",
-		url: "https://elevatedevworks.com/contact",
+		url: "https://elevatedevworks.com/contact/",
 		images: ["/elevate_devworks_seo_image.png"],
 	},
 	twitter: {
@@ -37,7 +37,7 @@ export default function ContactPage() {
 					href: "mailto:chris@elevatedevworks.com",
 					label: "Email us",
 				}}
-				secondaryCta={{ href: "/privacy", label: "Privacy policy" }}
+				secondaryCta={{ href: "/privacy/", label: "Privacy policy" }}
 				align="center"
 				headingLevel="h1"
 			/>
@@ -117,7 +117,7 @@ export default function ContactPage() {
 						"@context": "https://schema.org",
 						"@type": "ContactPage",
 						name: "Contact Elevate DevWorks",
-						url: "https://elevatedevworks.com/contact",
+						url: "https://elevatedevworks.com/contact/",
 						mainEntity: {
 							"@type": "Organization",
 							name: "Elevate DevWorks",

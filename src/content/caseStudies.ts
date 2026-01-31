@@ -16,6 +16,7 @@ export type CaseStudy = {
 	closingTitle: string;
 	closingText: string;
 	image: string;
+	metaDescription: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -60,6 +61,8 @@ export const caseStudies: CaseStudy[] = [
 		closingText:
 			"Elevate DevWorks builds fast, modern websites for local service businesses that want more leads and a stronger online presence. If you’re a contractor or small business owner looking to upgrade your site, let’s talk.",
 		image: "landscaping",
+		metaDescription:
+			"A landscaping website demo designed for clear services, local trust, and quick lead capture with a mobile-first layout.",
 	},
 	{
 		slug: "clearpath",
@@ -117,5 +120,7 @@ export const caseStudies: CaseStudy[] = [
 		closingText:
 			"This demo showcases a complete advisor website framework. For real-world implementations, all content, images, branding, and legal requirements would be customized for the licensed advisor.",
 		image: "clearpath",
+		metaDescription:
+			"A modern, performance-focused website demo for ClearPath, built to highlight clarity, trust, and a smooth path to contact.",
 	},
 ];

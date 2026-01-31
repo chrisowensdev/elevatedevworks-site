@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+/* @import "tw-animate-css"; */
 @plugin "@tailwindcss/typography";
 
 /*---break---
@@ -18,22 +18,24 @@
 	--color-accent: #3b82f6;
 	--color-soft: #f9fafb;
 	--color-neutral: #6b7280;
-	--font-sans: var(--font-text), ui-sans-serif, system-ui, -apple-system,
-		"Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji",
-		"Segoe UI Emoji";
-	--font-display: var(--font-display), var(--font-text), ui-sans-serif,
-		system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+	--font-sans:
+		var(--font-text), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+		Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+	--font-display:
+		var(--font-display), var(--font-text), ui-sans-serif, system-ui,
+		-apple-system, "Segoe UI", Roboto, Helvetica, Arial;
 	--color-brand: #2175a2;
 	--color-brand-light: #eaf3f7;
 	--color-brand-accent: #21a37c;
 }
 
 :root {
-	--font-sans: var(--font-text), ui-sans-serif, system-ui, -apple-system,
-		"Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji",
-		"Segoe UI Emoji";
-	--font-display: var(--font-display), var(--font-text), ui-sans-serif,
-		system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+	/* --font-sans:
+		var(--font-text), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+		Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+	--font-display:
+		var(--font-display), var(--font-text), ui-sans-serif, system-ui,
+		-apple-system, "Segoe UI", Roboto, Helvetica, Arial; */
 	--radius: 0.625rem;
 	--background: oklch(1 0 0);
 	--foreground: oklch(0.129 0.042 264.695);
@@ -67,31 +69,7 @@
 	--sidebar-border: oklch(0.929 0.013 255.508);
 	--sidebar-ring: oklch(0.704 0.04 256.788);
 }
-/* Old */
-/* :root {
-	--font-inter: "InterVariable";
-	--font-jakarta: "Plus Jakarta Sans";
-}
 
-@theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #111827;
-		--foreground: #ededed;
-		--primary: #111827;
-		--accent: #3b82f6;
-		--soft: #f9fafb;
-		--neutral: #6b7280;
-	}
-} */
-/*---break---
-  */
 @theme inline {
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
@@ -170,7 +148,6 @@
 	* {
 		@apply border-border outline-ring/50;
 	}
-	h1,
 	h2,
 	h3 {
 		@apply font-display font-semibold tracking-tight;

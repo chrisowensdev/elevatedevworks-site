@@ -8,11 +8,12 @@ export const metadata: Metadata = {
 	title: "Client Work & Case Studies",
 	description:
 		"Explore recent projects and case studies from Elevate DevWorks, showcasing fast, SEO-ready websites built for small businesses and service professionals.",
+	alternates: { canonical: "/work/" },
 	openGraph: {
 		title: "Client Work & Case Studies | Elevate DevWorks",
 		description:
 			"See real examples of websites designed and developed for small businesses, including performance-focused builds, SEO foundations, and conversion-driven layouts.",
-		url: "https://elevatedevworks.com/work",
+		url: "/work/",
 		images: ["/elevate_devworks_seo_image.png"],
 		type: "website",
 	},
@@ -32,7 +33,7 @@ export default function WorkPage() {
 				eyebrow="Our Work"
 				title="Web experiences built for performance and trust"
 				description="From startups to local businesses, we deliver high-quality websites that balance design, performance, and conversion."
-				primaryCta={{ href: "/contact", label: "Start your project" }}
+				primaryCta={{ href: "/contact/", label: "Start your project" }}
 				tone="white"
 				align="left"
 			/>

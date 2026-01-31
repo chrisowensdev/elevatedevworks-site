@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 	title: "Website Maintenance | Elevate DevWorks",
 	description:
 		"Website maintenance that keeps your site secure, stable, and running smoothly. Typically included as part of ongoing care packages.",
-	alternates: { canonical: "/maintenance" },
+	alternates: { canonical: "/maintenance/" },
 	openGraph: {
 		title: "Website Maintenance | Elevate DevWorks",
 		description:
 			"Website maintenance that keeps your site secure, stable, and running smoothly. Typically included as part of ongoing care packages.",
-		url: "/maintenance",
+		url: "/maintenance/",
 		type: "website",
 	},
 	twitter: {
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
 };
 
 export default function MaintenancePage() {
-	const ctaHref = "/contact";
-	const careHref = "/care";
-	const carePackagesHref = "/services#ongoing-care";
-	const quickWinsHref = "/services#quick-wins";
+	const ctaHref = "/contact/";
+	const careHref = "/care/";
+	const carePackagesHref = "/services/#ongoing-care";
+	const quickWinsHref = "/services/#quick-wins";
 
 	const cards: CardProps[] = [
 		{
@@ -44,7 +44,7 @@ export default function MaintenancePage() {
 		{
 			title: "Backups + recovery",
 			description:
-				"Backups and a clear recovery path so you’re covered if something goes wrong.",
+				"Backups and a clear recovery path so you're covered if something goes wrong.",
 			variant: "compact",
 		},
 		{
@@ -93,7 +93,7 @@ export default function MaintenancePage() {
 
 			<CTASection
 				title="Not sure what you need?"
-				description="Tell me what’s going on and I’ll recommend the simplest next step."
+				description="Tell me what's going on and I'll recommend the simplest next step."
 			/>
 		</>
 	);

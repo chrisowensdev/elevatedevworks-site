@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 	description:
 		"Fast, calm, SEO-ready websites for small businesses. Thoughtful design, performance-first builds, and a clear process—without the salesy agency experience.",
 	alternates: {
-		canonical: "/web-design",
+		canonical: "/web-design/",
 	},
 	openGraph: {
 		title: "Web Design for Small Businesses | Elevate DevWorks",
@@ -278,11 +278,11 @@ const afterLaunchCards: CardProps[] = [
 
 export default function WebDesignHub() {
 	const basePath = "/web-design",
-		ctaHref = "/contact",
+		ctaHref = "/contact/",
 		ctaLabel = "Discuss your project",
-		packagesHref = "/services#website-packages",
+		packagesHref = "/services/#website-packages",
 		// workHref = "/work",
-		careHref = "/care",
+		careHref = "/care/",
 		// workTeasers = [],
 		showLocations = true;
 	return (
@@ -323,7 +323,7 @@ export default function WebDesignHub() {
 			{/* Deliverables */}
 			<Section
 				eyebrow="Deliverables"
-				title="What you’ll leave with"
+				title="What you'll leave with"
 				description="A finished site that looks professional, loads quickly, and is ready to bring in leads."
 			>
 				<Cards
@@ -341,7 +341,7 @@ export default function WebDesignHub() {
 			{/* Scope */}
 			<Section
 				eyebrow="Scope"
-				title="What’s included (and what’s optional)"
+				title="What's included (and what's optional)"
 				description="Everything starts with a strong foundation. From there, we add the pieces that match your goals."
 			>
 				<Cards items={scopeCards} columns={2} cardVariant="compact" />
@@ -349,7 +349,7 @@ export default function WebDesignHub() {
 					links={[
 						{
 							text: "See add-ons and quick wins",
-							href: "/services#add-ons",
+							href: "/services/#add-ons",
 						},
 					]}
 				/>
@@ -359,7 +359,7 @@ export default function WebDesignHub() {
 			<Section
 				eyebrow="Timeline"
 				title="What a typical build looks like"
-				description="Most projects move smoothly when content is ready. We’ll confirm timing after a quick walkthrough."
+				description="Most projects move smoothly when content is ready. We'll confirm timing after a quick walkthrough."
 			>
 				<Cards items={timelineCards} columns={4} cardVariant="mini" />
 			</Section>
@@ -368,7 +368,7 @@ export default function WebDesignHub() {
 			<Section
 				eyebrow="After launch"
 				title="Keep it healthy after it goes live"
-				description="Websites don’t break all at once—they drift over time. Ongoing care keeps performance, security, and visibility moving in the right direction."
+				description="Websites don't break all at once—they drift over time. Ongoing care keeps performance, security, and visibility moving in the right direction."
 			>
 				<Cards
 					items={afterLaunchCards}
@@ -407,7 +407,7 @@ export default function WebDesignHub() {
 
 			<CTASection
 				title="Ready for a website that feels professional and runs fast?"
-				description="If you want clarity, speed, and a calm build process, let’s talk through what you need."
+				description="If you want clarity, speed, and a calm build process, let's talk through what you need."
 			/>
 		</>
 	);

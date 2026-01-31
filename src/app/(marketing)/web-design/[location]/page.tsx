@@ -37,11 +37,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		title,
 		description,
 		robots,
-		alternates: { canonical: `/web-design/${loc.slug}` },
+		alternates: { canonical: `/web-design/${loc.slug}/` },
 		openGraph: {
 			title,
 			description,
-			url: `/web-design/${loc.slug}`,
+			url: `/web-design/${loc.slug}/`,
 			type: "website",
 		},
 		twitter: {
@@ -57,9 +57,9 @@ export default async function WebDesignLocationPage({ params }: Props) {
 	const loc = getLocation(location);
 	if (!loc) notFound();
 
-	const ctaHref = "/contact";
-	const hubHref = "/web-design";
-	const packagesHref = "/services#website-packages";
+	const ctaHref = "/contact/";
+	const hubHref = "/web-design/";
+	const packagesHref = "/services/#website-packages";
 
 	const whatYouGetCards: CardProps[] = [
 		{

@@ -12,13 +12,13 @@ export default function Page() {
 	return (
 		<Main>
 			<Hero />
-			<Problem actionText="Discuss your project" actionUrl="/contact" />
-			<Plan actionText="See services" actionUrl="/services" />
+			<Problem actionText="Discuss your project" actionUrl="/contact/" />
+			<Plan actionText="See services" actionUrl="/services/" />
 			<ServicesOverview
 				actionText="View all services"
-				actionUrl="/services"
+				actionUrl="/services/"
 			/>
-			<WorkSection actionText="View all projects" actionUrl="/work" />
+			<WorkSection actionText="View all projects" actionUrl="/work/" />
 			<About />
 			<FAQSection context="home" />
 			<CTASection />

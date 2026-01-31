@@ -26,7 +26,7 @@ const services: ServiceItem[] = [
 			"Clean, maintainable code",
 		],
 		icon: Laptop,
-		href: "/web-design", // ✅ link hub
+		href: "/web-design/", // ✅ link hub
 	},
 	{
 		title: "Hosting & Maintenance",
@@ -39,7 +39,7 @@ const services: ServiceItem[] = [
 			"Updates & small fixes",
 		],
 		icon: Server,
-		href: "/maintenance",
+		href: "/maintenance/",
 		// href: "/maintenance" // add later if/when it exists
 	},
 	{
@@ -53,7 +53,7 @@ const services: ServiceItem[] = [
 			"Ongoing visibility improvements",
 		],
 		icon: LineChart,
-		href: "/seo",
+		href: "/seo/",
 		// href: "/seo" // add later if/when it exists
 	},
 ];
