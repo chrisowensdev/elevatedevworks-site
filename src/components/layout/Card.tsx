@@ -1,4 +1,3 @@
-// components/ui/Card.tsx
 "use client";
 
 import * as React from "react";
@@ -45,8 +44,8 @@ export default function Card({
 		variant === "primary"
 			? "text-lg font-semibold text-gray-900"
 			: variant === "mini"
-			? "text-sm font-semibold text-gray-900"
-			: "text-base font-semibold text-gray-900";
+				? "text-sm font-semibold text-gray-900"
+				: "text-base font-semibold text-gray-900";
 
 	const descClass =
 		variant === "mini"
@@ -86,16 +85,16 @@ export default function Card({
 						.join(" ")}
 				>
 					<div className="min-w-0">
-						<div className="flex justify-between items-center mb-3">
+						<div className="flex justify-between items-center">
 							{eyebrow ? (
-								<div className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
+								<div className="text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-3">
 									{eyebrow}
 								</div>
 							) : null}
 							{Icon ? (
 								<div className="rounded-xl">
 									<Icon
-										className="h-5 w-5 text-emerald-600"
+										className="h-5 w-5 text-emerald-600 mb-3"
 										aria-hidden
 									/>
 								</div>
@@ -119,7 +118,7 @@ export default function Card({
 						) : (
 							<h3
 								className={[titleClass, "tracking-tight"].join(
-									" "
+									" ",
 								)}
 							>
 								{title}
