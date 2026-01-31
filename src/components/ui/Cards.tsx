@@ -21,8 +21,8 @@ export default function Cards({ items, columns = 3, dense = false }: Props) {
 		columns === 2
 			? "md:grid-cols-2"
 			: columns === 4
-			? "md:grid-cols-2 lg:grid-cols-4"
-			: "md:grid-cols-2 lg:grid-cols-3";
+				? "md:grid-cols-2 lg:grid-cols-4"
+				: "md:grid-cols-2 lg:grid-cols-3";
 
 	const pad = dense ? "p-4" : "p-6";
 
