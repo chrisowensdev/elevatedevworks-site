@@ -9,9 +9,10 @@ import QuickWins from "./_components/QuickWins";
 import ServicesOverview from "./_components/ServicesOverview";
 import FAQSection from "../../../components/sections/FAQSection";
 import Section from "@/components/layout/Section";
+import IndustryWebKitsSection from "./_components/IndustryWebKitsSection";
 
 export const metadata: Metadata = {
-	title: "Website Design, SEO & Hosting Services for Small Businesses",
+	title: "Website Design & SEO Services for Small Businesses",
 	description:
 		"Website design, development, SEO, and ongoing care for small businesses. Elevate DevWorks builds fast, reliable, SEO-ready websites that support real growth.",
 	alternates: { canonical: "/services/" },
@@ -47,6 +48,7 @@ export default function ServicesPage() {
 
 			<ServicesOverview className="bg-white/70" />
 			<WebsitePackagesSection />
+			<IndustryWebKitsSection />
 			<CarePackagesSection />
 			<AddOns />
 			<QuickWins />

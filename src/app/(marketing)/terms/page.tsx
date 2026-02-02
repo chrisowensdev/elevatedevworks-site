@@ -55,12 +55,12 @@ export default function TermsPage() {
 					<h2>Third-party links</h2>
 					<p>
 						Links to other sites are provided as a convenience;
-						we’re not responsible for their content or policies.
+						we're not responsible for their content or policies.
 					</p>
 
 					<h2>Limitation of liability</h2>
 					<p>
-						To the maximum extent permitted by law, we’re not liable
+						To the maximum extent permitted by law, we're not liable
 						for any indirect or consequential damages arising from
 						your use of this site.
 					</p>
@@ -74,7 +74,9 @@ export default function TermsPage() {
 					<h2>Contact</h2>
 					<p>
 						Questions?{" "}
-						<a href={siteConfig.email}>chris@elevatedevworks.com</a>
+						<a href={`mailto:${siteConfig.email}`}>
+							${siteConfig.email}
+						</a>
 					</p>
 				</article>
 			</Container>
