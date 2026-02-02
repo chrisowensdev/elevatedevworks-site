@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const data = caseStudies.find((c) => c.slug === slug);
 	if (!data) return {};
 
-	const title = `${data.name} Website Demo | Elevate DevWorks`;
+	const title = `${data.name} Website Demo`;
 	const description = data.metaDescription;
 
 	// const robots =

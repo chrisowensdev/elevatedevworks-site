@@ -67,7 +67,7 @@ export default function PrivacyPage() {
 
 					<h2 id="sharing">Sharing</h2>
 					<p>
-						We don’t sell your personal information. We may share
+						We don't sell your personal information. We may share
 						limited data with service providers who help run this
 						site (e.g., hosting, CI/CD, email delivery, analytics)
 						under their terms and only as necessary to provide the
@@ -122,7 +122,7 @@ export default function PrivacyPage() {
 					</ul>
 					<p>
 						You can opt out by declining analytics in our banner or
-						by using Google’s{" "}
+						by using Google's{" "}
 						<a
 							href="https://tools.google.com/dlpage/gaoptout"
 							rel="noopener noreferrer"
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
 							rel="noopener noreferrer"
 							target="_blank"
 						>
-							Google’s Privacy Policy
+							Google's Privacy Policy
 						</a>
 						.
 					</p>
@@ -218,8 +218,8 @@ export default function PrivacyPage() {
 
 					<h2 id="children">Children</h2>
 					<p>
-						This site isn’t intended for children under 13, and we
-						don’t knowingly collect their personal information.
+						This site isn't intended for children under 13, and we
+						don't knowingly collect their personal information.
 					</p>
 
 					<h2 id="changes">Changes</h2>

@@ -1,5 +1,14 @@
 export type ProductFAQ = { q: string; a: string };
 
+export type IncludedItem = {
+	key: string;
+	title: string;
+	summary: string; // short for cards
+	details?: string[]; // longer bullets for expanded section
+	imageSrc?: string; // screenshot (optional)
+	imageAlt?: string;
+};
+
 export const healthAdvisorWebsite = {
 	slug: "health-advisor-websites",
 	title: "Health Advisor Website Launch",
@@ -29,16 +38,127 @@ export const healthAdvisorWebsite = {
 		"Mobile-first and fast-loading (performance-minded build)",
 	],
 	included: [
-		"Conversion-focused homepage",
-		"Plans / Services page",
-		"About page (with advisor photo section)",
-		"FAQs page (product + process FAQs)",
-		"Resources / Articles (lightweight markdown-based publishing)",
-		"Contact page + CTA flow",
-		"Privacy policy + Medicare disclaimer pages",
-		"Basic SEO: titles/meta, clean URLs, sitemap + robots",
-		"Mobile optimization + performance pass",
-		"1 revision round",
+		{
+			key: "homepage",
+			title: "Conversion-focused homepage",
+			summary:
+				"Clear trust signals, simple structure, and a primary CTA that drives coverage review requests.",
+			details: [
+				"Senior-friendly hierarchy and readable type",
+				"Trust elements (credentials, service area, clear contact paths)",
+				"Primary CTA placement tuned for calls and form submissions",
+			],
+			imageSrc: "/images/demos/health-advisor/home.webp",
+			imageAlt: "Homepage demo screenshot",
+		},
+		{
+			key: "plans",
+			title: "Plans / Services page",
+			summary:
+				"A structured page that explains what you help with without overwhelming visitors.",
+			details: [
+				"Clear categories (Medicare, ACA, supplemental)",
+				"Plain-language copy structure",
+				"Strong CTAs at natural decision points",
+			],
+			imageSrc: "/images/demos/health-advisor/plans.webp",
+			imageAlt: "Services page demo screenshot",
+		},
+		{
+			key: "about",
+			title: "About page (with advisor photo section)",
+			summary:
+				"A credibility page that makes the business feel real and trustworthy.",
+			details: [
+				"Advisor photo + short bio layout",
+				"Licensing/experience/approach highlights",
+				"Reinforced CTA for coverage review",
+			],
+			imageSrc: "/images/demos/health-advisor/about.webp",
+			imageAlt: "About page demo screenshot",
+		},
+		{
+			key: "faqs",
+			title: "FAQs page (product + process FAQs)",
+			summary:
+				"Answer common questions upfront to reduce friction and increase inquiries.",
+			details: [
+				"What you help with + what to expect",
+				"Boundaries and disclaimers where appropriate",
+				"CTA after key answers",
+			],
+			imageSrc: "/images/demos/health-advisor/faq.webp",
+			imageAlt: "FAQ page demo screenshot",
+		},
+		{
+			key: "resources",
+			title: "Resources / Articles (lightweight publishing)",
+			summary:
+				"Simple educational posts to build trust and support SEO over time.",
+			details: [
+				"Markdown-based posts (fast + maintainable)",
+				"Clean article layout (readable on mobile)",
+				"Optional monthly post support via care plan",
+			],
+			imageSrc: "/images/demos/health-advisor/resources.webp",
+			imageAlt: "Resources page demo screenshot",
+		},
+		{
+			key: "contact",
+			title: "Contact page + CTA flow",
+			summary:
+				"A contact experience designed for calls, quick questions, and coverage reviews.",
+			details: [
+				"Tap-to-call and clear next steps",
+				"Form messaging to avoid sensitive info",
+				"Multiple CTA placements without feeling pushy",
+			],
+			imageSrc: "/images/demos/health-advisor/contact.webp",
+			imageAlt: "Contact page demo screenshot",
+		},
+		{
+			key: "policy",
+			title: "Privacy policy + Medicare disclaimer pages",
+			summary:
+				"Compliance-aware basics and trust-friendly policies included.",
+			details: [
+				"Privacy policy page included",
+				"Medicare disclaimer page included",
+				"Form guidance (don't submit sensitive info)",
+			],
+		},
+		{
+			key: "seo",
+			title: "Basic SEO foundations",
+			summary:
+				"Titles/meta, clean URLs, sitemap + robots—set up for indexing and clarity.",
+			details: [
+				"Metadata and page structure",
+				"Sitemap + robots.txt",
+				"Clean internal linking setup",
+			],
+		},
+		{
+			key: "performance",
+			title: "Mobile optimization + performance pass",
+			summary:
+				"Fast-loading pages with clean assets and mobile-first behavior.",
+			details: [
+				"Image optimization + sane layout shifts",
+				"Mobile typography and spacing checks",
+				"Performance-minded build defaults",
+			],
+		},
+		{
+			key: "revision",
+			title: "1 revision round",
+			summary: "A focused refinement pass after your initial review.",
+			details: [
+				"Copy/layout tweaks within scope",
+				"CTA placement adjustments",
+				"Small visual refinements",
+			],
+		},
 	],
 	carePlan: {
 		title: "Ongoing Care Plan (peace of mind)",
