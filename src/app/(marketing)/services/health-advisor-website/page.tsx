@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 	title: "Health Advisor Website | Elevate DevWorks",
 	description:
 		"Productized website launch for Health Advisors, Medicare agents, and ACA brokers. Trustworthy, senior-friendly design with clear conversion paths—starting at $750.",
-	alternates: { canonical: "/services/health-advisor-websites/" },
+	alternates: { canonical: "/services/health-advisor-website/" },
 	openGraph: {
 		title: "Health Advisor Website | Elevate DevWorks",
 		description:
 			"Productized website launch for Health Advisors, Medicare agents, and ACA brokers—starting at $750.",
-		url: "/services/health-advisor-websites/",
+		url: "/services/health-advisor-website/",
 		type: "website",
 	},
 	twitter: {
@@ -47,11 +47,14 @@ export default function HealthAdvisorWebsitePage() {
 		variant: "compact",
 	}));
 
-	const includedCards: CardProps[] = p.included.map((x) => ({
-		title: x,
-		description: "",
-		variant: "compact",
-	}));
+	// const includedCards: CardProps[] = p.included.map((x) => ({
+	// 	title: x.title,
+	// 	description: x.summary,
+	// 	variant: "compact",
+	// }));
+
+	const withImages = p.included.filter((x) => !!x.imageSrc);
+	const noImages = p.included.filter((x) => !x.imageSrc);
 
 	const processCards: CardProps[] = p.process.map((s) => ({
 		eyebrow: s.step,
@@ -73,10 +76,10 @@ export default function HealthAdvisorWebsitePage() {
 				title={p.subtitle}
 				description={`${p.description} Starting at $${p.startingPrice}.`}
 				primaryCta={p.primaryCta}
-				secondaryCta={{
-					label: p.secondaryCta.label,
-					href: p.secondaryCta.href,
-				}}
+				// secondaryCta={{
+				// 	label: p.secondaryCta.label,
+				// 	href: p.secondaryCta.href,
+				// }}
 			/>
 
 			<Section
@@ -94,22 +97,61 @@ export default function HealthAdvisorWebsitePage() {
 					</>
 				}
 			>
-				<SectionActions
-					links={[
-						{ text: "Request pricing", href: p.primaryCta.href },
-					]}
-				/>
-				<div className="mt-4">
+				<div className="mt-10 grid gap-6 md:grid-cols-2 md:items-start">
+					{/* Left: actions + quick bullets */}
+					<div className="p-6">
+						<div className="text-sm font-semibold text-gray-900">
+							Explore the full experience
+						</div>
+						<p className="mt-2 text-sm text-gray-700 leading-6">
+							The demo shows the structure, CTA flow, and
+							senior-friendly layout style.
+						</p>
+
+						<ul className="mt-5 space-y-2 text-sm text-gray-700">
+							{[
+								"Conversion-first homepage layout",
+								"Coverage review CTA flow",
+								"FAQ + Resources structure",
+							].map((x) => (
+								<li key={x} className="flex gap-2">
+									<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600/80" />
+									<span className="leading-6">{x}</span>
+								</li>
+							))}
+						</ul>
+
+						<div className="mt-4 flex flex-wrap gap-3">
+							<Link
+								href={p.secondaryCta.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+							>
+								View live demo{" "}
+								<span aria-hidden className="ml-1">
+									↗
+								</span>
+							</Link>
+						</div>
+					</div>
+
+					{/* Right: screenshot */}
 					<Link
 						href={p.secondaryCta.href}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="inline-flex items-center text-sm font-medium text-emerald-700 hover:text-emerald-800"
+						className="group block overflow-hidden rounded-2xl border bg-neutral-50"
+						aria-label="Open live demo in a new tab"
 					>
-						{p.secondaryCta.label}{" "}
-						<span className="ml-1" aria-hidden>
-							↗
-						</span>
+						<div className="aspect-[16/10]">
+							<img
+								src="/images/demos/health-advisor/home.webp"
+								alt="Health Advisor website demo preview"
+								className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+								loading="lazy"
+							/>
+						</div>
 					</Link>
 				</div>
 			</Section>
@@ -151,11 +193,91 @@ export default function HealthAdvisorWebsitePage() {
 					</>
 				}
 			>
-				<Cards
+				{/* <Cards
 					items={includedCards}
 					columns={2}
 					cardVariant="compact"
-				/>
+				/> */}
+				{/* Expanded proof rows (with images) */}
+				<div className="mt-12 space-y-10">
+					{withImages.map((item) => (
+						<div
+							key={item.key}
+							className="grid gap-6 md:grid-cols-2 md:items-start"
+						>
+							<div className="md:pt-2">
+								<h3 className="text-lg font-semibold tracking-tight text-gray-900">
+									{item.title}
+								</h3>
+								<p className="mt-2 text-sm leading-6 text-gray-700">
+									{item.summary}
+								</p>
+
+								{item.details?.length ? (
+									<ul className="mt-4 space-y-2 text-sm text-gray-700">
+										{item.details.map((d) => (
+											<li key={d} className="flex gap-2">
+												<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600/80" />
+												<span className="leading-6">
+													{d}
+												</span>
+											</li>
+										))}
+									</ul>
+								) : null}
+							</div>
+
+							<div className="overflow-hidden rounded-2xl border bg-neutral-50">
+								<div className="aspect-[16/10]">
+									<img
+										src={item.imageSrc!}
+										alt={item.imageAlt ?? ""}
+										className="h-full w-full object-cover"
+										loading="lazy"
+									/>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+
+				{/* Text-only items in 2 columns on desktop */}
+				{noImages.length ? (
+					<div className="mt-12">
+						<div className="grid gap-6 md:grid-cols-2">
+							{noImages.map((item) => (
+								<div
+									key={item.key}
+									className="rounded-2xl border bg-white/60 p-6"
+								>
+									<h3 className="text-base font-semibold tracking-tight text-gray-900">
+										{item.title}
+									</h3>
+									<p className="mt-2 text-sm leading-6 text-gray-700">
+										{item.summary}
+									</p>
+
+									{item.details?.length ? (
+										<ul className="mt-4 space-y-2 text-sm text-gray-700">
+											{item.details.map((d) => (
+												<li
+													key={d}
+													className="flex gap-2"
+												>
+													<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600/80" />
+													<span className="leading-6">
+														{d}
+													</span>
+												</li>
+											))}
+										</ul>
+									) : null}
+								</div>
+							))}
+						</div>
+					</div>
+				) : null}
+
 				<SectionActions
 					links={[
 						{

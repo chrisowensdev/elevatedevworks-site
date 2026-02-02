@@ -39,13 +39,13 @@ export default function Footer() {
 								</a>
 							</li>
 							<li>
-								<a href="/about" className="hover:text-white">
+								<a href="/about/" className="hover:text-white">
 									About
 								</a>
 							</li>
 							<li>
 								<a
-									href="/services"
+									href="/services/"
 									className="hover:text-white"
 								>
 									Services
@@ -53,13 +53,13 @@ export default function Footer() {
 							</li>
 
 							<li>
-								<a href="/work" className="hover:text-white">
+								<a href="/work/" className="hover:text-white">
 									Work
 								</a>
 							</li>
 							<li>
 								<a
-									href="/contact"
+									href="/contact/"
 									className="hover:text-slate-900"
 								>
 									Contact
@@ -79,7 +79,7 @@ export default function Footer() {
 								<a
 									href={`tel:${siteConfig.phone.replaceAll(
 										"-",
-										""
+										"",
 									)}`}
 									className="text-white/80 hover:text-white"
 								>
@@ -108,12 +108,15 @@ export default function Footer() {
 						</h4>
 						<ul className="mt-3 space-y-2 text-sm text-white/60">
 							<li>
-								<a href="/terms" className="hover:text-white">
+								<a href="/terms/" className="hover:text-white">
 									Terms
 								</a>
 							</li>
 							<li>
-								<a href="/privacy" className="hover:text-white">
+								<a
+									href="/privacy/"
+									className="hover:text-white"
+								>
 									Privacy Policy
 								</a>
 							</li>
