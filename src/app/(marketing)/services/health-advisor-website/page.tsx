@@ -10,6 +10,7 @@ import CTASection from "@/components/sections/CTASection";
 import { SectionActions } from "@/components/sections/SectionActions";
 import { healthAdvisorWebsite } from "@/content/products/health-advisor-website";
 import FAQAccordion from "@/components/ui/FAQAccordian";
+import HealthAdvisorPackagesSection from "./_components/HeathAdvisorPackages";
 
 export const metadata: Metadata = {
 	title: "Health Advisor Website | Elevate DevWorks",
@@ -74,7 +75,7 @@ export default function HealthAdvisorWebsitePage() {
 			<PageHero
 				eyebrow="Productized Offering"
 				title={p.subtitle}
-				description={`${p.description} Starting at $${p.startingPrice}.`}
+				description={`${p.description}`}
 				primaryCta={p.primaryCta}
 				// secondaryCta={{
 				// 	label: p.secondaryCta.label,
@@ -82,14 +83,17 @@ export default function HealthAdvisorWebsitePage() {
 				// }}
 			/>
 
+			<HealthAdvisorPackagesSection />
+
 			<Section
 				eyebrow="Demo"
 				title="See the demo experience"
 				description={
 					<>
 						<p>
-							Want to see the flow and structure? View the demo
-							site.
+							Want to see the flow and structure of the Growth
+							package? <br />
+							View the demo site.
 						</p>
 						<p className="mt-2 text-sm text-gray-500">
 							{p.demoNotice}
@@ -178,17 +182,15 @@ export default function HealthAdvisorWebsitePage() {
 			</Section>
 
 			<Section
-				eyebrow="What's included"
-				title="Health Advisor Website Launch"
+				eyebrow="What's included in Growth (Recommended)"
+				title="Health Advisor Website - Growth"
 				description={
 					<>
-						<p className="text-sm text-gray-600">
-							One-time setup starting at{" "}
-							<span className="font-semibold text-gray-900">
-								${p.startingPrice}
-							</span>
-							. Productized scope, built quickly, tailored to your
-							niche.
+						<p className="text-lg text-gray-600">
+							This is the full multi-page website (matching the
+							demo screenshots). Built for clarity, trust, and
+							steady lead-flow, without over-complicating your
+							tech stack.
 						</p>
 					</>
 				}

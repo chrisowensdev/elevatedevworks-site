@@ -15,7 +15,7 @@ export const healthAdvisorWebsite = {
 	subtitle:
 		"A modern website built to help health advisors earn more qualified calls",
 	description:
-		"Trustworthy, compliance-aware, senior-friendly design with clear conversion paths—built fast and maintained easily.",
+		"Productized website packages for licensed health advisors — from a clean 1-page launch to a full multi-page site with resources.",
 	startingPrice: 750,
 	monthlyCarePrice: 149,
 	primaryCta: { label: "Request pricing", href: "/contact/" },
