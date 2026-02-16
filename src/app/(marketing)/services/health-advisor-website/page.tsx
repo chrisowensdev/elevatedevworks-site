@@ -13,7 +13,7 @@ import FAQAccordion from "@/components/ui/FAQAccordian";
 import HealthAdvisorPackagesSection from "./_components/HeathAdvisorPackages";
 
 export const metadata: Metadata = {
-	title: "Health Advisor Website | Elevate DevWorks",
+	title: "Health Advisor Website Packages (Medicare & ACA)",
 	description:
 		"Productized website launch for Health Advisors, Medicare agents, and ACA brokers. Trustworthy, senior-friendly design with clear conversion paths—starting at $750.",
 	alternates: { canonical: "/services/health-advisor-website/" },
