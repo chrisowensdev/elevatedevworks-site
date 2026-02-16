@@ -9,6 +9,9 @@ type PackageCardProps = {
 	ctaLabel?: string;
 	badge?: string; // e.g. "Most Popular"
 	accent?: "emerald" | "brand";
+	salePrice?: string;
+	saleText?: string;
+	saleEndsText?: string;
 };
 
 export default function PackageCard({
@@ -20,6 +23,9 @@ export default function PackageCard({
 	features,
 	badge,
 	accent = "emerald",
+	salePrice,
+	saleText = "SALE",
+	saleEndsText,
 }: PackageCardProps) {
 	const accentClasses =
 		accent === "brand"
@@ -90,11 +96,38 @@ export default function PackageCard({
 
 			{/* Footer pinned to bottom */}
 			<div className="mt-auto pt-6">
-				<div className="flex items-baseline justify-between gap-4">
-					<p className="text-sm text-gray-600">Starting at</p>
-					<p className="text-lg font-semibold text-brand-accent">
-						{price}
-					</p>
+				{salePrice ? (
+					<div className="inline-flex w-full flex-wrap justify-end gap-2">
+						<span className="rounded-full bg-brand-accent/10 px-2 py-0.5 text-xs font-semibold text-brand-accent">
+							{saleText}
+						</span>
+						{saleEndsText ? (
+							<span className="text-xs text-black/50">
+								{saleEndsText}
+							</span>
+						) : null}
+					</div>
+				) : null}
+
+				<div className="flex items-start justify-between gap-4">
+					<p className="pt-1 text-sm text-gray-600">Starting at</p>
+
+					{salePrice ? (
+						<div className="text-right space-y-1">
+							<div className="flex items-baseline justify-end gap-2">
+								<p className="text-2xl font-semibold text-brand-accent">
+									{salePrice}
+								</p>
+								<p className="text-sm font-semibold text-black/30 line-through">
+									{price}
+								</p>
+							</div>
+						</div>
+					) : (
+						<p className="text-lg font-semibold text-brand-accent">
+							{price}
+						</p>
+					)}
 				</div>
 
 				{/* <div className="mt-5">
