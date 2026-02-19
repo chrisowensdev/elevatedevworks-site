@@ -114,7 +114,7 @@ function KitCard({
 					href={href}
 					className="inline-flex items-center text-sm font-medium text-emerald-700 hover:text-emerald-800"
 				>
-					View kit details{" "}
+					View {title} details{" "}
 					<span aria-hidden className="ml-1">
 						→
 					</span>
