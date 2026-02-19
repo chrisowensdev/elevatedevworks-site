@@ -40,13 +40,16 @@ export default function ServicesPage() {
 				eyebrow="What we do"
 				title="Services built to ship fast and scale"
 				description="From small-business websites to designer handoffs and ongoing care—clean code, performance, measurable results."
-				primaryCta={{ href: "/contact/", label: "Start a project" }}
+				primaryCta={{
+					href: "/contact/",
+					label: "Discuss your project",
+				}}
 				tone="muted"
 				align="left"
 				headingLevel="h1"
 			/>
 
-			<ServicesOverview className="bg-white/70" />
+			<ServicesOverview className="bg-white/70 " />
 			<WebsitePackagesSection />
 			<IndustryWebKitsSection />
 			<CarePackagesSection />

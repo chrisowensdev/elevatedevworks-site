@@ -102,24 +102,56 @@ export default function Footer() {
 					</div>
 
 					{/* Column 4: Legal */}
+					{/* Column 4: Services */}
 					<div>
 						<h4 className="text-sm font-semibold text-white">
-							Legal
+							Services
 						</h4>
-						<ul className="mt-3 space-y-2 text-sm text-white/60">
+
+						<ul className="mt-3 space-y-2 text-sm text-white/80">
 							<li>
-								<a href="/terms/" className="hover:text-white">
-									Terms
+								<a
+									href="/web-design/"
+									className="hover:text-white"
+								>
+									Web Design
+								</a>
+							</li>
+							<li>
+								<a href="/seo/" className="hover:text-white">
+									SEO
 								</a>
 							</li>
 							<li>
 								<a
-									href="/privacy/"
+									href="/maintenance/"
 									className="hover:text-white"
 								>
-									Privacy Policy
+									Maintenance
 								</a>
 							</li>
+							<li>
+								<a href="/care/" className="hover:text-white">
+									Ongoing Care
+								</a>
+							</li>
+						</ul>
+
+						<h5 className="mt-6 text-xs font-semibold tracking-wide text-white/70">
+							Website Kits
+						</h5>
+
+						<ul className="mt-3 space-y-2 text-sm text-white/80">
+							<li>
+								<a
+									href="/services/health-advisor-website/"
+									className="hover:text-white"
+								>
+									Health Advisor Website
+								</a>
+							</li>
+							{/* add later */}
+							{/* <li><a href="/services/bookkeeping-website/" className="hover:text-white">Bookkeeping Website</a></li> */}
 						</ul>
 					</div>
 				</div>
