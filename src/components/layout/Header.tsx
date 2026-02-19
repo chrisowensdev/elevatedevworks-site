@@ -33,6 +33,16 @@ export default function Header() {
 		[],
 	);
 
+	const kitLinks: NavItem[] = useMemo(
+		() => [
+			{
+				label: "Health Advisor",
+				href: "/services/health-advisors/website",
+			},
+		],
+		[],
+	);
+
 	// const primaryNav: NavGroup[] = useMemo(
 	// 	() => [
 	// 		{ label: "About", href: "/about" },
@@ -174,7 +184,38 @@ export default function Header() {
 											onClick={() =>
 												setServicesOpen(false)
 											}
-											className="group flex items-center justify-between rounded-xl px-3 py-2 text-sm text-gray-900 hover:bg-emerald-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/40"
+											className="group flex items-center justify-between rounded-xl px-3 py-2 text-sm text-gray-900 hover:bg-emerald-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/40 pl-8"
+										>
+											<span>{item.label}</span>
+											<span
+												aria-hidden
+												className="text-gray-400 transition group-hover:text-emerald-700"
+											>
+												→
+											</span>
+										</Link>
+									))}
+
+									<div className="h-px bg-gray-100 my-1" />
+
+									<div className="px-3 py-2">
+										<div className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
+											Website Kits
+										</div>
+										<div className="mt-1 text-xs text-gray-500"></div>
+									</div>
+
+									<div className="h-px bg-gray-100 my-1" />
+
+									{kitLinks.map((item) => (
+										<Link
+											key={item.href}
+											href={item.href}
+											role="menuitem"
+											onClick={() =>
+												setServicesOpen(false)
+											}
+											className="group flex items-center justify-between rounded-xl px-3 py-2 text-sm text-gray-900 hover:bg-emerald-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/40 pl-8"
 										>
 											<span>{item.label}</span>
 											<span
@@ -284,7 +325,7 @@ export default function Header() {
 						style={{ willChange: "transform, opacity" }}
 						aria-label="Mobile menu"
 					>
-						<div className="flex items-center justify-between px-2 pt-1">
+						<div className="flex items-center justify-between px-2 pt-1 relatve">
 							<div className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
 								Menu
 							</div>
@@ -348,6 +389,12 @@ export default function Header() {
 							>
 								<div className="overflow-hidden">
 									<div className="mt-1 rounded-2xl border bg-neutral-50/60 p-2">
+										<div className="px-3 py-2">
+											<div className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
+												Services
+											</div>
+											<div className="mt-1 text-xs text-gray-500"></div>
+										</div>
 										{servicesLinks.map((item) => (
 											<Link
 												key={item.href}
@@ -355,7 +402,31 @@ export default function Header() {
 												onClick={() =>
 													setMobileOpen(false)
 												}
-												className="flex items-center justify-between rounded-xl px-3 py-3 text-base text-gray-900 hover:bg-white"
+												className="flex items-center justify-between rounded-xl px-3 py-3 text-base text-gray-900 hover:bg-white pl-10"
+											>
+												<span>{item.label}</span>
+												<span
+													aria-hidden
+													className="text-gray-400"
+												>
+													→
+												</span>
+											</Link>
+										))}
+										<div className="px-3 py-2">
+											<div className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
+												Website Kits
+											</div>
+											<div className="mt-1 text-xs text-gray-500"></div>
+										</div>
+										{kitLinks.map((item) => (
+											<Link
+												key={item.href}
+												href={item.href}
+												onClick={() =>
+													setMobileOpen(false)
+												}
+												className="flex items-center justify-between rounded-xl px-3 py-3 text-base text-gray-900 hover:bg-white pl-10"
 											>
 												<span>{item.label}</span>
 												<span
