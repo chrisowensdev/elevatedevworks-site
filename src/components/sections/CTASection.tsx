@@ -10,7 +10,7 @@ type CTASectionProps = {
 
 export default function CTASection({
 	bgColor = "bgWhite",
-	title = "Read to start your project?",
+	title = "Ready to start your project?",
 	description = "Let's talk about your goals and see if Elevate DevWorks is the right fit.",
 }: CTASectionProps) {
 	const bgColors = {
