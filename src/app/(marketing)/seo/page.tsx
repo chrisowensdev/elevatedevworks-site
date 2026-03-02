@@ -19,6 +19,14 @@ export const metadata: Metadata = {
 			"Practical SEO foundations and steady improvements that help your site get found and understood. Typically included as part of ongoing care packages.",
 		url: "/seo/",
 		type: "website",
+		images: [
+			{
+				url: "/elevate_devworks_seo_image.png",
+				width: 1200,
+				height: 630,
+				alt: "Elevate DevWorks",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",

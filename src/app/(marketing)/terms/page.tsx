@@ -5,7 +5,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Terms of Service",
-	description: "The terms that govern your use of Elevate DevWorks services.",
+	description:
+		"Review Elevate DevWorks’ Terms of Use for website access, service terms, limitations, and other conditions that apply to using this site.",
 	alternates: {
 		canonical: "/terms/",
 	},
@@ -26,7 +27,7 @@ export default function TermsPage() {
 				>
 					<h1>Terms of Use</h1>
 					<p>
-						<em>Last updated: October 1st, 2025</em>
+						<em>Last updated: March 1st, 2026</em>
 					</p>
 
 					<h2>Use of this site</h2>
@@ -39,7 +40,7 @@ export default function TermsPage() {
 					<h2>Intellectual property</h2>
 					<p>
 						Unless stated otherwise, all content on this site is
-						owned by Chris Owens. Client work shown may be the
+						owned by Elevate DevWorks. Client work shown may be the
 						property of each client and used here for portfolio
 						purposes only. You may not copy or redistribute without
 						permission.
@@ -75,7 +76,7 @@ export default function TermsPage() {
 					<p>
 						Questions?{" "}
 						<a href={`mailto:${siteConfig.email}`}>
-							${siteConfig.email}
+							{siteConfig.email}
 						</a>
 					</p>
 				</article>

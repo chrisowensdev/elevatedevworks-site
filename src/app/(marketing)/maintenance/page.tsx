@@ -19,6 +19,14 @@ export const metadata: Metadata = {
 			"Website maintenance that keeps your site secure, stable, and running smoothly. Typically included as part of ongoing care packages.",
 		url: "/maintenance/",
 		type: "website",
+		images: [
+			{
+				url: "/elevate_devworks_seo_image.png",
+				width: 1200,
+				height: 630,
+				alt: "Elevate DevWorks",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",

@@ -17,8 +17,16 @@ export const metadata: Metadata = {
 		title: "Ongoing Website Care | Elevate DevWorks",
 		description:
 			"Maintenance, performance, and practical SEO—bundled into calm, consistent monthly care so your website stays fast, secure, and improving.",
-		url: "/care",
+		url: "/care/",
 		type: "website",
+		images: [
+			{
+				url: "/elevate_devworks_seo_image.png",
+				width: 1200,
+				height: 630,
+				alt: "Elevate DevWorks",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",

@@ -1,7 +1,7 @@
 import { siteConfig } from "@/content/siteConfig";
 
 export default function SEOJsonLd() {
-	const baseUrl = "https://elevatedevworks.com";
+	const baseUrl = "https://elevatedevworks.com/";
 
 	const jsonLd = {
 		"@context": "https://schema.org",
@@ -37,17 +37,13 @@ export default function SEOJsonLd() {
 				"@id": `${baseUrl}#website`,
 				url: baseUrl,
 				name: "Elevate DevWorks",
+				alternateName: ["Elevated DevWorks", "EDW"],
 				description:
 					"Web and application development for small businesses and creative professionals.",
 				publisher: {
 					"@id": `${baseUrl}#business`,
 				},
 				inLanguage: "en-US",
-				potentialAction: {
-					"@type": "SearchAction",
-					target: `${baseUrl}/search?q={search_term_string}`,
-					"query-input": "required name=search_term_string",
-				},
 			},
 		],
 	};

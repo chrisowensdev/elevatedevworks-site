@@ -15,7 +15,7 @@ import HealthAdvisorPackagesSection from "./_components/HeathAdvisorPackages";
 export const metadata: Metadata = {
 	title: "Health Advisor Website Packages (Medicare & ACA)",
 	description:
-		"Productized website launch for Health Advisors, Medicare agents, and ACA brokers. Trustworthy, senior-friendly design with clear conversion paths—starting at $750.",
+		"Productized website launch for Health Advisors, Medicare agents, and ACA brokers. Trustworthy, senior-friendly design with clear conversion paths.",
 	alternates: { canonical: "/services/health-advisor-website/" },
 	openGraph: {
 		title: "Health Advisor Website | Elevate DevWorks",
@@ -23,6 +23,14 @@ export const metadata: Metadata = {
 			"Productized website launch for Health Advisors, Medicare agents, and ACA brokers—starting at $750.",
 		url: "/services/health-advisor-website/",
 		type: "website",
+		images: [
+			{
+				url: "/elevate_devworks_seo_image.png",
+				width: 1200,
+				height: 630,
+				alt: "Elevate DevWorks",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
