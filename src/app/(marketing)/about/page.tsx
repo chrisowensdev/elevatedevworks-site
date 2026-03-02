@@ -11,7 +11,7 @@ import OurMission from "./_components/OurMission";
 export const metadata: Metadata = {
 	title: "About",
 	description:
-		"Learn about Elevate DevWorks - a friendly, modern web design and development studio helping small businesses and creative professionals build fast, SEO-ready websites.",
+		"Learn about Elevate DevWorks - a friendly, modern web design and development studio helping small businesses and professionals build fast, SEO-ready websites.",
 	alternates: { canonical: "/about/" },
 	openGraph: {
 		title: "About Elevate DevWorks | Web Development for Small Businesses & Designers",

@@ -15,7 +15,14 @@ export const metadata = {
 		description:
 			"Tell us about your project or request a free quote. We typically reply within one business day.",
 		url: "https://elevatedevworks.com/contact/",
-		images: ["/elevate_devworks_seo_image.png"],
+		images: [
+			{
+				url: "/elevate_devworks_seo_image.png",
+				width: 1200,
+				height: 630,
+				alt: "Elevate DevWorks",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",

@@ -6,9 +6,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Privacy Policy",
-	description: "How Elevate DevWorks collects, uses, and protects your data.",
+	description:
+		"Read Elevate DevWorks’ Privacy Policy explaining what data we collect, how we use it, and the choices you have regarding your information.",
 	alternates: {
-		canonical: "https://elevatedevworks.com/privacy/",
+		canonical: "/privacy/",
 	},
 };
 

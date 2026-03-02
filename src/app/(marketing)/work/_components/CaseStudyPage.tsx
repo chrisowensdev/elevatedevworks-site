@@ -21,7 +21,7 @@ export default function CaseStudyPage({ data }: { data: CaseStudy }) {
 					{ label: "Year", value: "2025" },
 				]}
 				fgImageSrc={`/work/${data.image}-800.webp`} // your right-side image
-				fgImageAlt="" // decorative (empty alt for a11y)
+				fgImageAlt={`${data.name} website image`}
 				fgImageWidth={960}
 				fgImageHeight={640}
 			/>

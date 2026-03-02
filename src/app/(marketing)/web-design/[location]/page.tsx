@@ -43,6 +43,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			description,
 			url: `/web-design/${loc.slug}/`,
 			type: "website",
+			images: [
+				{
+					url: "/elevate_devworks_seo_image.png",
+					width: 1200,
+					height: 630,
+					alt: "Elevate DevWorks",
+				},
+			],
 		},
 		twitter: {
 			card: "summary_large_image",
