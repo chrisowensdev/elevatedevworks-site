@@ -45,8 +45,16 @@ export const metadata: Metadata = {
 		title: "Web Design for Small Businesses | Elevate DevWorks",
 		description:
 			"Fast, calm, SEO-ready websites for small businesses. Thoughtful design, performance-first builds, and a clear process—without the salesy agency experience.",
-		url: "/web-design",
+		url: "/web-design/",
 		type: "website",
+		images: [
+			{
+				url: "/elevate_devworks_seo_image.png",
+				width: 1200,
+				height: 630,
+				alt: "Elevate DevWorks",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",

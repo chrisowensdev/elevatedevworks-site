@@ -3,8 +3,8 @@ import "./globals.css";
 import { text, display } from "./fonts";
 import {
 	SEOJsonLd,
-	ConsentScript,
-	CookieBanner,
+	// ConsentScript,
+	// CookieBanner,
 } from "@/components/analytics-privacy";
 import { Header, Footer, FixedBackground } from "@/components/layout";
 
@@ -71,13 +71,13 @@ export default function RootLayout({
 				</a>
 				<FixedBackground />
 				<SEOJsonLd />
-				<ConsentScript gaMeasurementId="G-HRK4JC4W3J" />
+				{/* <ConsentScript gaMeasurementId="G-HRK4JC4W3J" /> */}
 
 				<Header />
 				{children}
 				<Footer />
 
-				<CookieBanner />
+				{/* <CookieBanner /> */}
 			</body>
 		</html>
 	);

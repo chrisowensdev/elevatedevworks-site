@@ -156,6 +156,14 @@ export default function Footer() {
 					</div>
 				</div>
 				<SocialIcons className="text-white/70" />
+				<div className="pt-5 text-sm text-white/70">
+					<a href="/privacy/" className="mr-2">
+						Privacy
+					</a>
+					<a href="/terms/" className="mr-2">
+						Terms
+					</a>
+				</div>
 
 				{/* Bottom row */}
 				<div className="mt-10 border-t border-slate-300 pt-6 text-center text-xs text-white/80">
