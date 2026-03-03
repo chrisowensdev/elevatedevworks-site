@@ -1,7 +1,7 @@
 import Section from "@/components/layout/Section";
 import ReviewCard from "@/components/layout/ReviewCard";
-import { Star } from "lucide-react";
 import Link from "next/link";
+import { GoogleRatingLink } from "@/components/ui/GoogleRatingLink";
 
 export type ReviewCardProps = {
 	stars: number;
@@ -39,21 +39,8 @@ export default function Reviews({
 			eyebrow="Client Feedback"
 			title="Clear communication. Fast delivery. Solid results."
 		>
-			<div className="flex flex-col justify-center">
-				<div className="display flex justify-center mb-10">
-					<Star fill="#21a37c" stroke="none" size={20} />
-					<Star fill="#21a37c" stroke="none" size={20} />
-					<Star fill="#21a37c" stroke="none" size={20} />
-					<Star fill="#21a37c" stroke="none" size={20} />
-					<Star fill="#21a37c" stroke="none" size={20} />
-					<p className="text-sm px-3"> 5.0 on Google</p>
-				</div>
-			</div>
-			<div
-				className={["grid gap-4 items-stretch md:grid-cols-2"]
-					.filter(Boolean)
-					.join(" ")}
-			>
+			<GoogleRatingLink />
+			<div className={"grid gap-4 items-stretch md:grid-cols-2 mt-5"}>
 				{reviewCards.map((item) => (
 					<ReviewCard key={item.company ?? item.company} {...item} />
 				))}
@@ -62,7 +49,7 @@ export default function Reviews({
 			<div className="mt-10 flex items-center justify-between">
 				<Link
 					href={actionUrl}
-					className="inline-flex items-center text-sm font-medium text-emerald-600 transition hover:text-emerald-800"
+					className="inline-flex items-center text-base font-boldest text-emerald-600 transition hover:text-emerald-800"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
