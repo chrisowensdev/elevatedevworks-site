@@ -12,7 +12,7 @@ export function SectionActions({
 					<Link
 						key={l.href}
 						href={l.href}
-						className="inline-flex items-center text-sm font-medium text-emerald-600 transition hover:text-emerald-800"
+						className="inline-flex items-center text-base text-emerald-600 transition hover:text-emerald-800 font-extrabold"
 					>
 						{l.text}{" "}
 						<span aria-hidden className="ml-1">

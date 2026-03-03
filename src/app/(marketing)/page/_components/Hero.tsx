@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout";
 import CTAButtons from "@/components/layout/CTAButtons";
+import { GoogleRatingLink } from "@/components/ui/GoogleRatingLink";
 
 const BRAND = { primary: "#2175a2", accent: "#21a37c" };
 
@@ -50,6 +51,7 @@ export default function Hero() {
 					<div className="mt-5 flex justify-center">
 						<CTAButtons secondaryCTA />
 					</div>
+					<GoogleRatingLink />
 				</div>
 
 				<div className="mt-7">

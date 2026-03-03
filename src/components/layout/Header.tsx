@@ -262,7 +262,7 @@ export default function Header() {
 							href="/contact/"
 							className="hidden md:inline-flex items-center rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_20px_rgba(16,185,129,0.25)] transition hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/50"
 						>
-							Discuss your Project
+							Discuss your project
 						</Link>
 
 						<button
