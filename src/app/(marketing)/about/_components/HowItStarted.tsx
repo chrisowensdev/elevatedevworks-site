@@ -4,19 +4,22 @@ export default function HowItStarted() {
 	return (
 		<Section eyebrow="Our Story" title="How It Started" id="how-it-started">
 			<p>
-				Elevate DevWorks began as a small passion project by{" "}
-				<strong>Chris Owens</strong>, a developer who saw how often
-				great designs were held back by unreliable or overly complex
-				development. After years of working with enterprise systems,
-				Chris set out to bring that same level of precision and quality
-				to smaller teams, without the layers of red tape.
+				Elevate DevWorks started as a weekend side project — mostly
+				because I kept seeing small businesses get stuck with tools that
+				looked good on the surface, but broke down when it was time to
+				update, scale, or integrate with how they actually work. I’m{" "}
+				<strong>Chris Owens</strong>, and after years supporting
+				enterprise systems, I wanted to bring that same reliability and
+				attention to detail to smaller teams — without the red tape.
 			</p>
 			<p className="mt-4">
-				What started as weekend projects soon grew into a development
-				studio focused on{" "}
-				<strong>partnership, craftsmanship, and trust</strong>. Today,
-				we collaborate with business owners and designers who want
-				reliable, modern websites that actually deliver results.
+				What began as a few builds for friends and referrals turned into
+				a studio focused on{" "}
+				<strong>clarity, craftsmanship, and trust</strong>. Today I
+				partner with business owners and designers to ship modern
+				websites and custom development, from SEO-ready marketing sites
+				to automations, integrations, and lightweight web apps that save
+				time and support growth.
 			</p>
 		</Section>
 	);
