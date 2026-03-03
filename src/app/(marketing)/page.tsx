@@ -7,11 +7,13 @@ import WorkSection from "./work/_components/WorkSection";
 import FAQSection from "../../components/sections/FAQSection";
 import Problem from "./page/_components/Problem";
 import Plan from "./page/_components/Plan";
+import Reviews from "./page/_components/Reviews";
 
 export default function Page() {
 	return (
 		<Main>
 			<Hero />
+			<Reviews />
 			<Problem actionText="Discuss your project" actionUrl="/contact/" />
 			<Plan actionText="See services" actionUrl="/services/" />
 			<ServicesOverview
