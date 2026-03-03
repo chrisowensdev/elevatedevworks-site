@@ -26,7 +26,7 @@ export default function ReviewCard({
 			}
 		>
 			<article
-				className={"relative h-full rounded-2xl  transition px-10"}
+				className={"relative h-full rounded-2xl  transition sm:px-10"}
 			>
 				<div className={"flex items-start gap-3"}>
 					<div className="min-w-0">
