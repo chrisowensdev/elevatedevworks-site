@@ -34,6 +34,7 @@ export default function HowWeWork() {
 		<Section
 			eyebrow="The Elevate Approach"
 			title="How We Work"
+			description="Projects range from marketing sites to custom features, integrations, and small web apps — scoped clearly so you always know what’s next."
 			className="bg-white"
 			id="how-we-work"
 		>

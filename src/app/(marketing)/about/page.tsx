@@ -37,7 +37,7 @@ export default function AboutPage() {
 			<PageHero
 				eyebrow="About Elevate DevWorks"
 				title="Building better digital experiences, together."
-				description="Elevate DevWorks helps small businesses and creative professionals turn ideas into fast, modern, beautifully built websites."
+				description="Elevate DevWorks helps small businesses and creative teams turn ideas into fast, modern websites and custom software — built with clean code, clear communication, and long-term maintainability."
 				primaryCta={{ href: "/contact/", label: "Get a free quote" }}
 				secondaryCta={{ href: "/work/", label: "View projects" }}
 				tone="white"
