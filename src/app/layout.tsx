@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { text, display } from "./fonts";
 import {
+	ConsentScript,
 	SEOJsonLd,
 	// ConsentScript,
 	// CookieBanner,
@@ -71,7 +72,7 @@ export default function RootLayout({
 				</a>
 				<FixedBackground />
 				<SEOJsonLd />
-				{/* <ConsentScript gaMeasurementId="G-HRK4JC4W3J" /> */}
+				<ConsentScript gaMeasurementId="G-HRK4JC4W3J" />
 
 				<Header />
 				{children}
