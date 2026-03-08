@@ -20,7 +20,11 @@ export default function Page() {
 				actionText="View all services"
 				actionUrl="/services/"
 			/>
-			<WorkSection actionText="View all projects" actionUrl="/work/" />
+			<WorkSection
+				actionText="View all projects"
+				actionUrl="/work/"
+				featured
+			/>
 			<Reviews />
 			<About />
 			<FAQSection context="home" />
