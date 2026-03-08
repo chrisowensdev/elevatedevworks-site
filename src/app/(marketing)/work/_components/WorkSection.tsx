@@ -1,4 +1,4 @@
-import { projects } from "@/content/projects";
+import { projects, featuredProjects } from "@/content/projects";
 import WorkGrid from "./WorkGrid";
 import Section from "@/components/layout/Section";
 import { SectionActions } from "@/components/sections/SectionActions";
@@ -6,10 +6,13 @@ import { SectionActions } from "@/components/sections/SectionActions";
 export default function WorkSection({
 	actionText,
 	actionUrl,
+	featured = false,
 }: {
 	actionText?: string;
 	actionUrl?: string;
+	featured?: boolean;
 }) {
+	const displayProjects = featured ? featuredProjects : projects;
 	return (
 		<Section
 			id="recent-projects"
@@ -19,7 +22,7 @@ export default function WorkSection({
 						businesses and creative professionals turn ideas into
 						fast, beautiful, high-performing web experiences."
 		>
-			<WorkGrid projects={projects} />
+			<WorkGrid projects={displayProjects} />
 			{actionText && actionUrl && (
 				<SectionActions
 					links={[

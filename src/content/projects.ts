@@ -15,7 +15,7 @@ export const projects = [
 	{
 		title: "ClearPath Health Advisor",
 		tag: "Health Advisor",
-		img: "clearpath",
+		img: "/images/demos/health-advisor/home.webp",
 		alt: "Health Advisor website demo",
 		desc: "Fast, mobile-first site with a quote-request funnel, service-area pages, and reviews to drive calls.",
 		liveUrl: "https://clearpath.elevatedevworks.com",
@@ -25,13 +25,24 @@ export const projects = [
 		hasCaseStudy: true,
 	},
 	{
+		title: "Stone & Ledger",
+		tag: "Bookkeeper Website Demo",
+		img: "/images/demos/bookkeeper/home.webp",
+		alt: "Stone & Ledger bookkeeper website homepage preview",
+		desc: "A premium bookkeeping website demo designed to help independent bookkeepers and small firms look established, explain services clearly, and generate better client inquiries.",
+		liveUrl: "https://stoneledger.elevatedevworks.com",
+		featured: true,
+		ariaLabel: "Stone & Ledger website demo",
+		slug: "",
+	},
+	{
 		title: "Landscaping",
 		tag: "Professional Services",
-		img: "landscaping",
+		img: "/work/landscaping-1200.webp",
 		alt: "Landscaping website",
 		desc: "Trust-first layout with clear services offered, intake form, and badges—built to convert consultations and create clients.",
 		liveUrl: "https://greenscape.elevatedevworks.com",
-		featured: true,
+		featured: false,
 		slug: "greenscape",
 		ariaLabel: "Greenscape Landscaping case study",
 		hasCaseStudy: true,
@@ -39,7 +50,7 @@ export const projects = [
 	{
 		title: "Invoice Ways",
 		tag: "Mobile App",
-		img: "invoiceways",
+		img: "/work/invoiceways-1200.webp",
 		alt: "InvoiceWays Landing Page",
 		desc: "Cross-platform invoicing app (Web/iOS/Android) with estimates, branded PDFs, and Stripe-powered payments.",
 		liveUrl: "https://invoiceways.com",
@@ -47,6 +58,7 @@ export const projects = [
 		slug: "invoiceways",
 		ariaLabel: "InvoiceWays case study",
 	},
+
 	// {
 	// 	title: "HVAC Demo",
 	// 	tag: "Home Services",

@@ -8,40 +8,40 @@ import type { CardProps } from "@/components/layout/Card";
 import CTASection from "@/components/sections/CTASection";
 
 import { SectionActions } from "@/components/sections/SectionActions";
-import { healthAdvisorWebsite } from "@/content/products/health-advisor-website";
 import FAQAccordion from "@/components/ui/FAQAccordian";
+import { bookkeeperWebsite } from "@/content/products/bookkeeper";
 import ProductPackagesSection from "../_components/ProductPackagesSection";
 
 export const metadata: Metadata = {
-	title: "Health Advisor Website Packages (Medicare & ACA)",
+	title: "Bookkeeper Website Packages | Website Design for Bookkeepers",
 	description:
-		"Productized website launch for Health Advisors, Medicare agents, and ACA brokers. Trustworthy, senior-friendly design with clear conversion paths.",
-	alternates: { canonical: "/services/health-advisor-website/" },
+		"Website design packages for bookkeepers and bookkeeping firms. Professional, trust-focused websites with clear service pages, process explanations, and strong conversion paths—starting at $750.",
+	alternates: { canonical: "/services/bookkeeper-website/" },
 	openGraph: {
-		title: "Health Advisor Website | Elevate DevWorks",
+		title: "Bookkeeper Website Design | Elevate DevWorks",
 		description:
-			"Productized website launch for Health Advisors, Medicare agents, and ACA brokers—starting at $750.",
-		url: "/services/health-advisor-website/",
+			"Professional website packages for bookkeepers and bookkeeping firms—built to increase trust, explain services clearly, and generate better inquiries.",
+		url: "/services/bookkeeper-website/",
 		type: "website",
 		images: [
 			{
 				url: "/elevate_devworks_seo_image.png",
 				width: 1200,
 				height: 630,
-				alt: "Elevate DevWorks",
+				alt: "Elevate DevWorks Bookkeeper Website Design",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Health Advisor Website | Elevate DevWorks",
+		title: "Bookkeeper Website Design | Elevate DevWorks",
 		description:
-			"Productized website launch for Health Advisors, Medicare agents, and ACA brokers—starting at $750.",
+			"Professional website packages for bookkeepers and bookkeeping firms—starting at $750.",
 	},
 };
 
-export default function HealthAdvisorWebsitePage() {
-	const p = healthAdvisorWebsite;
+export default function BookkeeperWebsitePage() {
+	const p = bookkeeperWebsite;
 
 	const whoCards: CardProps[] = p.whoItsFor.map((x) => ({
 		title: x,
@@ -86,8 +86,9 @@ export default function HealthAdvisorWebsitePage() {
 				description={`${p.description}`}
 				primaryCta={p.primaryCta}
 			/>
+
 			<ProductPackagesSection
-				title="Simple, productized pricing for health advisors"
+				title="Simple, productized pricing for Bookkeepers"
 				packages={p.packages}
 			/>
 
@@ -151,12 +152,12 @@ export default function HealthAdvisorWebsitePage() {
 						href={p.secondaryCta.href}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="group block overflow-hidden rounded-2xl border bg-neutral-50"
+						className="group block overflow-hidden rounded-2xl border bg-neutral-50 shadow-[0_0px_24px_rgba(15,185,129,0.15)]"
 						aria-label="Open live demo in a new tab"
 					>
 						<div className="aspect-[16/10]">
 							<img
-								src="/images/demos/health-advisor/home.webp"
+								src="/images/demos/bookkeeper/home.webp"
 								alt="Health Advisor website demo preview"
 								className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
 								loading="lazy"
@@ -202,10 +203,10 @@ export default function HealthAdvisorWebsitePage() {
 				}
 			>
 				{/* <Cards
-					items={includedCards}
-					columns={2}
-					cardVariant="compact"
-				/> */}
+                    items={includedCards}
+                    columns={2}
+                    cardVariant="compact"
+                /> */}
 				{/* Expanded proof rows (with images) */}
 				<div className="mt-12 space-y-10">
 					{withImages.map((item) => (
@@ -235,7 +236,7 @@ export default function HealthAdvisorWebsitePage() {
 								) : null}
 							</div>
 
-							<div className="overflow-hidden rounded-2xl border bg-neutral-50">
+							<div className="overflow-hidden rounded-2xl border bg-neutral-50 shadow-[0_0px_24px_rgba(15,185,129,0.15)]">
 								<div className="aspect-[16/10]">
 									<img
 										src={item.imageSrc!}
@@ -351,14 +352,14 @@ export default function HealthAdvisorWebsitePage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "Service",
-						name: "Health Advisor Website Design",
+						name: "Bookkeeper Website Design",
 						provider: {
 							"@type": "Organization",
 							name: "Elevate DevWorks",
 							url: "https://elevatedevworks.com",
 						},
 						description:
-							"Professional website design packages for health advisors and independent agencies.",
+							"Professional website design packages for bookkeepers and bookkeeping firms.",
 						areaServed: "United States",
 						offers: {
 							"@type": "Offer",

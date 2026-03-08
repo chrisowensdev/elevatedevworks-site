@@ -39,6 +39,10 @@ export default function Header() {
 				label: "Health Advisor",
 				href: "/services/health-advisor-website",
 			},
+			{
+				label: "Bookkeeper",
+				href: "/services/bookkeeper-website",
+			},
 		],
 		[],
 	);
