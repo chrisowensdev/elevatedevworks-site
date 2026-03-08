@@ -150,6 +150,14 @@ export default function Footer() {
 									Health Advisor Website
 								</a>
 							</li>
+							<li>
+								<a
+									href="/services/bookkeeper-website/"
+									className="hover:text-white"
+								>
+									Bookkeeper Website
+								</a>
+							</li>
 							{/* add later */}
 							{/* <li><a href="/services/bookkeeping-website/" className="hover:text-white">Bookkeeping Website</a></li> */}
 						</ul>

@@ -11,7 +11,7 @@ export type IncludedItem = {
 
 export const healthAdvisorWebsite = {
 	slug: "health-advisor-websites",
-	title: "Health Advisor Website Launch",
+	title: "Health Advisor Website Design",
 	subtitle:
 		"A modern website built to help health advisors earn more qualified calls",
 	description:
@@ -223,4 +223,54 @@ export const healthAdvisorWebsite = {
 			a: "Yes. We can connect your domain and ensure everything routes correctly on launch.",
 		},
 	] satisfies ProductFAQ[],
+	packages: [
+		{
+			title: "Starter",
+			price: "$750",
+			description: "Single-page scroll site to start booking calls fast.",
+			perfectFor:
+				'new agents, Facebook-first, "I just need something professional"',
+			features: [
+				"One-page scroll layout (hero, services snapshot, FAQ preview, contact)",
+				"Trust/compliance messaging + “don’t submit sensitive info” guidance",
+				"Privacy Policy + Medicare Disclaimer pages",
+				"Basic SEO (titles/meta), mobile optimization, deployment + domain connection",
+				"1 revision round",
+			],
+		},
+		{
+			title: "Growth",
+			price: "$1,250",
+			description:
+				"Full multi-page website + resources hub (best value).",
+			perfectFor:
+				"established agents who want credibility pages but not heavy content.",
+			features: [
+				"Home, Services/Plans, About (photo spot), FAQs (10–12), Contact",
+				"Resources hub + 3 starter articles (markdown-based)",
+				"Sitemap + robots + SEO basics across pages",
+				"Privacy Policy + Medicare Disclaimer pages",
+				"1 revision round",
+			],
+			badge: "Recommended",
+			salePrice: "$750",
+			saleText: "New Product · first 3 clients",
+		},
+		{
+			title: "Authority",
+			price: "$2,500",
+			description:
+				"Growth + scheduling, campaign landing page, and GBP tune-up.",
+			perfectFor:
+				"established agents trying to scale, run ads, or compete in search.",
+			features: [
+				"Everything in Growth",
+				"Scheduling integration (Calendly or Google Appointment Schedule)",
+				"1 campaign landing page (Turning 65 / AEP / SEP)",
+				"Google Business Profile tune-up",
+				"Lightweight analytics setup",
+				"1 revision round",
+			],
+		},
+	],
 };

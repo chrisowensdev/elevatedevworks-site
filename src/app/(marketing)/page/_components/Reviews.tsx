@@ -49,7 +49,7 @@ export default function Reviews({
 			<div className="mt-10 flex items-center justify-between">
 				<Link
 					href={actionUrl}
-					className="inline-flex items-center text-base font-boldest text-emerald-600 transition hover:text-emerald-800"
+					className="inline-flex items-center text-base font-boldest text-emerald-600 transition hover:text-emerald-800 font-extrabold"
 					target="_blank"
 					rel="noopener noreferrer"
 				>

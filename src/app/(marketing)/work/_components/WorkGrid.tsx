@@ -2,23 +2,19 @@ import { FadeIn } from "@/components/media";
 import type { Project } from "@/content/projects";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 export default function WorkGrid({ projects }: { projects: Project[] }) {
 	return (
 		<div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{projects.map((project, i) => (
 				<FadeIn key={project.slug} delay={i * 0.05}>
-					<article className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md border-t-4 border-t-brand-accent">
-						<div className="relative aspect-video overflow-hidden">
+					<article className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+						<div className="relative aspect-[16/9] overflow-hidden">
 							<Image
-								src={`/work/${project.img}-1200.webp`}
+								src={project.img}
 								alt={project.alt}
 								fill
-								className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-								sizes="(min-width:1280px) calc((100vw - 9rem)/3),
-                                                           (min-width:640px) calc((100vw - 4rem)/2),
-                                                           100vw"
+								className="object-center transition-transform duration-300 group-hover:scale-[1.03]"
 							/>
 						</div>
 

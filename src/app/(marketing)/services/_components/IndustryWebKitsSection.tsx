@@ -25,7 +25,7 @@ const kits: Kit[] = [
 		description:
 			"A compliance-aware, senior-friendly site designed to earn more qualified calls and coverage review requests.",
 		perfectFor:
-			"Medicare agents, ACA brokers, and independent advisors who want a trustworthy web presence",
+			"Medicare agents, ACA brokers, and independent advisors and agents who want a clear, trustworthy web presence",
 		highlights: [
 			"Conversion-first CTA: “Book a Free Coverage Review”",
 			"Core pages + FAQ + resources/articles",
@@ -34,8 +34,26 @@ const kits: Kit[] = [
 		],
 		href: "/services/health-advisor-website",
 		badge: "New",
-		imageSrc: "/work/clearpath-400.webp",
+		imageSrc: "/images/demos/health-advisor/home.webp",
 		imageAlt: "Health Advisor website demo preview",
+	},
+	{
+		title: "Bookkeeper Website Kit",
+		price: "Starting at $750",
+		description:
+			"A trust-focused, professional website designed to help bookkeepers look established and generate client inquiries.",
+		perfectFor:
+			"Independent bookkeepers, virtual bookkeeping services, and small firms that want a clear, credible web presence",
+		highlights: [
+			"Conversion-first CTA: “Book a Free Consult”",
+			"Core pages + FAQ + process explanation",
+			"Fast, modern build (Next.js) + SEO basics included",
+			"Optional ongoing care ($149/mo)",
+		],
+		href: "/services/bookkeeper-website",
+		badge: "New",
+		imageSrc: "/images/demos/bookkeeper/home.webp",
+		imageAlt: "Bookkeeper website demo preview",
 	},
 ];
 
@@ -51,7 +69,7 @@ function KitCard({
 	imageAlt,
 }: Kit) {
 	return (
-		<article className="relative rounded-2xl border bg-white/90 p-6">
+		<article className="relative flex h-full flex-col rounded-2xl border bg-white/90 p-6">
 			<div className="absolute left-[3px] top-0 h-1 w-full rounded-tl-full bg-gradient-to-r from-emerald-600/60 to-emerald-600/0 mb-10" />
 
 			{imageSrc ? (
@@ -109,7 +127,7 @@ function KitCard({
 				))}
 			</ul>
 
-			<div className="mt-5">
+			<div className="mt-auto pt-5">
 				<Link
 					href={href}
 					className="inline-flex items-center text-sm font-medium text-emerald-700 hover:text-emerald-800"
@@ -132,7 +150,7 @@ export default function IndustryWebKitsSection() {
 			description="Productized website kits built for specific industries—clear outcomes, a clean scope, and a straightforward starting price."
 			id="industry-web-kits"
 		>
-			<div className="mt-10 grid gap-6 md:grid-cols-3">
+			<div className="mt-10 grid gap-6 md:grid-cols-2">
 				{kits.map((k, i) => (
 					<FadeIn key={k.title} delay={i * 0.05}>
 						<KitCard {...k} />
