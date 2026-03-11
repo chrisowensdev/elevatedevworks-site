@@ -152,10 +152,10 @@ export default function Footer() {
 							</li>
 							<li>
 								<a
-									href="/services/bookkeeper-website/"
+									href="/services/financial-services-website/"
 									className="hover:text-white"
 								>
-									Bookkeeper Website
+									Financial Services Website
 								</a>
 							</li>
 							{/* add later */}

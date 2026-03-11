@@ -13,7 +13,7 @@ export default function Hero() {
 						Richmond, VA • Web Design + Development
 					</p>
 
-					<h1 className="mt-4 max-w-4xl mx-auto text-4xl md:text-6xl font-semibold leading-[1.02] tracking-tight text-neutral-900">
+					<h1 className="mt-4 max-w-[20ch] mx-auto text-4xl md:text-6xl font-semibold leading-[1.02] tracking-tight text-neutral-900">
 						High-performing websites for small businesses that want
 						to grow.
 					</h1>
