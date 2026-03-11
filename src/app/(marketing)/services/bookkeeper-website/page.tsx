@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import PageHero from "@/components/sections/PageHero";
 import Section from "@/components/layout/Section";
 import Cards from "@/components/layout/Cards";
 import type { CardProps } from "@/components/layout/Card";
@@ -11,6 +10,7 @@ import { SectionActions } from "@/components/sections/SectionActions";
 import FAQAccordion from "@/components/ui/FAQAccordian";
 import { bookkeeperWebsite } from "@/content/products/bookkeeper";
 import ProductPackagesSection from "../_components/ProductPackagesSection";
+import ProductHero from "@/components/sections/ProductHero";
 
 export const metadata: Metadata = {
 	title: "Bookkeeper Website Packages | Website Design for Bookkeepers",
@@ -80,7 +80,7 @@ export default function BookkeeperWebsitePage() {
 
 	return (
 		<>
-			<PageHero
+			<ProductHero
 				eyebrow="Productized Offering"
 				title={p.subtitle}
 				description={`${p.description}`}
