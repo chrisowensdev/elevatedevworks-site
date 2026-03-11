@@ -89,7 +89,7 @@ export default function BookkeeperWebsitePage() {
 			/>
 
 			<ProductPackagesSection
-				title="Simple, productized pricing for Bookkeepers"
+				title="Simple, productized pricing for independent financial professionals"
 				packages={p.packages}
 			/>
 
@@ -176,7 +176,7 @@ export default function BookkeeperWebsitePage() {
 
 			<Section
 				eyebrow="Who it's for"
-				title="Built for independent health advisors"
+				title="Built for independent financial professionals"
 				description="Designed to build trust quickly and make it easy for people to request a coverage review."
 			>
 				<Cards items={whoCards} columns={2} cardVariant="compact" />
@@ -197,7 +197,7 @@ export default function BookkeeperWebsitePage() {
 
 			<Section
 				eyebrow="What's included in Growth (Recommended)"
-				title="Health Advisor Website - Growth"
+				title="Financial Services Website - Growth"
 				description={
 					<>
 						<p className="text-lg text-gray-600">
