@@ -38,12 +38,12 @@ const kits: Kit[] = [
 		imageAlt: "Health Advisor website demo preview",
 	},
 	{
-		title: "Bookkeeper Website Kit",
+		title: "Financial Services Website Kit",
 		price: "Starting at $750",
 		description:
-			"A trust-focused, professional website designed to help bookkeepers look established and generate client inquiries.",
+			"A trust-focused, professional website designed to help independent financial professionals look established and generate better client inquiries.",
 		perfectFor:
-			"Independent bookkeepers, virtual bookkeeping services, and small firms that want a clear, credible web presence",
+			"Bookkeepers, accountants, tax professionals, insurance advisors, and small financial service firms that want a clear, credible web presence",
 		highlights: [
 			"Conversion-first CTA: “Book a Free Consult”",
 			"Core pages + FAQ + process explanation",
@@ -53,7 +53,7 @@ const kits: Kit[] = [
 		href: "/services/bookkeeper-website",
 		badge: "New",
 		imageSrc: "/images/demos/bookkeeper/home.webp",
-		imageAlt: "Bookkeeper website demo preview",
+		imageAlt: "Financial services website demo preview",
 	},
 ];
 
