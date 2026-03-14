@@ -49,8 +49,8 @@ export default function Card({
 
 	const descClass =
 		variant === "mini"
-			? "mt-2 text-sm text-gray-600"
-			: "mt-2 text-sm text-gray-600";
+			? "mt-2 text-sm leading-6 text-gray-600 sm:text-base"
+			: "mt-2 text-sm leading-6 text-gray-600 sm:text-base";
 
 	const Wrapper: React.ElementType = href ? Link : "div";
 	const wrapperProps = href ? { href } : {};

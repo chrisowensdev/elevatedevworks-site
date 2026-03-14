@@ -32,6 +32,9 @@ export type ProductHeroProps = {
 
 	/** Optional: slot to render custom actions instead of CTAs */
 	actionsSlot?: React.ReactNode;
+
+	img: string;
+	alt: string;
 };
 
 export default function ProductHero({
@@ -46,6 +49,8 @@ export default function ProductHero({
 	className,
 	innerClassName,
 	actionsSlot,
+	img,
+	alt,
 }: ProductHeroProps) {
 	const Heading = headingLevel;
 
@@ -56,11 +61,14 @@ export default function ProductHero({
 
 	return (
 		<section className={cn("relative isolate ", className)}>
-			<Container size="wide">
+			<Container
+				size="wide"
+				className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start pt-16 pb-10 sm:pt-24 sm:pb-16"
+			>
 				<FadeIn>
 					<div
 						className={cn(
-							"mx-auto max-w-6xl pt-16 pb-10 sm:pt-24 sm:pb-16 flex flex-col",
+							"mx-auto max-w-6xl  flex flex-col",
 							alignClasses,
 							innerClassName,
 						)}
@@ -139,45 +147,40 @@ export default function ProductHero({
 						) : null}
 					</div>
 				</FadeIn>
-			</Container>
-			<div className="mt-7">
-				<div className="relative mx-auto max-w-2xl">
-					<div className="overflow-hidden rounded-lg md:rounded-3xl border border-neutral-200 bg-white shadow-[0_18px_50px_rgba(0,0,0,0.12)] pt-1">
-						<div className="bg-neutral-50">
-							<img
-								src="/work/clearpath-800.webp"
-								// 	srcSet="
-								// 		/work/clearpath-400.webp 400w,
-								// 		/work/clearpath-800.webp 800w,
-								// 		/work/clearpath-1200.webp 1200w
-								// "
-								sizes="(min-width: 768px) 672px, 92vw"
-								alt="ClearPath desktop website preview"
-								className="block w-full h-auto [filter:contrast(1.03)_saturate(1.02)]"
-								loading="eager"
-								fetchPriority="high"
-								decoding="async"
-								width={1200}
-								height={675}
-							/>
+				<div className="mt-7">
+					<div className="relative mx-auto max-w-2xl">
+						<div className="overflow-hidden rounded-lg md:rounded-3xl border border-neutral-200 bg-white shadow-[0_18px_50px_rgba(0,0,0,0.12)] pt-1">
+							<div className="bg-neutral-50">
+								<img
+									src={img}
+									sizes="(min-width: 768px) 672px, 92vw"
+									alt={alt}
+									className="block w-full h-auto [filter:contrast(1.03)_saturate(1.02)]"
+									loading="eager"
+									fetchPriority="high"
+									decoding="async"
+									width={1200}
+									height={675}
+								/>
+							</div>
 						</div>
-					</div>
 
-					{/* Phone overlay (desktop only) */}
-					<div className="hidden sm:block absolute -bottom-5 right-6 w-[60px] md:w-[130px]">
-						<div className="overflow-hidden  border-0 rounded-lg md:rounded-3xl shadow-[0_14px_34px_rgba(0,0,0,0.16)]">
-							<img
-								src="/clearpath-mobile-mockup-1.png"
-								alt="ClearPath mobile preview"
-								className="block w-full h-auto"
-								loading="lazy"
-								decoding="async"
-								fetchPriority="low"
-							/>
-						</div>
+						{/* Phone overlay (desktop only) */}
+						{/* <div className="hidden sm:block absolute -bottom-5 right-6 w-[60px] md:w-[130px]">
+							<div className="overflow-hidden  border-0 rounded-lg md:rounded-3xl shadow-[0_14px_34px_rgba(0,0,0,0.16)]">
+								<img
+									src="/clearpath-mobile-mockup-1.png"
+									alt="ClearPath mobile preview"
+									className="block w-full h-auto"
+									loading="lazy"
+									decoding="async"
+									fetchPriority="low"
+								/>
+							</div>
+						</div> */}
 					</div>
 				</div>
-			</div>
+			</Container>
 		</section>
 	);
 }
