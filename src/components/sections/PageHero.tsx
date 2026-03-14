@@ -49,12 +49,12 @@ export default function PageHero({
 }: PageHeroProps) {
 	const Heading = headingLevel;
 
-	// const toneClasses =
-	// 	tone === "brand"
-	// 		? "bg-brand text-white"
-	// 		: tone === "muted"
-	// 		? "bg-brand-light text-neutral-900"
-	// 		: "bg-white text-neutral-900";
+	const toneClasses =
+		tone === "brand"
+			? "bg-brand text-white"
+			: tone === "muted"
+				? "bg-brand-light text-neutral-900"
+				: "text-neutral-900";
 
 	const alignClasses =
 		align === "center"
@@ -62,7 +62,7 @@ export default function PageHero({
 			: "text-left items-start";
 
 	return (
-		<section className={cn("relative isolate", className)}>
+		<section className={cn("relative isolate", className, toneClasses)}>
 			<Container size="wide">
 				<FadeIn>
 					<div
@@ -73,7 +73,14 @@ export default function PageHero({
 						)}
 					>
 						{eyebrow ? (
-							<p className="text-sm font-semibold tracking-wider text-emerald-600">
+							<p
+								className={cn(
+									"text-sm font-semibold tracking-wider ",
+									tone === "brand"
+										? "text-white/50"
+										: "text-emerald-600",
+								)}
+							>
 								{eyebrow}
 							</p>
 						) : null}
@@ -123,7 +130,12 @@ export default function PageHero({
 								{primaryCta ? (
 									<Link
 										href={primaryCta.href}
-										className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-white transition hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 shadow-[0_3px_10px_rgba(0,0,0,0.30)]"
+										className={cn(
+											"inline-flex items-center font-bold justify-center rounded-xl  px-5 py-3 text-white transition hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 shadow-[0_3px_10px_rgba(0,0,0,0.30)]",
+											tone === "brand"
+												? "bg-white text-brand"
+												: "bg-emerald-600 text-white ",
+										)}
 									>
 										{primaryCta.label}
 									</Link>
