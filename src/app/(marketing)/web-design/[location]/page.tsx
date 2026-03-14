@@ -1,14 +1,17 @@
-// src/app/(marketing)/web-design/[location]/page.tsx
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { webDesignLocations } from "@/content/locations.web-design";
 
 import PageHero from "@/components/sections/PageHero";
 import Section from "@/components/layout/Section";
-import Cards from "@/components/layout/Cards";
-import type { CardProps } from "@/components/layout/Card";
+// import Cards from "@/components/layout/Cards";
+// import type { CardProps } from "@/components/layout/Card";
 import CTASection from "@/components/sections/CTASection";
 import { SectionActions } from "@/components/sections/SectionActions";
+import { LocationContextSection } from "./_components/LocationContextSection";
+import { LocationImprovementsSection } from "./_components/LocationImprovementsSection";
+import { GoodFitSection } from "./_components/GoodFit";
+import { LocationProblemsSection } from "./_components/LocationProblemsSection";
 
 type Props = { params: Promise<{ location: string }> };
 
@@ -26,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	if (!loc) return {};
 
 	const title = `Web Design in ${loc.city}, ${loc.state} | Elevate DevWorks`;
-	const description = `Fast, SEO-ready websites for ${loc.city} small businesses. Calm process, clean design, and performance-first builds.`;
+	const description = `Professional web design for ${loc.city} small businesses. Fast, modern websites build for clarity, performance, and more customer inquires.`;
 
 	const robots =
 		loc.index === false
@@ -69,26 +72,32 @@ export default async function WebDesignLocationPage({ params }: Props) {
 	const hubHref = "/web-design/";
 	const packagesHref = "/services/#website-packages";
 
-	const whatYouGetCards: CardProps[] = [
-		{
-			title: "Fast, SEO-ready foundation",
-			description:
-				"Clean structure, strong technical basics, and performance-minded builds from day one.",
-			variant: "compact",
-		},
-		{
-			title: "Clear messaging + page flow",
-			description:
-				"Simple hierarchy and page paths so visitors understand what you do and what to do next.",
-			variant: "compact",
-		},
-		{
-			title: "Calm, organized process",
-			description:
-				"Clear steps, steady progress, and a professional experience without the agency pressure.",
-			variant: "compact",
-		},
-	];
+	// const whatYouGetCards: CardProps[] = [
+	// 	{
+	// 		title: "The site looks outdated",
+	// 		description:
+	// 			"A website that once worked well now feels dated or generic compared to competitors.",
+	// 		variant: "compact",
+	// 	},
+	// 	{
+	// 		title: "The message isn't clear",
+	// 		description:
+	// 			"Visitors struggle to understand what the business actually offers.",
+	// 		variant: "compact",
+	// 	},
+	// 	{
+	// 		title: "Calm, organized process",
+	// 		description:
+	// 			"Clear steps, steady progress, and a professional experience without the agency pressure.",
+	// 		variant: "compact",
+	// 	},
+	// 	{
+	// 		title: "Calm, organized process",
+	// 		description:
+	// 			"Clear steps, steady progress, and a professional experience without the agency pressure.",
+	// 		variant: "compact",
+	// 	},
+	// ];
 
 	// const fitCards: CardProps[] = [
 	// 	{
@@ -124,24 +133,24 @@ export default async function WebDesignLocationPage({ params }: Props) {
 	return (
 		<>
 			<PageHero
-				eyebrow="Web Design"
+				eyebrow={`Web Design in ${loc.city}`}
 				title={`Web design for ${loc.city} small businesses`}
 				description={
 					loc.introBlurb ??
 					`Calm, professional websites built for speed, clarity, and conversion.`
 				}
 				primaryCta={{ label: "Discuss your project", href: ctaHref }}
-				secondaryCta={{ label: "Back to Web Design", href: hubHref }}
+				secondaryCta={{ label: "More About Web Design", href: hubHref }}
+				// tone="brand"
 			/>
 
-			<Section
-				eyebrow="What you get"
-				title="A modern site built for clarity, speed, and trust"
-				description="A clean, professional website that loads fast, communicates clearly, and makes it easy for customers to reach you."
+			{/* <Section
+				title={`Why ${loc.city} businesses reach out for a new website`}
+				description="Most projects start when a business realizes their website isn't clearly representing the quality of their work."
 			>
 				<Cards
 					items={whatYouGetCards}
-					columns={3}
+					columns={4}
 					cardVariant="compact"
 				/>
 				<SectionActions
@@ -149,9 +158,14 @@ export default async function WebDesignLocationPage({ params }: Props) {
 						{ text: "View website packages", href: packagesHref },
 					]}
 				/>
-			</Section>
+			</Section> */}
+			<LocationProblemsSection />
 
-			<Section
+			<LocationImprovementsSection />
+
+			<LocationContextSection />
+
+			{/* <Section
 				eyebrow="Local"
 				title={`Serving ${loc.city} and nearby areas`}
 				description={
@@ -179,9 +193,11 @@ export default async function WebDesignLocationPage({ params }: Props) {
 						{ text: "View the main Web Design hub", href: hubHref },
 					]}
 				/>
-			</Section>
+			</Section> */}
 
-			{loc.industries?.length ? (
+			<GoodFitSection />
+
+			{/* {loc.industries?.length ? (
 				<Section
 					eyebrow="Good fit"
 					title={`Common projects around ${loc.city}`}
@@ -198,7 +214,7 @@ export default async function WebDesignLocationPage({ params }: Props) {
 						))}
 					</div>
 				</Section>
-			) : null}
+			) : null} */}
 
 			<Section
 				eyebrow="FAQ"
