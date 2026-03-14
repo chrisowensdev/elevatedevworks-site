@@ -19,6 +19,11 @@ export const bookkeeperWebsite = {
 	startingPrice: 750,
 	monthlyCarePrice: 149,
 
+	primaryDesktopImage: {
+		url: "/images/demos/bookkeeper/home_1200.webp",
+		alt: "Bookkeeper home screenshot for desktop",
+	},
+
 	primaryCta: { label: "Request pricing", href: "/contact/" },
 
 	secondaryCta: {

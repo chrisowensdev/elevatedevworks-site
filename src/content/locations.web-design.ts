@@ -1,21 +1,24 @@
-// src/content/locations.web-design.ts
 export type WebDesignLocation = {
-	slug: string; // "richmond-va"
-	city: string; // "Richmond"
-	state: string; // "VA"
-	regionLabel?: string; // "Richmond Metro"
-	nearby?: string[]; // ["Henrico", "Chesterfield", "Short Pump"]
-	industries?: string[]; // ["Contractors", "Med Spas", "Professional Services"]
-	introBlurb: string; // 2-3 sentence human intro (unique)
-	whyThisLocation: string[]; // bullets unique to the location
+	slug: string;
+	metaTitle: string;
+	metaDescription: string;
+	city: string;
+	state: string;
+	regionLabel?: string;
+	nearby?: string[];
+	industries?: string[];
+	introBlurb: string;
+	whyThisLocation: string[];
 	faqs: { q: string; a: string }[];
 	priority?: "high" | "normal";
-	index?: boolean; // allow you to noindex thinner/experimental pages
+	index?: boolean;
 };
 
 export const webDesignLocations: WebDesignLocation[] = [
 	{
 		slug: "richmond-va",
+		metaTitle: "",
+		metaDescription: "",
 		city: "Richmond",
 		state: "VA",
 		regionLabel: "Richmond Metro",
@@ -27,7 +30,7 @@ export const webDesignLocations: WebDesignLocation[] = [
 			"Small professional firms",
 		],
 		introBlurb:
-			"Elevate DevWorks builds fast, SEO-ready websites for Richmond small businesses—clear messaging, clean design, and a calm process that doesn't feel salesy.",
+			"Elevate DevWorks helps Richmond businesses launch fast, modern websites that clearly explain what they do, load quickly on mobile, and make it easy for customers to get in touch.",
 		whyThisLocation: [
 			"Designed for service businesses that rely on phone calls and quote requests.",
 			"Mobile-first layouts that make it easy to tap-to-call, request an estimate, or book a consult.",

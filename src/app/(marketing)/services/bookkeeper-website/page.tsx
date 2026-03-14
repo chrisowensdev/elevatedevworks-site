@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import PageHero from "@/components/sections/PageHero";
 import Section from "@/components/layout/Section";
 import Cards from "@/components/layout/Cards";
 import type { CardProps } from "@/components/layout/Card";
@@ -11,6 +10,7 @@ import { SectionActions } from "@/components/sections/SectionActions";
 import FAQAccordion from "@/components/ui/FAQAccordian";
 import { bookkeeperWebsite } from "@/content/products/bookkeeper";
 import ProductPackagesSection from "../_components/ProductPackagesSection";
+import ProductHero from "@/components/sections/ProductHero";
 
 export const metadata: Metadata = {
 	title: "Bookkeeper Website Packages | Website Design for Bookkeepers",
@@ -80,11 +80,13 @@ export default function BookkeeperWebsitePage() {
 
 	return (
 		<>
-			<PageHero
+			<ProductHero
 				eyebrow="Productized Offering"
 				title={p.subtitle}
 				description={`${p.description}`}
 				primaryCta={p.primaryCta}
+				img={p.primaryDesktopImage.url}
+				alt={p.primaryDesktopImage.alt}
 			/>
 
 			<ProductPackagesSection
@@ -92,80 +94,62 @@ export default function BookkeeperWebsitePage() {
 				packages={p.packages}
 			/>
 
-			<Section
-				eyebrow="Demo"
-				title="See the demo experience"
-				description={
-					<>
-						<p>
-							Want to see the flow and structure of the Growth
-							package? <br />
-							View the demo site.
-						</p>
-						<p className="mt-2 text-sm text-gray-500">
-							{p.demoNotice}
-						</p>
-					</>
-				}
-			>
-				<div className="mt-10 grid gap-6 md:grid-cols-2 md:items-start">
-					{/* Left: actions + quick bullets */}
-					<div className="p-6">
-						<div className="text-sm font-semibold text-gray-900">
-							Explore the full experience
+			<section>
+				<div className="mx-auto max-w-5xl px-6 py-14 md:py-20">
+					<div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+						<div>
+							<p className="text-xs font-semibold tracking-wider text-emerald-600">
+								Demo
+							</p>
+							<h2 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
+								See the demo experience
+							</h2>
+							<p className="mt-4 text-base leading-7 text-gray-600 sm:text-lg">
+								Want to see the flow and structure of the Growth
+								package? <br />
+								View the demo site.
+							</p>
 						</div>
-						<p className="mt-2 text-sm text-gray-700 leading-6">
-							The demo shows the structure, CTA flow, and
-							senior-friendly layout style.
-						</p>
 
-						<ul className="mt-5 space-y-2 text-sm text-gray-700">
-							{[
-								"Conversion-first homepage layout",
-								"Coverage review CTA flow",
-								"FAQ + Resources structure",
-							].map((x) => (
-								<li key={x} className="flex gap-2">
-									<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600/80" />
-									<span className="leading-6">{x}</span>
-								</li>
-							))}
-						</ul>
+						<div className="pl-6">
+							<div className="text-sm font-semibold text-gray-900">
+								Explore the full experience
+							</div>
+							<p className="mt-2 text-sm text-gray-700 leading-6">
+								The demo shows the structure, CTA flow, and
+								senior-friendly layout style.
+							</p>
 
-						<div className="mt-4 flex flex-wrap gap-3">
-							<Link
-								href={p.secondaryCta.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="inline-flex items-center rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
-							>
-								View live demo{" "}
-								<span aria-hidden className="ml-1">
-									↗
-								</span>
-							</Link>
+							<ul className="mt-5 space-y-2 text-sm text-gray-700">
+								{[
+									"Conversion-first homepage layout",
+									"Coverage review CTA flow",
+									"FAQ + Resources structure",
+								].map((x) => (
+									<li key={x} className="flex gap-2">
+										<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600/80" />
+										<span className="leading-6">{x}</span>
+									</li>
+								))}
+							</ul>
+
+							<div className="mt-4 flex flex-wrap gap-3">
+								<Link
+									href={p.secondaryCta.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-flex items-center rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+								>
+									View live demo{" "}
+									<span aria-hidden className="ml-1">
+										↗
+									</span>
+								</Link>
+							</div>
 						</div>
 					</div>
-
-					{/* Right: screenshot */}
-					<Link
-						href={p.secondaryCta.href}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="group block overflow-hidden rounded-2xl border bg-neutral-50 shadow-[0_0px_24px_rgba(15,185,129,0.15)]"
-						aria-label="Open live demo in a new tab"
-					>
-						<div className="aspect-[16/10]">
-							<img
-								src="/images/demos/bookkeeper/home.webp"
-								alt="Health Advisor website demo preview"
-								className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-								loading="lazy"
-							/>
-						</div>
-					</Link>
 				</div>
-			</Section>
+			</section>
 
 			<Section
 				eyebrow="Who it's for"
