@@ -47,7 +47,31 @@ export default function AboutPage() {
 			<HowItStarted />
 			<OurMission />
 
+			<section className="mt-12">
+				<div className="relative mx-auto max-w-xl">
+					<div className="overflow-hidden rounded-lg md:rounded-3xl bg-white shadow-[0_12px_30px_rgba(0,0,0,0.10)]">
+						<div className="bg-neutral-50">
+							<img
+								src="/images/about/chris_working.jpg"
+								sizes="(min-width: 768px) 672px, 92vw"
+								alt="Responsive small business website design example"
+								className="block w-full h-auto [filter:contrast(1.03)_saturate(1.02)]"
+								loading="eager"
+								fetchPriority="high"
+								decoding="async"
+								width={600}
+								height={800}
+							/>
+						</div>
+					</div>
+					{/* <p className="mt-3 text-sm text-neutral-500 text-center">
+						Chris Owens - Founder, Elevate DevWorks
+					</p> */}
+				</div>
+			</section>
+
 			<Values />
+
 			<HowWeWork />
 			<CTASections />
 
