@@ -18,7 +18,10 @@ export type IconKey =
 	| "Search"
 	| "MapPin"
 	| "Wrench"
-	| "FileText";
+	| "FileText"
+	| "RefreshCw"
+	| "ShieldCheck"
+	| "LifeBuoy";
 
 export type LocationImprovementCardProps = {
 	title: string;
@@ -36,6 +39,7 @@ export type LocationImprovementsSectionProps = {
 	mobileImgSrc?: string;
 	mobileImgAlt?: string;
 	items: LocationImprovementCardProps[];
+	maintenanceGraphic?: boolean;
 };
 
 //LocationContextSection.tsx
