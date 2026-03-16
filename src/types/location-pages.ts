@@ -5,9 +5,9 @@ type ProblemItem = {
 };
 
 export type LocationProblemsSectionProps = {
-	title?: string;
-	intro?: string;
-	items?: ProblemItem[];
+	title: string;
+	intro: string;
+	items: ProblemItem[];
 };
 
 //LocationImprovementsSection.tsx
