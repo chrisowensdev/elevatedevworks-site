@@ -7,6 +7,8 @@ import Cards from "@/components/layout/Cards";
 import type { CardProps } from "@/components/layout/Card";
 import CTASection from "@/components/sections/CTASection";
 import { SectionActions } from "@/components/sections/SectionActions";
+import ServiceAreaSection from "@/components/sections/service-hub/ServiceAreaSection";
+import { webDesignLocations } from "@/content/locations.web-design";
 
 export const metadata: Metadata = {
 	title: "Website Maintenance | Elevate DevWorks",
@@ -37,10 +39,12 @@ export const metadata: Metadata = {
 };
 
 export default function MaintenancePage() {
+	const basePath = "/maintenance";
 	const ctaHref = "/contact/";
 	const careHref = "/care/";
 	const carePackagesHref = "/services/#ongoing-care";
 	const quickWinsHref = "/services/#quick-wins";
+	const showLocations = true;
 
 	const cards: CardProps[] = [
 		{
@@ -98,6 +102,13 @@ export default function MaintenancePage() {
 					]}
 				/>
 			</Section>
+
+			{showLocations ? (
+				<ServiceAreaSection
+					locations={webDesignLocations}
+					basePath={basePath}
+				/>
+			) : null}
 
 			<CTASection
 				title="Not sure what you need?"

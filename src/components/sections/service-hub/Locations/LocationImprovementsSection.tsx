@@ -2,6 +2,7 @@
 
 import type { LocationImprovementsSectionProps } from "@/types/location-pages";
 import LocationImprovementCard from "./LocationImprovementCard";
+import { MaintenanceSolutionsGraphic } from "./MaintenanceSolutionsGraphic";
 
 export function LocationImprovementsSection({
 	eyebrow,
@@ -12,6 +13,7 @@ export function LocationImprovementsSection({
 	mobileImgSrc,
 	mobileImgAlt,
 	items,
+	maintenanceGraphic,
 }: LocationImprovementsSectionProps) {
 	return (
 		<section>
@@ -28,6 +30,11 @@ export function LocationImprovementsSection({
 							{intro}
 						</p>
 					</div>
+					{maintenanceGraphic ? (
+						<div>
+							<MaintenanceSolutionsGraphic className="max-w-2xl" />
+						</div>
+					) : null}
 					{desktopImgSrc ? (
 						<div>
 							<div className="relative mx-auto max-w-2xl">
