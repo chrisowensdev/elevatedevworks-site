@@ -4,14 +4,13 @@ import { webDesignLocations } from "@/content/locations.web-design";
 
 import PageHero from "@/components/sections/PageHero";
 import Section from "@/components/layout/Section";
-// import Cards from "@/components/layout/Cards";
-// import type { CardProps } from "@/components/layout/Card";
 import CTASection from "@/components/sections/CTASection";
 import { SectionActions } from "@/components/sections/SectionActions";
-import { LocationContextSection } from "./_components/LocationContextSection";
-import { LocationImprovementsSection } from "./_components/LocationImprovementsSection";
-import { GoodFitSection } from "./_components/GoodFit";
-import { LocationProblemsSection } from "./_components/LocationProblemsSection";
+import { LocationContextSection } from "@/components/sections/service-hub/Locations/LocationContextSection";
+import { LocationImprovementsSection } from "@/components/sections/service-hub/Locations/LocationImprovementsSection";
+import { LocationGoodFitSection } from "@/components/sections/service-hub/Locations/LocationGoodFit";
+import { LocationProblemsSection } from "@/components/sections/service-hub/Locations/LocationProblemsSection";
+import FAQAccordion from "@/components/ui/FAQAccordion";
 
 type Props = { params: Promise<{ location: string }> };
 
@@ -72,64 +71,6 @@ export default async function WebDesignLocationPage({ params }: Props) {
 	const hubHref = "/web-design/";
 	const packagesHref = "/services/#website-packages";
 
-	// const whatYouGetCards: CardProps[] = [
-	// 	{
-	// 		title: "The site looks outdated",
-	// 		description:
-	// 			"A website that once worked well now feels dated or generic compared to competitors.",
-	// 		variant: "compact",
-	// 	},
-	// 	{
-	// 		title: "The message isn't clear",
-	// 		description:
-	// 			"Visitors struggle to understand what the business actually offers.",
-	// 		variant: "compact",
-	// 	},
-	// 	{
-	// 		title: "Calm, organized process",
-	// 		description:
-	// 			"Clear steps, steady progress, and a professional experience without the agency pressure.",
-	// 		variant: "compact",
-	// 	},
-	// 	{
-	// 		title: "Calm, organized process",
-	// 		description:
-	// 			"Clear steps, steady progress, and a professional experience without the agency pressure.",
-	// 		variant: "compact",
-	// 	},
-	// ];
-
-	// const fitCards: CardProps[] = [
-	// 	{
-	// 		title: "Great fit for",
-	// 		description: (
-	// 			<ul className="mt-1 space-y-2 text-sm text-gray-700">
-	// 				{[
-	// 					"Service businesses that need more calls, leads, or bookings",
-	// 					"Small teams that want clarity and maintainability",
-	// 					"Owners who want a website that feels trustworthy and fast",
-	// 				].map((x) => (
-	// 					<li key={x} className="flex gap-2">
-	// 						<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600" />
-	// 						<span className="leading-6">{x}</span>
-	// 					</li>
-	// 				))}
-	// 			</ul>
-	// 		),
-	// 		variant: "compact",
-	// 	},
-	// 	{
-	// 		title: "If you only need a quick fix",
-	// 		description: (
-	// 			<p className="text-sm text-gray-700 leading-6">
-	// 				A Quick Win may be the simplest option. If you’re not sure,
-	// 				we’ll recommend the most straightforward next step.
-	// 			</p>
-	// 		),
-	// 		variant: "compact",
-	// 	},
-	// ];
-
 	return (
 		<>
 			<PageHero
@@ -144,99 +85,112 @@ export default async function WebDesignLocationPage({ params }: Props) {
 				// tone="brand"
 			/>
 
-			{/* <Section
-				title={`Why ${loc.city} businesses reach out for a new website`}
-				description="Most projects start when a business realizes their website isn't clearly representing the quality of their work."
-			>
-				<Cards
-					items={whatYouGetCards}
-					columns={4}
-					cardVariant="compact"
-				/>
-				<SectionActions
-					links={[
-						{ text: "View website packages", href: packagesHref },
-					]}
-				/>
-			</Section> */}
-			<LocationProblemsSection />
-
-			<LocationImprovementsSection />
-
-			<LocationContextSection />
-
-			{/* <Section
-				eyebrow="Local"
-				title={`Serving ${loc.city} and nearby areas`}
-				description={
-					loc.nearby?.length
-						? `Commonly supporting businesses in ${loc.nearby.join(
-								", ",
-							)} and the surrounding area.`
-						: "Supporting local businesses with calm, performance-first web design."
-				}
-			>
-				<ul className="grid gap-3 md:grid-cols-2">
-					{loc.whyThisLocation.map((point) => (
-						<li
-							key={point}
-							className="flex gap-2 text-sm text-gray-700"
-						>
-							<span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600/70" />
-							<span className="leading-6">{point}</span>
-						</li>
-					))}
-				</ul>
-
-				<SectionActions
-					links={[
-						{ text: "View the main Web Design hub", href: hubHref },
-					]}
-				/>
-			</Section> */}
-
-			<GoodFitSection />
-
-			{/* {loc.industries?.length ? (
-				<Section
-					eyebrow="Good fit"
-					title={`Common projects around ${loc.city}`}
-					description="A few types of businesses we often support with web design and rebuilds."
-				>
-					<div className="flex flex-wrap gap-2">
-						{loc.industries.map((x) => (
-							<span
-								key={x}
-								className="rounded-full border bg-white/60 px-3 py-1 text-sm text-gray-800"
-							>
-								{x}
-							</span>
-						))}
-					</div>
-				</Section>
-			) : null} */}
+			<LocationProblemsSection
+				title={`Why ${loc.city} businesses start looking for a new website`}
+				intro="Most projects start when a business realizes their website isn't clearly representing the quality of their work."
+				items={[
+					{
+						title: "The site looks outdated",
+						description:
+							"A website that once worked well now feels generic or behind the quality of the business.",
+					},
+					{
+						title: "The message isn't clear",
+						description:
+							"Visitors land on the site but still struggle to quickly understand what the business actually offers.",
+					},
+					{
+						title: "It's not generating enough inquiries",
+						description:
+							"The site may get traffic, but it isn't helping turn visitors into calls, quote requests, or conversations.",
+					},
+					{
+						title: "Updating the site feels frustrating",
+						description:
+							"Even simple updates feel complicated or risky, so the site slowly becomes outdated.",
+					},
+				]}
+			/>
+			<LocationImprovementsSection
+				eyebrow="How we help"
+				title="What improves with a redesign"
+				intro="A stronger website should do more than look better. It should make your business easier to understand, easier to trust, and easier to contact."
+				desktopImgSrc="/work/clearpath-800.webp"
+				desktopImgAlt="Responsive small business website design example"
+				mobileImgSrc="/clearpath-mobile-mockup-1.png"
+				mobileImgAlt="ClearPath mobile preview"
+				items={[
+					{
+						title: "Clearer messaging",
+						description:
+							"We structure the page so visitors quickly understand what you do, who you help, and how to take the next step.",
+						iconKey: "MessageSquare",
+					},
+					{
+						title: "Better conversion flow",
+						description:
+							"We make it easier for people to call, request a quote, or reach out without friction.",
+						iconKey: "TrendingUp",
+					},
+					{
+						title: "Faster mobile performance",
+						description:
+							"Your site should load quickly and feel polished on the devices most people use first.",
+						iconKey: "Smartphone",
+					},
+					{
+						title: "SEO-ready structure",
+						description:
+							"We build with clean page structure, metadata, and internal linking in place from the start.",
+						iconKey: "Search",
+					},
+				]}
+			/>
+			<LocationContextSection
+				eyebrow="Local experience"
+				title={`Working with businesses in ${loc.city} and nearby areas`}
+				description="We work with businesses across Richmond, Henrico, Chesterfield, and nearby areas. Most projects run smoothly remote-first, but local kickoff calls or in-person meetings can happen when helpful."
+				points={[
+					"Clear communication from kickoff to launch",
+					"Fast, modern builds focused on performance",
+					"Flexible support for small business owners and lean teams",
+				]}
+			/>
+			<LocationGoodFitSection
+				eyebrow="Good fit"
+				title="A good fit for businesses that want to"
+				intro="This kind of project usually makes the most sense for businesses that are ready to strengthen how they show up online."
+				items={[
+					"Make a stronger first impression",
+					"Get more calls or quote requests",
+					"Replace an outdated or DIY site",
+					"Clearly explain their services",
+					"Improve mobile performance and maintainability",
+					"Launch with a cleaner, more professional presence",
+				]}
+			/>
 
 			<Section
 				eyebrow="FAQ"
 				title={`Web design in ${loc.city}: common questions`}
 				description="A few quick answers. If you want the simplest next step, reach out."
 			>
-				<div className="space-y-6">
-					{loc.faqs.map((f) => (
-						<div
-							key={f.q}
-							className="rounded-2xl border bg-white/60 p-5"
-						>
-							<h3 className="text-base font-semibold tracking-tight text-gray-900">
-								{f.q}
-							</h3>
-							<p className="mt-2 text-sm text-gray-700 leading-6">
-								{f.a}
-							</p>
-						</div>
-					))}
-				</div>
-
+				<FAQAccordion
+					items={[
+						{
+							q: `Do you work with ${loc.city} businesses remotely or in person?`,
+							a: "Both. Most projects run smoothly remote-first, and we can meet locally when it helps kickoff or content review.",
+						},
+						{
+							q: "How long does a typical small business website take?",
+							a: "Most sites land in a few weeks depending on content readiness. We'll give you a clear timeline after a quick walkthrough.",
+						},
+						{
+							q: "Can you improve an existing site instead of rebuilding?",
+							a: "Yes—if the foundation is workable. Otherwise we'll recommend a rebuild for speed, structure, and SEO.",
+						},
+					]}
+				/>
 				<SectionActions
 					links={[
 						{ text: "View website packages", href: packagesHref },

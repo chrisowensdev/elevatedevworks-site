@@ -6,7 +6,7 @@ import * as React from "react";
 export type FAQItem = { q: string; a: string };
 
 export default function FAQAccordion({ items }: { items: FAQItem[] }) {
-	const [open, setOpen] = React.useState<number | null>(0);
+	const [open, setOpen] = React.useState<number | null>(null);
 
 	return (
 		<div className="space-y-3">
@@ -20,7 +20,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
 							aria-expanded={isOpen}
 							onClick={() => setOpen(isOpen ? null : idx)}
 						>
-							<span className="text-base font-semibold tracking-tight text-gray-900">
+							<span className="text-base font-medium tracking-tight text-gray-900">
 								{f.q}
 							</span>
 							<span

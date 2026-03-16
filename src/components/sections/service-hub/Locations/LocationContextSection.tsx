@@ -1,19 +1,10 @@
-type LocationContextSectionProps = {
-	eyebrow?: string;
-	title?: string;
-	description?: string;
-	points?: string[];
-};
+import type { LocationContextSectionProps } from "@/types/location-pages";
 
 export function LocationContextSection({
-	eyebrow = "Local experience",
-	title = "Working with businesses in Richmond and nearby areas",
-	description = "We work with businesses across Richmond, Henrico, Chesterfield, and nearby areas. Most projects run smoothly remote-first, but local kickoff calls or in-person meetings can happen when helpful.",
-	points = [
-		"Clear communication from kickoff to launch",
-		"Fast, modern builds focused on performance",
-		"Flexible support for small business owners and lean teams",
-	],
+	eyebrow,
+	title,
+	description,
+	points,
 }: LocationContextSectionProps) {
 	return (
 		<section className="bg-white">
