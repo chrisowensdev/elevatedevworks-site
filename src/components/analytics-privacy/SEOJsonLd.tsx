@@ -1,20 +1,20 @@
 import { siteConfig } from "@/content/siteConfig";
 
 export default function SEOJsonLd() {
-	const baseUrl = "https://elevatedevworks.com/";
+	const baseUrl = "https://elevatedevworks.com";
 
 	const jsonLd = {
 		"@context": "https://schema.org",
 		"@graph": [
 			{
 				"@type": "LocalBusiness",
-				"@id": `${baseUrl}#business`,
+				"@id": `${baseUrl}/#business`,
 				name: "Elevate DevWorks",
-				url: baseUrl,
+				url: `${baseUrl}/`,
 				description:
 					"Elevate DevWorks is a Richmond, VA-based web and software development company specializing in custom websites, web apps, and mobile applications.",
-				image: `${baseUrl}elevate_devworks_seo_image.png`, // or your logo
-				logo: `${baseUrl}elevate-logo-symbol-48x48.png`,
+				image: `${baseUrl}/elevate_devworks_seo_image.png`, // or your logo
+				logo: `${baseUrl}/elevate-logo-symbol-48x48.png`,
 				telephone: siteConfig.phone ?? undefined,
 				address: {
 					"@type": "PostalAddress",
@@ -27,21 +27,18 @@ export default function SEOJsonLd() {
 					name: "United States",
 				},
 				sameAs: [
-					// replace with your actual profiles
-					"https://github.com/chrisowensdev",
-					"https://www.linkedin.com/in/chrisowensdev", // example
+					"https://github.com/elevatedevworks",
+					"https://www.linkedin.com/company/elevatedevworks",
 				],
 			},
 			{
 				"@type": "WebSite",
-				"@id": `${baseUrl}#website`,
-				url: baseUrl,
+				"@id": `${baseUrl}/#website`,
+				url: `${baseUrl}/`,
 				name: "Elevate DevWorks",
-				alternateName: ["Elevated DevWorks", "EDW"],
-				description:
-					"Web and application development for small businesses and creative professionals.",
+				alternateName: "EDW",
 				publisher: {
-					"@id": `${baseUrl}#business`,
+					"@id": `${baseUrl}/#business`,
 				},
 				inLanguage: "en-US",
 			},
