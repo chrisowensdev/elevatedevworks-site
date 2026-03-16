@@ -10,6 +10,7 @@ import { LocationGoodFitSection } from "@/components/sections/service-hub/Locati
 import { LocationProblemsSection } from "@/components/sections/service-hub/Locations/LocationProblemsSection";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { seoLocations } from "@/content/locations.seo";
+import { RelatedServicesSection } from "@/components/sections/service-hub/Locations/RelatedServicesSection";
 
 type Props = { params: Promise<{ location: string }> };
 
@@ -26,8 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const loc = getLocation(location);
 	if (!loc) return {};
 
-	const title = `Web Design in ${loc.city}, ${loc.state} | Elevate DevWorks`;
-	const description = `Professional web design for ${loc.city} small businesses. Fast, modern websites build for clarity, performance, and more customer inquires.`;
+	const title = `SEO ${loc.city} ${loc.state} | Local SEO for Small Businesses | Elevate DevWorks`;
+	const description = `Improve your search visibility with ${loc.city} SEO services focused on site structure, local relevance, technical foundations, and better lead generation.`;
 
 	const robots =
 		loc.index === false
@@ -38,11 +39,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		title,
 		description,
 		robots,
-		alternates: { canonical: `/web-design/${loc.slug}/` },
+		alternates: { canonical: `/seo/${loc.slug}/` },
 		openGraph: {
 			title,
 			description,
-			url: `/web-design/${loc.slug}/`,
+			url: `/seo/${loc.slug}/`,
 			type: "website",
 			images: [
 				{
@@ -61,14 +62,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	};
 }
 
-export default async function WebDesignLocationPage({ params }: Props) {
+export default async function SEOLocationPage({ params }: Props) {
 	const { location } = await params;
 	const loc = getLocation(location);
 	if (!loc) notFound();
 
 	const ctaHref = "/contact/";
 	const hubHref = "/seo/";
-	const packagesHref = "/services/#website-packages";
+
+	const relatedServices = [
+		{
+			title: "Web Design",
+			description: `Build a clearer, more professional website for your ${loc.city} business.`,
+			href: `/web-design/${loc.slug}`,
+			ctaLabel: `View web design in ${loc.city} →`,
+			graphic: "webDesign" as const,
+		},
+		{
+			title: "Website Maintenance",
+			description:
+				"Keep your website updated, supported, and running smoothly over time.",
+			href: `/website-maintenance/${loc.slug}`,
+			ctaLabel: `View website maintenance in ${loc.city} →`,
+			graphic: "maintenance" as const,
+		},
+	];
 
 	return (
 		<>
@@ -197,6 +215,12 @@ export default async function WebDesignLocationPage({ params }: Props) {
 					]}
 				/>
 			</Section>
+
+			<RelatedServicesSection
+				headline="Explore other website services in Richmond"
+				intro="SEO is one part of building a stronger online presence. Depending on your goals, web design or ongoing website maintenance may also be part of the right next step."
+				services={relatedServices}
+			/>
 
 			<CTASection
 				title={`Ready to improve your website in ${loc.city}?`}
