@@ -9,7 +9,7 @@ import CTASection from "@/components/sections/CTASection";
 
 import { SectionActions } from "@/components/sections/SectionActions";
 import { healthAdvisorWebsite } from "@/content/products/health-advisor-website";
-import FAQAccordion from "@/components/ui/FAQAccordian";
+import FAQAccordion from "@/components/ui/FAQAccordion";
 import ProductPackagesSection from "../_components/ProductPackagesSection";
 
 export const metadata: Metadata = {

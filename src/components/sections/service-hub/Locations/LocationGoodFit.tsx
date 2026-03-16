@@ -1,23 +1,11 @@
-type GoodFitSectionProps = {
-	eyebrow?: string;
-	title?: string;
-	intro?: string;
-	items?: string[];
-};
+import type { LocationGoodFitSectionProps } from "@/types/location-pages";
 
-export function GoodFitSection({
-	eyebrow = "Good fit",
-	title = "A good fit for businesses that want to",
-	intro = "This kind of project usually makes the most sense for businesses that are ready to strengthen how they show up online.",
-	items = [
-		"Make a stronger first impression",
-		"Get more calls or quote requests",
-		"Replace an outdated or DIY site",
-		"Clearly explain their services",
-		"Improve mobile performance and maintainability",
-		"Launch with a cleaner, more professional presence",
-	],
-}: GoodFitSectionProps) {
+export function LocationGoodFitSection({
+	eyebrow,
+	title,
+	intro,
+	items,
+}: LocationGoodFitSectionProps) {
 	return (
 		<section className="bg-slate-50">
 			<div className="mx-auto max-w-5xl px-6 py-14 md:py-20">

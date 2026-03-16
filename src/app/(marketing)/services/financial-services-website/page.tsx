@@ -8,7 +8,7 @@ import type { CardProps } from "@/components/layout/Card";
 import CTASection from "@/components/sections/CTASection";
 
 import { SectionActions } from "@/components/sections/SectionActions";
-import FAQAccordion from "@/components/ui/FAQAccordian";
+import FAQAccordion from "@/components/ui/FAQAccordion";
 import { financialServicesWebsite } from "@/content/products/finance";
 import ProductPackagesSection from "../_components/ProductPackagesSection";
 import SectionCTA from "@/components/layout/SectionCTA";
