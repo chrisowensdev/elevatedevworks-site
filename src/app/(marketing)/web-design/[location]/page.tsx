@@ -11,6 +11,7 @@ import { LocationImprovementsSection } from "@/components/sections/service-hub/L
 import { LocationGoodFitSection } from "@/components/sections/service-hub/Locations/LocationGoodFit";
 import { LocationProblemsSection } from "@/components/sections/service-hub/Locations/LocationProblemsSection";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { RelatedServicesSection } from "@/components/sections/service-hub/Locations/RelatedServicesSection";
 
 type Props = { params: Promise<{ location: string }> };
 
@@ -71,6 +72,24 @@ export default async function WebDesignLocationPage({ params }: Props) {
 	const hubHref = "/web-design/";
 	const packagesHref = "/services/#website-packages";
 
+	const relatedServices = [
+		{
+			title: "SEO",
+			description: `Improve visibility for ${loc.city}-area searches with stronger local targeting and technical foundations.`,
+			href: `/seo/${loc.slug}`,
+			ctaLabel: `View SEO in ${loc.city} →`,
+			graphic: "seo" as const,
+		},
+		{
+			title: "Website Maintenance",
+			description:
+				"Keep your website updated, supported, and running smoothly over time.",
+			href: `/website-maintenance/${loc.slug}`,
+			ctaLabel: `View website maintenance in ${loc.city} →`,
+			graphic: "maintenance" as const,
+		},
+	];
+
 	return (
 		<>
 			<PageHero
@@ -84,7 +103,6 @@ export default async function WebDesignLocationPage({ params }: Props) {
 				secondaryCta={{ label: "More About Web Design", href: hubHref }}
 				// tone="brand"
 			/>
-
 			<LocationProblemsSection
 				title={`Why ${loc.city} businesses start looking for a new website`}
 				intro="Most projects start when a business realizes their website isn't clearly representing the quality of their work."
@@ -169,7 +187,6 @@ export default async function WebDesignLocationPage({ params }: Props) {
 					"Launch with a cleaner, more professional presence",
 				]}
 			/>
-
 			<Section
 				eyebrow="FAQ"
 				title={`Web design in ${loc.city}: common questions`}
@@ -197,7 +214,12 @@ export default async function WebDesignLocationPage({ params }: Props) {
 					]}
 				/>
 			</Section>
-
+			<RelatedServicesSection
+				headline="Explore other website services in Richmond"
+				intro="SEO is one part of building a stronger online presence. Depending on your goals, web design or ongoing website maintenance may also be part of the right next step."
+				services={relatedServices}
+			/>
+			;
 			<CTASection
 				title={`Ready to improve your website in ${loc.city}?`}
 				description="If you want clarity, speed, and a calm build process, let’s talk through what you need."
