@@ -42,7 +42,7 @@ export default function HowItStarted() {
 								<img
 									src="/images/about/about_us_chris_owens.webp"
 									sizes="(min-width: 768px) 672px, 92vw"
-									alt="Responsive small business website design example"
+									alt="Chris Owens - Founder - Elevate DevWorks"
 									className="block w-full h-auto [filter:contrast(1.03)_saturate(1.02)]"
 									loading="eager"
 									fetchPriority="high"
