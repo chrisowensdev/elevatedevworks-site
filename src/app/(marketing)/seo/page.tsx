@@ -7,6 +7,8 @@ import Cards from "@/components/layout/Cards";
 import type { CardProps } from "@/components/layout/Card";
 import CTASection from "@/components/sections/CTASection";
 import { SectionActions } from "@/components/sections/SectionActions";
+import { seoLocations } from "@/content/locations.seo";
+import ServiceAreaSection from "@/components/sections/service-hub/ServiceAreaSection";
 
 export const metadata: Metadata = {
 	title: "SEO for Small Businesses | Elevate DevWorks",
@@ -37,10 +39,12 @@ export const metadata: Metadata = {
 };
 
 export default function SEOPage() {
+	const basePath = "/seo";
 	const ctaHref = "/contact/";
 	const careHref = "/care/";
 	const carePackagesHref = "/services/#ongoing-care";
 	const quickWinsHref = "/services/#quick-wins";
+	const showLocations = true;
 
 	const cards: CardProps[] = [
 		{
@@ -98,6 +102,14 @@ export default function SEOPage() {
 					]}
 				/>
 			</Section>
+
+			{showLocations ? (
+				<ServiceAreaSection
+					locations={seoLocations}
+					basePath={basePath}
+					actions={[{ text: "View care packages", href: careHref }]}
+				/>
+			) : null}
 
 			<CTASection
 				title="Want a clear next step?"
