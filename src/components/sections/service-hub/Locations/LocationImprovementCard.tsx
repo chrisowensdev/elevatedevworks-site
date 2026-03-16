@@ -1,9 +1,12 @@
 import type { LocationImprovementCardProps } from "@/types/location-pages";
 import {
 	FileText,
+	LifeBuoy,
 	MapPin,
 	MessageSquare,
+	RefreshCw,
 	Search,
+	ShieldCheck,
 	Smartphone,
 	TrendingUp,
 	Wrench,
@@ -22,6 +25,9 @@ export default function LocationImprovementCard({
 		MapPin,
 		Wrench,
 		FileText,
+		RefreshCw,
+		ShieldCheck,
+		LifeBuoy,
 	};
 	const Icon = iconMap[iconKey];
 

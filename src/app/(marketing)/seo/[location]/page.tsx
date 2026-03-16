@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const loc = getLocation(location);
 	if (!loc) return {};
 
-	const title = `SEO ${loc.city} ${loc.state} | Local SEO for Small Businesses | Elevate DevWorks`;
+	const title = `SEO ${loc.city} ${loc.state} | Local SEO for Small Businesses`;
 	const description = `Improve your search visibility with ${loc.city} SEO services focused on site structure, local relevance, technical foundations, and better lead generation.`;
 
 	const robots =
