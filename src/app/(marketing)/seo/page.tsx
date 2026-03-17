@@ -11,7 +11,7 @@ import { seoLocations } from "@/content/locations.seo";
 import ServiceAreaSection from "@/components/sections/service-hub/ServiceAreaSection";
 
 export const metadata: Metadata = {
-	title: "SEO for Small Businesses | Elevate DevWorks",
+	title: "SEO for Small Businesses",
 	description:
 		"Practical SEO foundations and steady improvements that help your site get found and understood. Typically included as part of ongoing care packages.",
 	alternates: { canonical: "/seo/" },

@@ -35,7 +35,7 @@ import type { Metadata } from "next";
 // };
 
 export const metadata: Metadata = {
-	title: "Web Design for Small Businesses | Elevate DevWorks",
+	title: "Web Design for Small Businesses",
 	description:
 		"Fast, calm, SEO-ready websites for small businesses. Thoughtful design, performance-first builds, and a clear process—without the salesy agency experience.",
 	alternates: {

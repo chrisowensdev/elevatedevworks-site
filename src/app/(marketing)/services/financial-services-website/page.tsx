@@ -14,7 +14,7 @@ import ProductPackagesSection from "../_components/ProductPackagesSection";
 import SectionCTA from "@/components/layout/SectionCTA";
 
 export const metadata: Metadata = {
-	title: "Financial Services Website Packages | Elevate DevWorks",
+	title: "Financial Services Website Packages",
 	description:
 		"Website design packages for independent financial professionals. Professional, trust-focused websites with clear service pages, process explanations, and strong conversion paths—starting at $750.",
 	alternates: { canonical: "/services/financial-services-website/" },
