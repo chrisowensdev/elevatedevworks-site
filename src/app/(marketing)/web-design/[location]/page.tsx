@@ -214,7 +214,7 @@ export default async function WebDesignLocationPage({ params }: Props) {
 				/>
 			</Section>
 			<RelatedServicesSection
-				headline={`Explore other website services in ${loc.city}}`}
+				headline={`Explore other website services in ${loc.city}`}
 				intro="SEO is one part of building a stronger online presence. Depending on your goals, web design or ongoing website maintenance may also be part of the right next step."
 				services={relatedServices}
 			/>

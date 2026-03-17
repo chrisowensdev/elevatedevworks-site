@@ -62,4 +62,42 @@ export const webDesignLocations: LocationPageEntry[] = [
 		},
 		index: true,
 	},
+	{
+		slug: "chesterfield-va",
+		city: "Chesterfield",
+		state: "VA",
+		meta: {
+			title: "Web Design Chesterfield VA | Small Business Websites",
+			description:
+				"Web design for Chesterfield small businesses focused on clear messaging, modern design, mobile performance, and stronger lead generation.",
+		},
+		hero: {
+			headline: "Web design for Chesterfield small businesses",
+			subtext:
+				"Elevate DevWorks helps Chesterfield businesses launch fast, modern websites that clearly explain what they do, load quickly on mobile, and make it easy for customers to get in touch.",
+		},
+		localSection: {
+			headline:
+				"Working with businesses in Chesterfield and nearby areas",
+			body: "We work with businesses in Chesterfield, Richmond, and nearby areas that want a website that feels more polished, easier to manage, and better aligned with how they want to present their business online.",
+			bullets: [
+				"Clear communication from kickoff to launch",
+				"Fast, modern builds focused on performance",
+				"Flexible support for small business owners and lean teams",
+			],
+		},
+		faqOverrides: [
+			{
+				id: "service-area",
+				question: "Do you only help businesses in Chesterfield?",
+				answer: "No. We can help remotely, but this page is focused on Chesterfield-area businesses and nearby locations where local relevance still matters. We also work with businesses in surrounding areas like Richmond, Henrico, Mechanicsville, and Short Pump.",
+			},
+		],
+		finalCta: {
+			headline: "Ready to improve your website in Chesterfield?",
+			subtext:
+				"If you want a clearer, more professional website that supports your business goals, let’s talk through what you need.",
+		},
+		index: true,
+	},
 ];
