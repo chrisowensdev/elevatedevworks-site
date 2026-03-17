@@ -9,7 +9,7 @@ import CTASection from "@/components/sections/CTASection";
 import { SectionActions } from "@/components/sections/SectionActions";
 
 export const metadata: Metadata = {
-	title: "Ongoing Website Care | Elevate DevWorks",
+	title: "Ongoing Website Care",
 	description:
 		"Maintenance, performance, and practical SEO—bundled into calm, consistent monthly care so your website stays fast, secure, and improving.",
 	alternates: { canonical: "/care/" },

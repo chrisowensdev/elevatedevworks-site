@@ -11,7 +11,7 @@ import ServiceAreaSection from "@/components/sections/service-hub/ServiceAreaSec
 import { webDesignLocations } from "@/content/locations.web-design";
 
 export const metadata: Metadata = {
-	title: "Website Maintenance | Elevate DevWorks",
+	title: "Website Maintenance",
 	description:
 		"Website maintenance that keeps your site secure, stable, and running smoothly. Typically included as part of ongoing care packages.",
 	alternates: { canonical: "/maintenance/" },
