@@ -8,9 +8,10 @@ import { LocationContextSection } from "@/components/sections/service-hub/Locati
 import { LocationImprovementsSection } from "@/components/sections/service-hub/Locations/LocationImprovementsSection";
 import { LocationGoodFitSection } from "@/components/sections/service-hub/Locations/LocationGoodFit";
 import { LocationProblemsSection } from "@/components/sections/service-hub/Locations/LocationProblemsSection";
-import FAQAccordion from "@/components/ui/FAQAccordion";
 import { seoLocations } from "@/content/locations.seo";
 import { RelatedServicesSection } from "@/components/sections/service-hub/Locations/RelatedServicesSection";
+import { mergeFaqs } from "@/lib/utils";
+import LocationFAQs from "@/components/sections/service-hub/Locations/LocationFAQs";
 
 type Props = { params: Promise<{ location: string }> };
 
@@ -27,8 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const loc = getLocation(location);
 	if (!loc) return {};
 
-	const title = `SEO ${loc.city} ${loc.state} | Local SEO for Small Businesses`;
-	const description = `Improve your search visibility with ${loc.city} SEO services focused on site structure, local relevance, technical foundations, and better lead generation.`;
+	const title = loc.meta.title;
+	const description = loc.meta.description;
 
 	const robots =
 		loc.index === false
@@ -82,9 +83,37 @@ export default async function SEOLocationPage({ params }: Props) {
 			title: "Website Maintenance",
 			description:
 				"Keep your website updated, supported, and running smoothly over time.",
-			href: `/website-maintenance/${loc.slug}`,
+			href: `/maintenance/${loc.slug}`,
 			ctaLabel: `View website maintenance in ${loc.city} →`,
 			graphic: "maintenance" as const,
+		},
+	];
+
+	const faqDefaults = [
+		{
+			id: "service-areas",
+			question: `Do you only help businesses in ${loc.city}?`,
+			answer: "No. We can help remotely, but this page is focused on area businesses because local relevance matters when building service pages and SEO structure. We also work with nearby areas.",
+		},
+		{
+			id: "timeline",
+			question: "How long does SEO take to show results?",
+			answer: "SEO usually takes time. Some improvements can help quickly, especially when technical issues or weak page structure are holding a site back, but meaningful growth often happens over months rather than days. The goal is to build a stronger foundation that compounds over time.",
+		},
+		{
+			id: "monthly",
+			question: "Do I need ongoing SEO every month?",
+			answer: "Not always. Some businesses need a one-time foundational improvement, while others benefit from ongoing content, optimization, and maintenance. It depends on your market, competition, and how aggressively you want to grow.",
+		},
+		{
+			id: "existing-site",
+			question: "Can you help if my website already exists?",
+			answer: "Yes. In many cases, the best starting point is improving the current site's structure, content, internal linking, metadata, and technical setup before considering a full rebuild.",
+		},
+		{
+			id: "webdesign",
+			question: "Is SEO separate from web design?",
+			answer: "They overlap. A well-built website gives SEO a much stronger foundation. Clear messaging, page structure, mobile performance, and internal linking all support better search visibility.",
 		},
 	];
 
@@ -92,11 +121,8 @@ export default async function SEOLocationPage({ params }: Props) {
 		<>
 			<PageHero
 				eyebrow={`SEO in ${loc.city}`}
-				title={`SEO for ${loc.city} small businesses`}
-				description={
-					loc.introBlurb ??
-					`Elevate DevWorks helps ${loc.city} businesses improve search visibility with clear site structure, stronger service pages, local relevance, and technical foundations that support long-term growth.`
-				}
+				title={loc.hero.headline}
+				description={loc.hero.subtext}
 				primaryCta={{ label: "Discuss your project", href: ctaHref }}
 				secondaryCta={{ label: "More About SEO", href: hubHref }}
 			/>
@@ -163,13 +189,9 @@ export default async function SEOLocationPage({ params }: Props) {
 			/>
 			<LocationContextSection
 				eyebrow="Local experience"
-				title={`Working with businesses in ${loc.city} and nearby areas`}
-				description="We work with businesses in Richmond, Henrico, Chesterfield, and nearby areas that want to improve how they appear in search without relying on bloated SEO packages or unclear reporting. The goal is to create a stronger foundation so your website supports visibility, trust, and lead generation over time."
-				points={[
-					"SEO improvements tied to real business goals",
-					"Clean site structure built around services and locations",
-					"Support that keeps visibility efforts practical and sustainable",
-				]}
+				title={loc.localSection.headline}
+				description={loc.localSection.body}
+				points={loc.localSection.bullets}
 			/>
 			<LocationGoodFitSection
 				eyebrow="Good fit"
@@ -190,34 +212,13 @@ export default async function SEOLocationPage({ params }: Props) {
 				title={`SEO in ${loc.city}: common questions`}
 				description="A few quick answers. If you want the simplest next step, reach out."
 			>
-				<FAQAccordion
-					items={[
-						{
-							q: `Do you only help businesses in ${loc.city}?`,
-							a: "No. We can help remotely, but this page is focused on Richmond-area businesses because local relevance matters when building service pages and SEO structure. We also work with nearby areas like Henrico, Chesterfield, Mechanicsville, and Short Pump.",
-						},
-						{
-							q: "How long does SEO take to show results?",
-							a: "SEO usually takes time. Some improvements can help quickly, especially when technical issues or weak page structure are holding a site back, but meaningful growth often happens over months rather than days. The goal is to build a stronger foundation that compounds over time.",
-						},
-						{
-							q: "Do I need ongoing SEO every month?",
-							a: "Not always. Some businesses need a one-time foundational improvement, while others benefit from ongoing content, optimization, and maintenance. It depends on your market, competition, and how aggressively you want to grow.",
-						},
-						{
-							q: "Can you help if my website already exists?",
-							a: "Yes. In many cases, the best starting point is improving the current site's structure, content, internal linking, metadata, and technical setup before considering a full rebuild.",
-						},
-						{
-							q: "Is SEO separate from web design?",
-							a: "They overlap. A well-built website gives SEO a much stronger foundation. Clear messaging, page structure, mobile performance, and internal linking all support better search visibility.",
-						},
-					]}
+				<LocationFAQs
+					items={mergeFaqs(faqDefaults, loc.faqOverrides)}
 				/>
 			</Section>
 
 			<RelatedServicesSection
-				headline="Explore other website services in Richmond"
+				headline={`Explore other website services in ${loc.city}`}
 				intro="SEO is one part of building a stronger online presence. Depending on your goals, web design or ongoing website maintenance may also be part of the right next step."
 				services={relatedServices}
 			/>

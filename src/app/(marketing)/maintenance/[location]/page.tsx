@@ -8,18 +8,19 @@ import { LocationContextSection } from "@/components/sections/service-hub/Locati
 import { LocationImprovementsSection } from "@/components/sections/service-hub/Locations/LocationImprovementsSection";
 import { LocationGoodFitSection } from "@/components/sections/service-hub/Locations/LocationGoodFit";
 import { LocationProblemsSection } from "@/components/sections/service-hub/Locations/LocationProblemsSection";
-import FAQAccordion from "@/components/ui/FAQAccordion";
-import { seoLocations } from "@/content/locations.seo";
 import { RelatedServicesSection } from "@/components/sections/service-hub/Locations/RelatedServicesSection";
+import { maintenanceLocations } from "@/content/locations.maintenance";
+import LocationFAQs from "@/components/sections/service-hub/Locations/LocationFAQs";
+import { mergeFaqs } from "@/lib/utils";
 
 type Props = { params: Promise<{ location: string }> };
 
 function getLocation(slug: string) {
-	return seoLocations.find((l) => l.slug === slug);
+	return maintenanceLocations.find((l) => l.slug === slug);
 }
 
 export function generateStaticParams() {
-	return seoLocations.map((l) => ({ location: l.slug }));
+	return maintenanceLocations.map((l) => ({ location: l.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -27,8 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const loc = getLocation(location);
 	if (!loc) return {};
 
-	const title = `Website Maintenance ${loc.city}, ${loc.state} | Ongoing Website Support`;
-	const description = `${loc.city} website maintenance for small businesses that need reliable updates, technical support, and ongoing help to keep their site running smoothly.`;
+	const title = loc.meta.title;
+	const description = loc.meta.description;
 
 	const robots =
 		loc.index === false
@@ -87,15 +88,40 @@ export default async function SEOLocationPage({ params }: Props) {
 		},
 	];
 
+	const faqDefaults = [
+		{
+			id: "service-area",
+			question: `Do you only help businesses in ${loc.city}?`,
+			answer: "No. We can help remotely, but this page is focused on Richmond-area businesses and nearby locations where local service visibility matters. We also work with businesses in surrounding areas like Henrico, Chesterfield, Mechanicsville, and Short Pump",
+		},
+		{
+			id: "maintenance",
+			question: "What counts as website maintenance?",
+			answer: "Website maintenance can include content updates, small page edits, technical fixes, performance checks, plugin or platform updates when relevant, and general support to keep the site working as expected.",
+		},
+		{
+			id: "monthly",
+			question: "Do I need monthly maintenance?",
+			answer: "Not always. Some businesses need occasional help, while others benefit from ongoing support. It depends on how often the site changes, how important uptime is, and how much internal bandwidth you have to manage updates yourself.",
+		},
+		{
+			id: "external",
+			question: "Can you maintain a site you did not build?",
+			answer: "Yes, in many cases. We usually need to review how the site is built first, since some websites are easier to support than others, but existing sites can often still be maintained and improved.",
+		},
+		{
+			id: "redesign",
+			question: "How is maintenance different from a redesign?",
+			answer: "Maintenance focuses on keeping an existing website updated, supported, and functioning well. A redesign is more appropriate when the structure, messaging, or overall site quality needs a larger rebuild.",
+		},
+	];
+
 	return (
 		<>
 			<PageHero
 				eyebrow={`Website maintenance in ${loc.city}`}
-				title={`Website maintenance for ${loc.city} small businesses`}
-				description={
-					// loc.introBlurb ??
-					`Elevate DevWorks helps ${loc.city} businesses keep their websites updated, supported, and running smoothly with practical maintenance that protects performance, reduces friction, and makes future changes easier.`
-				}
+				title={loc.hero.headline}
+				description={loc.hero.subtext}
 				primaryCta={{ label: "Discuss your project", href: ctaHref }}
 				secondaryCta={{
 					label: "More About Website Maintenance",
@@ -133,10 +159,6 @@ export default async function SEOLocationPage({ params }: Props) {
 				eyebrow="How we help"
 				title="What we improve with ongoing website maintenance"
 				intro="Good maintenance is not just about fixing problems. It helps keep your website current, functional, and easier to manage so it continues supporting your business after launch."
-				// desktopImgSrc="/images/demos/hvac/peak-performance-1200.webp"
-				// desktopImgAlt="Responsive small business website design example"
-				// mobileImgSrc="/images/demos/hvac/peakperformance-mobile.webp"
-				// mobileImgAlt="ClearPath mobile preview"
 				maintenanceGraphic
 				items={[
 					{
@@ -166,13 +188,9 @@ export default async function SEOLocationPage({ params }: Props) {
 			/>
 			<LocationContextSection
 				eyebrow="Local experience"
-				title={`Working with businesses in ${loc.city} and nearby areas`}
-				description="We work with businesses in Richmond, Henrico, Chesterfield, and nearby areas that want dependable website support without overcomplicated retainers or vague maintenance plans. The goal is to keep your website easier to manage, easier to trust, and better aligned with what your business needs over time."
-				points={[
-					"Practical support for updates, fixes, and small improvements",
-					"Maintenance that protects usability, performance, and trust",
-					"Flexible help for small business owners and lean teams",
-				]}
+				title={loc.localSection.headline}
+				description={loc.localSection.body}
+				points={loc.localSection.bullets}
 			/>
 			<LocationGoodFitSection
 				eyebrow="Good fit"
@@ -193,34 +211,13 @@ export default async function SEOLocationPage({ params }: Props) {
 				title={`Website maintenance in ${loc.city}: common questions`}
 				description="A few quick answers. If you want the simplest next step, reach out."
 			>
-				<FAQAccordion
-					items={[
-						{
-							q: `Do you only help businesses in ${loc.city}?`,
-							a: "No. We can help remotely, but this page is focused on Richmond-area businesses and nearby locations where local service visibility matters. We also work with businesses in surrounding areas like Henrico, Chesterfield, Mechanicsville, and Short Pump",
-						},
-						{
-							q: "What counts as website maintenance?",
-							a: "Website maintenance can include content updates, small page edits, technical fixes, performance checks, plugin or platform updates when relevant, and general support to keep the site working as expected.",
-						},
-						{
-							q: "Do I need monthly maintenance?",
-							a: "Not always. Some businesses need occasional help, while others benefit from ongoing support. It depends on how often the site changes, how important uptime is, and how much internal bandwidth you have to manage updates yourself.",
-						},
-						{
-							q: "Can you maintain a site you did not build?",
-							a: "Yes, in many cases. We usually need to review how the site is built first, since some websites are easier to support than others, but existing sites can often still be maintained and improved.",
-						},
-						{
-							q: "How is maintenance different from a redesign?",
-							a: "Maintenance focuses on keeping an existing website updated, supported, and functioning well. A redesign is more appropriate when the structure, messaging, or overall site quality needs a larger rebuild.",
-						},
-					]}
+				<LocationFAQs
+					items={mergeFaqs(faqDefaults, loc.faqOverrides)}
 				/>
 			</Section>
 
 			<RelatedServicesSection
-				headline="Explore other website services in Richmond"
+				headline={`Explore other website services in ${loc.city}`}
 				intro="SEO is one part of building a stronger online presence. Depending on your goals, web design or ongoing website maintenance may also be part of the right next step."
 				services={relatedServices}
 			/>

@@ -1,44 +1,65 @@
-export type WebDesignLocation = {
-	slug: string;
-	metaTitle: string;
-	metaDescription: string;
-	city: string;
-	state: string;
-	regionLabel?: string;
-	nearby?: string[];
-	industries?: string[];
-	introBlurb: string;
-	whyThisLocation: string[];
-	priority?: "high" | "normal";
-	index?: boolean;
-};
+import type { LocationPageEntry } from "@/types/location-pages";
 
-export const webDesignLocations: WebDesignLocation[] = [
+export const webDesignLocations: LocationPageEntry[] = [
 	{
 		slug: "richmond-va",
-		metaTitle: "",
-		metaDescription: "",
 		city: "Richmond",
 		state: "VA",
-		regionLabel: "Richmond Metro",
-		nearby: ["Henrico", "Chesterfield", "Short Pump", "Mechanicsville"],
-		industries: [
-			"Contractors",
-			"Med Spas",
-			"Local services",
-			"Small professional firms",
-		],
-
-		introBlurb:
-			"Elevate DevWorks helps Richmond businesses launch fast, modern websites that clearly explain what they do, load quickly on mobile, and make it easy for customers to get in touch.",
-		whyThisLocation: [
-			"Designed for service businesses that rely on phone calls and quote requests.",
-			"Mobile-first layouts that make it easy to tap-to-call, request an estimate, or book a consult.",
-			"SEO foundations built in: technical setup, page structure, and performance.",
-		],
-
+		meta: {
+			title: "Web Design Richmond VA | Small Business Websites",
+			description:
+				"Professional web design for Richmond small businesses. Fast, modern websites build for clarity, performance, and more customer inquires.",
+		},
+		hero: {
+			headline: "Web design for Richmond small businesses",
+			subtext:
+				"Elevate DevWorks helps Richmond businesses launch fast, modern websites that clearly explain what they do, load quickly on mobile, and make it easy for customers to get in touch.",
+		},
+		localSection: {
+			headline: "Working with businesses in Richmond and nearby areas",
+			body: "We work with businesses across Richmond, Henrico, Chesterfield, and nearby areas. Most projects run smoothly remote-first, but local kickoff calls or in-person meetings can happen when helpful.",
+			bullets: [
+				"Clear communication from kickoff to launch",
+				"Fast, modern builds focused on performance",
+				"Flexible support for small business owners and lean teams",
+			],
+		},
+		finalCta: {
+			headline: "Ready to improve your website in Richmond?",
+			subtext:
+				"If you want a clearer, more professional website that supports your business goals, let's talk through what you need.",
+		},
 		priority: "high",
 		index: true,
 	},
-	// Add more locations gradually with real uniqueness
+	{
+		slug: "henrico-va",
+		city: "Henrico",
+		state: "VA",
+		meta: {
+			title: "Web Design Henrico VA | Small Business Websites",
+			description:
+				"Web design for Henrico small businesses focused on clear messaging, modern design, mobile performance, and stronger lead generation.",
+		},
+		hero: {
+			headline: "Web design for Henrico small businesses",
+			subtext:
+				"Elevate DevWorks helps Henrico businesses launch fast, modern websites that clearly explain what they do, load quickly on mobile, and make it easy for customers to get in touch.",
+		},
+		localSection: {
+			headline: "Working with businesses in Henrico and nearby areas",
+			body: "We work with businesses in Henrico, Richmond, and nearby areas that want a website that feels more polished, easier to manage, and better aligned with how they want to present their business online.",
+			bullets: [
+				"Clear communication from kickoff to launch",
+				"Fast, modern builds focused on performance",
+				"Flexible support for small business owners and lean teams",
+			],
+		},
+		finalCta: {
+			headline: "Ready to improve your website in Henrico?",
+			subtext:
+				"If you want a clearer, more professional website that supports your business goals, let's talk through what you need.",
+		},
+		index: true,
+	},
 ];
