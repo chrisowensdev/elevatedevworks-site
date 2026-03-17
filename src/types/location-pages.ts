@@ -1,3 +1,33 @@
+export type LocationPageEntry = {
+	slug: string;
+	city: string;
+	state: string;
+	meta: {
+		title: string;
+		description: string;
+	};
+	hero: {
+		headline: string;
+		subtext: string;
+	};
+	localSection: {
+		headline: string;
+		body: string;
+		bullets: string[];
+	};
+	finalCta: {
+		headline: string;
+		subtext: string;
+	};
+	faqOverrides?: {
+		id: string;
+		question: string;
+		answer: string;
+	}[];
+	priority?: "high" | "normal";
+	index: boolean;
+};
+
 //LocationProblemsSection.tsx
 type ProblemItem = {
 	title: string;
