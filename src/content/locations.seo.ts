@@ -76,4 +76,44 @@ export const seoLocations: LocationPageEntry[] = [
 		],
 		index: true,
 	},
+
+	{
+		slug: "chesterfield-va",
+		city: "Chesterfield",
+		state: "VA",
+		meta: {
+			title: "SEO Chesterfield VA | Local SEO for Small Businesses",
+			description:
+				"SEO for Chesterfield small businesses focused on local relevance, technical foundations, service page targeting, and better long-term visibility.",
+		},
+		hero: {
+			headline: "SEO for Chesterfield small businesses",
+			subtext:
+				"Elevate DevWorks helps Chesterfield businesses improve search visibility with stronger service pages, cleaner site structure, local relevance, and technical SEO foundations that support better long-term lead generation.",
+		},
+		localSection: {
+			headline:
+				"Working with businesses in Chesterfield and nearby areas",
+			body: "We work with businesses in Chesterfield, Richmond, and nearby areas that want to improve how they appear in search without relying on bloated SEO packages or vague reporting. The goal is to build a stronger foundation for long-term visibility and lead generation.",
+			bullets: [
+				"Practical SEO improvements tied to real business goals",
+				"Clean site structure built around services and locations",
+				"Ongoing support for steady, sustainable growth",
+			],
+		},
+		faqOverrides: [
+			{
+				id: "service-area",
+				question: "Do you only help businesses in Chesterfield?",
+				answer: "No. We can help remotely, but this page is focused on Chesterfield-area businesses and nearby locations where local relevance matters. We also work with businesses in surrounding areas like Richmond, Henrico, Mechanicsville, and Short Pump.",
+			},
+		],
+		finalCta: {
+			headline: "Ready to improve your SEO in Chesterfield?",
+			subtext:
+				"If you want better visibility, clearer service targeting, and a stronger SEO foundation, let’s talk through what your site needs.",
+		},
+
+		index: true,
+	},
 ];

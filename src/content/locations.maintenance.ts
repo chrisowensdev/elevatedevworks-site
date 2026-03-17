@@ -77,4 +77,44 @@ export const maintenanceLocations: LocationPageEntry[] = [
 		},
 		index: true,
 	},
+	{
+		slug: "chesterfield-va",
+		city: "Chesterfield",
+		state: "VA",
+		meta: {
+			title: "Website Maintenance Chesterfield VA | Ongoing Website Support",
+			description:
+				"Website maintenance for Chesterfield small businesses that need reliable updates, technical support, and ongoing help to keep their site running smoothly.",
+		},
+		hero: {
+			headline: "Website maintenance for Chesterfield small businesses",
+			subtext:
+				"Elevate DevWorks helps Chesterfield businesses keep their websites updated, supported, and running smoothly with practical maintenance that protects performance, reduces friction, and makes future changes easier.",
+		},
+		localSection: {
+			headline:
+				"Working with businesses in Chesterfield and nearby areas",
+			body: "We work with businesses in Chesterfield, Richmond, and nearby areas that want dependable website support without overcomplicated retainers or vague maintenance plans. The goal is to keep your website easier to manage, easier to trust, and better aligned with what your business needs over time.",
+			bullets: [
+				"Practical support for updates, fixes, and small improvements",
+				"Maintenance that protects usability, performance, and trust",
+				"Flexible help for small business owners and lean teams",
+			],
+		},
+		faqOverrides: [
+			{
+				id: "service-area",
+				question: "Do you only help businesses in Chesterfield?",
+				answer: "No. We can help remotely, but this page is focused on Chesterfield-area businesses and nearby locations where local service visibility matters. We also work with businesses in surrounding areas like Richmond, Henrico, Mechanicsville, and Short Pump.",
+			},
+		],
+		finalCta: {
+			headline:
+				"Ready for more reliable website support in Chesterfield?",
+			subtext:
+				"If you want a simpler way to handle updates, fixes, and ongoing website needs, let’s talk through what support makes sense for your business.",
+		},
+		priority: "high",
+		index: true,
+	},
 ];
