@@ -1,57 +1,79 @@
-export type seoLocation = {
-	slug: string;
-	metaTitle: string;
-	metaDescription: string;
-	city: string;
-	state: string;
-	regionLabel?: string;
-	nearby?: string[];
-	industries?: string[];
-	introBlurb: string;
-	whyThisLocation: string[];
-	faqs: { q: string; a: string }[];
-	priority?: "high" | "normal";
-	index?: boolean;
-};
+import type { LocationPageEntry } from "@/types/location-pages";
 
-export const seoLocations: seoLocation[] = [
+export const seoLocations: LocationPageEntry[] = [
 	{
 		slug: "richmond-va",
-		metaTitle: "",
-		metaDescription: "",
 		city: "Richmond",
 		state: "VA",
-		regionLabel: "Richmond Metro",
-		nearby: ["Henrico", "Chesterfield", "Short Pump", "Mechanicsville"],
-		industries: [
-			"Contractors",
-			"Med Spas",
-			"Local services",
-			"Small professional firms",
-		],
-		introBlurb:
-			"Elevate DevWorks helps Richmond businesses improve search visibility with stronger service pages, cleaner site structure, local relevance, and technical SEO foundations that support better long-term lead generation.",
-		whyThisLocation: [
-			"Designed for service businesses that rely on phone calls and quote requests.",
-			"Mobile-first layouts that make it easy to tap-to-call, request an estimate, or book a consult.",
-			"SEO foundations built in: technical setup, page structure, and performance.",
-		],
-		faqs: [
+		meta: {
+			title: "SEO Richmond VA | Local SEO for Small Businesses",
+			description:
+				"Improve your search visibility with Richmond SEO services focused on site structure, local relevance, technical foundations, and better lead generation.",
+		},
+		hero: {
+			headline: "SEO for Richmond small businesses",
+			subtext:
+				"Elevate DevWorks helps Richmond businesses improve search visibility with clear site structure, stronger service pages, local relevance, and technical foundations that support long-term growth.",
+		},
+		localSection: {
+			headline: "Working with businesses in Richmond and nearby areas",
+			body: "We work with businesses in Richmond, Henrico, Chesterfield, and nearby areas that want to improve how they appear in search without relying on bloated SEO packages or unclear reporting. The goal is to create a stronger foundation so your website supports visibility, trust, and lead generation over time.",
+			bullets: [
+				"SEO improvements tied to real business goals",
+				"Clean site structure built around services and locations",
+				"Support that keeps visibility efforts practical and sustainable",
+			],
+		},
+		finalCta: {
+			headline: "Ready to improve your website in Richmond?",
+			subtext:
+				"If you want better visibility, clearer service targeting, and a stronger SEO foundation, let's talk through what your site needs.",
+		},
+		faqOverrides: [
 			{
-				q: "Do you work with Richmond businesses remotely or in person?",
-				a: "Both. Most projects run smoothly remote-first, and we can meet locally when it helps kickoff or content review.",
-			},
-			{
-				q: "How long does a typical small business website take?",
-				a: "Most sites land in a few weeks depending on content readiness. We'll give you a clear timeline after a quick walkthrough.",
-			},
-			{
-				q: "Can you improve an existing site instead of rebuilding?",
-				a: "Yes—if the foundation is workable. Otherwise we'll recommend a rebuild for speed, structure, and SEO.",
+				id: "service-areas",
+				question: "Do you only help businesses in Richmond?",
+				answer: "No. We can help remotely, but this page is focused on Richmond-area businesses because local relevance matters when building service pages and SEO structure. We also work with nearby areas like Henrico, Chesterfield, Mechanicsville, and Short Pump.",
 			},
 		],
 		priority: "high",
 		index: true,
 	},
-	// Add more locations gradually with real uniqueness
+	{
+		slug: "henrico-va",
+		city: "Henrico",
+		state: "VA",
+		meta: {
+			title: "SEO Henrico VA | Local SEO for Small Businesses | Elevate DevWorks",
+			description:
+				"SEO for Henrico small businesses focused on local relevance, technical foundations, service page targeting, and better long-term visibility.",
+		},
+		hero: {
+			headline: "SEO for Henrico small businesses",
+			subtext:
+				"Elevate DevWorks helps Henrico businesses improve search visibility with stronger service pages, cleaner site structure, local relevance, and technical SEO foundations that support better long-term lead generation.",
+		},
+		localSection: {
+			headline: "Working with businesses in Henrico and nearby areas",
+			body: "We work with businesses in Henrico, Richmond, and nearby areas that want to improve how they appear in search without relying on bloated SEO packages or vague reporting. The goal is to build a stronger foundation for long-term visibility and lead generation.",
+			bullets: [
+				"Practical SEO improvements tied to real business goals",
+				"Clean site structure built around services and locations",
+				"Ongoing support for steady, sustainable growth",
+			],
+		},
+		finalCta: {
+			headline: "Ready to improve your SEO in Henrico?",
+			subtext:
+				"If you want better visibility, clearer service targeting, and a stronger SEO foundation, let's talk through what your site needs.",
+		},
+		faqOverrides: [
+			{
+				id: "service-areas",
+				question: "Do you only help businesses in Henrico?",
+				answer: "No. We can help remotely, but this page is focused on Henrico businesses because local relevance matters when building service pages and SEO structure. We also work with nearby areas like Richmond, Chesterfield, Mechanicsville, and Short Pump.",
+			},
+		],
+		index: true,
+	},
 ];

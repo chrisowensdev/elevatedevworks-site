@@ -9,31 +9,6 @@ import ServiceAreaSection from "@/components/sections/service-hub/ServiceAreaSec
 import { webDesignLocations } from "@/content/locations.web-design";
 import type { Metadata } from "next";
 
-// type WebDesignHubLocation = ServiceHubLocation;
-
-// type WorkTeaserItem = {
-// 	title: string;
-// 	description?: string;
-// 	href: string;
-// };
-
-// type Props = {
-// 	locations?: WebDesignHubLocation[];
-// 	basePath?: string; // default "/web-design"
-
-// 	ctaHref?: string; // default "/contact"
-// 	ctaLabel?: string; // default "Discuss your project"
-
-// 	packagesHref?: string; // default "/services#website-packages"
-// 	workHref?: string; // default "/work"
-// 	careHref?: string; // default "/care"
-
-// 	// Optional: if you have real items to show, pass them in.
-// 	// If omitted, the section still renders with a single action to /work.
-// 	workTeasers?: WorkTeaserItem[];
-// 	showLocations?: boolean; // default true
-// };
-
 export const metadata: Metadata = {
 	title: "Web Design for Small Businesses",
 	description:
