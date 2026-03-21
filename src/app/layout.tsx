@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://elevatedevworks.com"),
 	title: {
 		default:
-			"Web Design & Development for Small Businesses | Elevate DevWorks",
+			"Elevate DevWorks | Web Design & Development for Small Businesses",
 		template: "%s | Elevate DevWorks",
 	},
 	description:
