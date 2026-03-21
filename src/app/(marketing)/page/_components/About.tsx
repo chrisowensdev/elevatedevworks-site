@@ -32,8 +32,8 @@ export default function About() {
 									style={{ aspectRatio: "4 / 4" }}
 								>
 									<Image
-										src={about.headshot}
-										alt={`Photo of ${about.name}`}
+										src="/images/about/elevatedevworks_workstation.webp"
+										alt={`Photo of Elevate DevWorks office`}
 										fill
 										className="object-cover"
 										sizes="(max-width: 768px) 100vw, 40vw"
