@@ -6,6 +6,6 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
 	email: "connect@elevatedevworks.com",
-	phone: "(804) 460-7641",
+	phone: "(804) 420-9804",
 	officeHours: "Monday - Friday, 8:00 AM - 5:00 PM",
 };
